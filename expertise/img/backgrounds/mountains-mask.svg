@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1122 252">
+  <defs>
+    <filter id="soft"><feGaussianBlur stdDeviation="5"/></filter>
+    <mask id="art" maskUnits="userSpaceOnUse" x="0" y="0" width="1122" height="252">
+      <path fill="white" d="M0 0h1122v252H0z"/>
+      <g fill="black" filter="url(#soft)">
+        <path d="M478 22h169v36H478zM314 62h494v52H314zM39 20h155v65H39zM1010 20h88v67h-88z"/>
+      </g>
+    </mask>
+  </defs>
+  <path fill="white" mask="url(#art)" d="M0 0h1122v252H0z"/>
+</svg>

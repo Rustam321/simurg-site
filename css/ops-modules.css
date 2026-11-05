@@ -1,0 +1,234 @@
+/* Блок «Операционные модули SIMURG» на главной (между видеорядом/баннером и SIMURG-БАНКОМ). «Одна страница = один блок»:
+   на мониторах и больших планшетах (от 1025px, высота окна от 600px) секция занимает ровно высоту окна — заголовок слева сверху,
+   под ним схема (высота по оставшемуся месту) и справа от неё 4 блока и плашка. Ниже 1025px — стопкой.
+   Схема — из SIMURG_Digital_Environment_v0.1 (inline-SVG с живым текстом; до 700px вместо неё карточки модулей). Шрифты — O Sans + Manrope.
+   Reveal включается только после запуска js/ops-modules.js (класс html.ops-js): без скрипта всё видно. */
+.ops {
+  --ops-ink: #0b1f4b;
+  --ops-ink-2: #12306b;
+  --ops-blue: #1648a8;
+  --ops-blue-2: #1e5fc8;
+  --ops-text: #4a5878;
+  --ops-line: #c9d8ec;
+  --ops-plate: #dce9fa;
+  --ops-gutter: clamp(16px, 4vw, 56px);
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+  padding: clamp(32px, 6vw, 64px) 0 clamp(40px, 6vw, 72px);
+  color: var(--ops-text);
+  background:
+    radial-gradient(60% 50% at 12% 0%, rgba(120, 170, 235, 0.22), rgba(120, 170, 235, 0) 70%),
+    radial-gradient(50% 45% at 100% 100%, rgba(120, 170, 235, 0.18), rgba(120, 170, 235, 0) 70%),
+    linear-gradient(180deg, #f4f8fe 0%, #e7f0fc 100%);
+  scroll-margin-top: var(--sx-bar-h, 0px);
+}
+.ops__inner {
+  width: calc(100% - 2 * var(--side, 6vw));   /* те же боковые отступы, что у видеоряда */
+  margin-inline: auto;
+}
+
+/* ---- заголовок и лид (слева, над блоком) ---- */
+.ops__head { text-align: left; }
+.ops__title {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: clamp(22px, 2.2vw, 34px);
+  line-height: 1.15;
+  letter-spacing: normal;   /* как у остальных заголовков сайта */
+  text-transform: uppercase;
+  color: var(--ops-ink);
+}
+.ops__title span { display: inline; }
+.ops__title .ops__title-sub {
+  background: linear-gradient(90deg, #2c5fb6 0%, #5d90da 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #3f73c9;
+}
+.ops__rule { position: relative; display: block; height: 4px; width: min(100%, 420px); margin: 12px 0 12px; }
+.ops__rule::before { content: ""; position: absolute; left: 0; right: 0; top: 2px; height: 1px; background: var(--ops-line); }
+.ops__rule::after { content: ""; position: absolute; left: 0; top: 0; width: 56px; height: 3px; border-radius: 2px; background: var(--ops-blue-2); }
+.ops__lead { max-width: 100ch; margin: 0; font-size: clamp(14px, 1vw, 16px); line-height: 1.55; color: var(--ops-text); }
+
+/* ---- схема (слева) ---- */
+.ops__body { margin-top: 24px; }
+.ops__figure { margin: 0; width: min(100%, 760px); margin-inline: auto; }
+/* схема без «карточки»: прозрачный SVG лежит прямо на фоне секции; сама схема — кнопка (клик/Enter/Space открывает лайтбокс) */
+.ops__zoom {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  cursor: zoom-in;
+  -webkit-tap-highlight-color: transparent;
+}
+.ops__zoom:focus-visible { outline: 3px solid var(--ops-blue-2); outline-offset: 4px; }
+.de-radial { margin: 0; height: 100%; }
+.ops .de-modules-svg { overflow: hidden; }   /* схема обрезана по кругам (угловые подписи убраны) — длинные линии фона не выходят за границы */
+.de-diagram { display: block; width: 100%; height: auto; max-width: 100%; user-select: text; -webkit-user-select: text; }
+.de-diagram text { user-select: text; -webkit-user-select: text; }
+.de-mobile-modules { display: none; }
+.de-screenreader { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; clip-path: inset(50%); overflow: clip; white-space: nowrap; border: 0; }
+
+/* ---- 4 блока и плашка (справа от схемы), без номеров ---- */
+.ops__side { margin-top: 16px; }
+.ops__item { padding: 16px 0; border-top: 1px solid var(--ops-line); }
+.ops__item h3 {
+  margin: 0 0 8px;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: clamp(15px, 2.2vw, 19px);
+  line-height: 1.25;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  color: var(--ops-blue);
+}
+.ops__item p { margin: 0; max-width: 70ch; font-size: clamp(15px, 2vw, 17px); line-height: 1.55; color: var(--ops-text); }
+.ops__final {
+  margin-top: 16px;
+  padding: 16px 24px;
+  border-radius: 16px;
+  background: var(--ops-plate);
+  text-align: left;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: clamp(14px, 2.2vw, 18px);
+  line-height: 1.3;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  text-wrap: balance;
+  color: var(--ops-ink);
+}
+
+/* ---- одна страница = один блок: мониторы и большие планшеты ---- */
+@media (min-width: 1025px) and (min-height: 600px) {
+  .ops {
+    height: 100vh;
+    height: 100svh;
+    display: flex;
+    align-items: center;
+    padding: clamp(12px, 2.4vh, 28px) 0;
+  }
+  .ops__inner { height: 100%; display: flex; flex-direction: column; }
+  .ops__head { flex: none; }
+  .ops__body { flex: 1; min-height: 0; display: flex; align-items: flex-start; gap: clamp(32px, 4vw, 72px); margin-top: clamp(12px, 2.2vh, 24px); }
+  /* высота схемы — всё оставшееся место, ширина — по пропорции схемы 1136×1140 */
+  /* --fig-h — высота схемы: всё оставшееся место, но не шире 60% блока (иначе схема «вписывалась» бы с полями и сбивала выравнивание) */
+  .ops__figure, .ops__side { --fig-h: min(100cqh, calc(60cqw * 1140 / 1136)); }
+  .ops__figure { flex: none; height: var(--fig-h); width: auto; aspect-ratio: 1136 / 1140; margin: 0; }
+  .de-radial .de-diagram { height: 100%; }
+  /* .ops__body — контейнер по высоте: cqh = высота схемы. Первый блок («ИНДИВИДУАЛЬНОЕ РАБОЧЕЕ ПРОСТРАНСТВО») стоит на одном уровне с надписью
+     «ОПЕРАЦИОННЫЕ МОДУЛИ SIMURG» внутри схемы (центр её строки — ≈2,7% высоты схемы от верха, см. --fig-h), остальные три — равным шагом ниже */
+  .ops__body { container-type: size; }
+  /* правая колонка заканчивается на уровне нижней границы нижнего круга схемы («Торговая логистика»: край кольца на y=1122 из 1140 → 98,4% высоты схемы),
+     поэтому плашка «ОТ ЗАДАЧИ ДО РЕЗУЛЬТАТА…» стоит нижним краем на одной линии с нижним кругом */
+  .ops__side { --h3: clamp(13px, 1.05vw, 17px); min-width: 0; margin: 0; height: calc(var(--fig-h) * 1122.8 / 1140); flex: 1 1 0; display: flex; flex-direction: column; }
+  .ops__items { flex: 1; display: grid; grid-template-rows: repeat(4, minmax(0, 1fr)); margin-top: calc(var(--fig-h) * 0.027 - var(--h3) * 0.625 - 12px); }
+  .ops__item { display: block; align-self: start; padding: 12px 0 0; }
+  .ops__item:first-child { border-top: 0; }
+  .ops__item h3 { margin-bottom: 4px; font-size: var(--h3); line-height: 1.25; }
+  .ops__item p { font-size: clamp(13px, 0.95vw, 15.5px); line-height: 1.5; }
+  .ops__final { margin-top: 12px; padding: 12px 20px; font-size: clamp(12.5px, 1vw, 16px); }
+}
+
+/* ---- мягкое появление (fade-up), только когда скрипт запущен ---- */
+.ops-js .ops-reveal { opacity: 0; transform: translateY(24px); transition: opacity 560ms cubic-bezier(0.22, 0.61, 0.36, 1), transform 560ms cubic-bezier(0.22, 0.61, 0.36, 1); }
+.ops-js .ops-reveal.is-in { opacity: 1; transform: none; }
+
+/* ---- лайтбокс ---- */
+.ops-lightbox {
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: rgba(5, 12, 32, 0.92);
+  color: #fff;
+}
+.ops-lightbox[open] { display: flex; }
+.ops-lightbox::backdrop { background: rgba(5, 12, 32, 0.88); }
+.ops-lightbox__scroll {
+  flex: 1;
+  display: flex;
+  overflow: auto;
+  padding: clamp(16px, 3vw, 40px);
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-x pan-y pinch-zoom;
+}
+.ops-lightbox__scroll .de-modules-svg {
+  margin: auto;
+  flex: none;
+  width: min(96vw, 1312px, calc(92dvh * 1136 / 1140));
+  height: auto;
+  border-radius: 14px;
+  background: linear-gradient(125deg, #f4f9ff 0%, #ebf4fd 48%, #e1ecfa 100%);   /* схема прозрачная — на тёмном фоне окна нужна светлая подложка */
+  cursor: zoom-out;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+.ops-lightbox__close {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  z-index: 2;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font: 400 30px/1 var(--font-body);
+  color: #fff;
+  background: rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(4px);
+}
+.ops-lightbox__close:hover { background: rgba(255, 255, 255, 0.28); }
+.ops-lightbox__close:focus-visible { outline: 3px solid #9fdcff; outline-offset: 3px; }
+html.ops-lock { overflow: hidden; }
+
+/* ---- ниже 1025px (и низкие окна): колонки стопкой — заголовок и лид → схема → 4 блока → плашка ---- */
+@media (max-width: 1024px) {
+  .ops__inner { width: calc(100% - 2 * var(--side, 6vw)); }
+  .ops__figure { margin-inline: 0; width: min(100%, 760px); }
+}
+@media (max-width: 600px) {
+  .ops-lightbox__scroll { padding: 12px; }
+  /* (до 700px вместо схемы показываются карточки модулей, лайтбокс там не открывается; правило — на случай узкого окна с уже открытым лайтбоксом) */
+  .ops-lightbox__scroll .de-modules-svg { width: max(170vw, 760px); cursor: default; }
+}
+/* ---- до 700px: вместо радиальной схемы — карточка Control Tower и 10 карточек модулей (HTML-текст) ---- */
+@media (max-width: 700px) {
+  .ops .de-radial { display: none; }
+  .ops .de-mobile-modules { display: block; }
+  .de-modules-heading { margin: 0; font-family: var(--font-heading); font-weight: 700; font-size: clamp(1.3rem, 4.6vw, 1.85rem); line-height: 1.2; text-align: center; color: var(--ops-ink); }
+  .de-modules-heading span { color: var(--ops-blue); }
+  .de-modules-subtitle { margin: 0.7rem 0 0; text-align: center; font-size: 0.68rem; line-height: 1.65; letter-spacing: 0.025em; color: var(--ops-text); }
+  .de-control { margin-top: 1.5rem; padding: 1.5rem 1rem; border: 2px solid #75caff; border-radius: 1rem; text-align: center; color: #fff; background: radial-gradient(ellipse at 45% 0%, #155492, #08274f 70%, #061b3b); box-shadow: 0 0 0 4px #9dd4f32b; }
+  .de-control h4 { margin: 0; font-family: var(--font-heading); font-weight: 700; font-size: clamp(1.4rem, 5vw, 1.8rem); line-height: 1.25; color: #fff; }
+  .de-control p { margin: 0; }
+  .de-control-actions { margin-top: 0.85rem !important; padding-block: 0.8rem; border-block: 1px solid #6bafd6; color: #b5e5ff; font-family: var(--font-heading); font-weight: 700; font-size: 0.9rem; line-height: 1.55; }
+  .de-control-description { font-size: 17px; line-height: 1.55; margin-top: 0.8rem !important; }
+  .de-module-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.85rem; margin-top: 1.25rem; }
+  .de-module-card { min-width: 0; padding: 1.1rem 0.9rem; border: 1.5px solid #8ad0ff; border-radius: 0.75rem; color: #fff; background: radial-gradient(ellipse at 50% 0%, #174b7e, #09274d 62%, #061a38); box-shadow: 0 0 0 3px #9dd4f31a; }
+  .de-module-card h4 { margin: 0; font-family: var(--font-heading); font-weight: 700; font-size: 0.95rem; line-height: 1.3; color: #fff; overflow-wrap: break-word; }
+  .de-module-card p { margin: 0.65rem 0 0; padding-top: 0.65rem; border-top: 1px solid #5e9cc1; font-size: 17px; line-height: 1.55; color: #eef8ff; }
+  .de-module-card p span { display: block; }
+}
+@media (max-width: 480px) {
+  .de-module-list { grid-template-columns: minmax(0, 1fr); }
+  .de-module-card { padding: 1.15rem; }
+  .de-module-card h4 { font-size: 1.08rem; }
+}
+@media (forced-colors: active) {
+  .de-module-card, .de-control { border: 1px solid CanvasText; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ops-js .ops-reveal { opacity: 1; transform: none; transition: none; }
+}

@@ -1,0 +1,115 @@
+/* высота меню — для страниц, считающих «экран минус меню» */
+:root{--sx-bar-h:76px}
+@media (max-width:1279px){:root{--sx-bar-h:72px}}
+@media (max-width:1099px){:root{--sx-bar-h:56px}}
+
+/* SIMURG — общее верхнее меню (все страницы). Префикс sx- изолирует его от стилей страниц. */
+@font-face{font-family:'SX Manrope';font-weight:500;font-display:swap;src:url('fonts/manrope-500-latin.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'SX Manrope';font-weight:500;font-display:swap;src:url('fonts/manrope-500-cyrillic.woff2') format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:'SX Manrope';font-weight:600;font-display:swap;src:url('fonts/manrope-600-latin.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'SX Manrope';font-weight:600;font-display:swap;src:url('fonts/manrope-600-cyrillic.woff2') format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+
+.sx-topbar{
+  all:initial;
+  --sx-text:#f4f8ff; --sx-sub:#86d4ff; --sx-line:#7cc4ff; --sx-focus:#9fdcff;
+  --sx-edge-h:4px; --sx-bg-top:#1d4a86; --sx-bg-mid:#12335f; --sx-bg-bot:#0a1f43; --sx-edge:#06122b;
+  position:relative; z-index:1000; display:block; width:100%;
+  font-family:'SX Manrope','Manrope',Arial,sans-serif; font-size:16px; font-weight:400; line-height:1.3; letter-spacing:normal; text-transform:none; text-align:left; direction:ltr; font-style:normal;
+  color:var(--sx-text);
+  background:
+    radial-gradient(120% 140% at 50% 0%, rgba(90,160,255,.28), transparent 62%),
+    linear-gradient(180deg,var(--sx-bg-top) 0%,var(--sx-bg-mid) 46%,var(--sx-bg-bot) 100%);
+  border-bottom:var(--sx-edge-h) solid var(--sx-edge);
+  box-shadow:0 6px 22px rgba(2,8,22,.45);
+  -webkit-text-size-adjust:100%;
+}
+.sx-topbar *,.sx-topbar *::before,.sx-topbar *::after{box-sizing:border-box}
+.sx-topbar :where(ul,li,nav,div,a,button,span,small){mix-blend-mode:normal;filter:none;isolation:auto;backdrop-filter:none;margin:0;padding:0;border:0;background:none;font:inherit;color:inherit;text-decoration:none;list-style:none;letter-spacing:inherit;text-transform:inherit;white-space:normal;gap:normal;align-items:normal;justify-content:normal;line-height:inherit;text-shadow:none;float:none;width:auto;height:auto;min-width:0;min-height:0;max-width:none;box-shadow:none;position:static;transform:none;opacity:1}
+.sx-topbar :where(img,svg,svg *){mix-blend-mode:normal;filter:none;isolation:auto;mask:none;clip-path:none;backdrop-filter:none;outline:0}
+.sx-topbar :where(img){display:block;max-width:none;height:auto;opacity:1;object-fit:fill;object-position:50% 50%;border-radius:0;box-shadow:none;vertical-align:baseline;aspect-ratio:auto}
+
+.sx-topbar__inner{display:flex;align-items:stretch;width:100%;max-width:1920px;min-height:72px;margin:0 auto;padding:0 0 0 clamp(16px,2vw,40px)}   /* справа без поля: ячейка «на главную» доходит до края экрана */
+
+/* языки */
+.sx-lang{display:flex;align-items:center;gap:clamp(10px,1.2vw,22px);padding-right:clamp(16px,1.8vw,34px);flex:none}
+.sx-lang__btn{display:flex;flex-direction:column;align-items:center;gap:5px;min-width:44px;min-height:44px;justify-content:center;cursor:default;font-size:12px;font-weight:600;letter-spacing:.02em;opacity:.92}
+.sx-lang__btn img{width:32px;height:22px;object-fit:cover;border-radius:2px;box-shadow:0 0 0 1px rgba(255,255,255,.18)}
+.sx-lang__btn[aria-current="true"]{opacity:1}
+.sx-lang__btn:not([aria-current="true"]){opacity:.55;transition:opacity .2s ease}
+.sx-lang__btn:not([aria-current="true"]):hover{opacity:.8}
+.sx-lang__btn span{border-bottom:2px solid transparent;padding-bottom:1px}   /* место под подчёркивание есть у всех подписей: флаги стоят на одной линии */
+.sx-lang__btn[aria-current="true"] span{border-bottom-color:var(--sx-sub)}
+.sx-lang__btn:focus-visible{outline:2px solid var(--sx-focus);outline-offset:3px;border-radius:4px}
+
+/* пункты */
+.sx-nav{flex:1;min-width:0;display:flex}
+.sx-nav__list{display:flex;flex:1;min-width:0}
+.sx-nav__item{position:relative;flex:1 1 0;min-width:0;display:flex}
+.sx-nav__item::before{ /* светящийся вертикальный разделитель */
+  content:'';position:absolute;left:0;top:50%;width:2px;height:50px;transform:translateY(-50%);
+  background:linear-gradient(180deg,transparent,var(--sx-line) 30%,#d6efff 50%,var(--sx-line) 70%,transparent);
+  box-shadow:0 0 10px 1px rgba(124,196,255,.55);border-radius:2px;opacity:.9;
+}
+.sx-nav__link{
+  flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;
+  padding:7px clamp(10px,1.2vw,26px);
+  font-size:clamp(12px,.85vw,16px);font-weight:600;letter-spacing:.03em;text-transform:uppercase;
+  transition:background-color .2s ease,color .2s ease,text-shadow .2s ease;
+  cursor:pointer;
+}
+.sx-nav__link small{display:block;margin-top:2px;font-size:.92em;font-weight:500;letter-spacing:.06em;color:var(--sx-sub)}
+a.sx-nav__link:hover{background:rgba(120,190,255,.12);text-shadow:0 0 14px rgba(160,215,255,.7)}
+.sx-nav__link:focus-visible{outline:2px solid var(--sx-focus);outline-offset:-4px;border-radius:6px}
+.sx-nav__link[aria-current="page"]{background:linear-gradient(180deg,rgba(120,190,255,.20),rgba(120,190,255,.04));box-shadow:inset 0 -3px 0 var(--sx-sub)}
+.sx-nav__link[aria-disabled="true"]{cursor:default}
+.sx-nav__link[aria-disabled="true"]:hover{background:none;text-shadow:none}
+.sx-nav__item--home{display:none}
+
+/* на главную (иконка справа, только десктоп) */
+.sx-home{flex:none;display:flex;align-items:center;justify-content:center;padding:0 clamp(24px,2.4vw,46px);position:relative}   /* разделитель вплотную к последнему пункту, значок по центру между разделителем и краем экрана */
+.sx-home::before{content:'';position:absolute;left:0;top:50%;width:2px;height:50px;transform:translateY(-50%);background:linear-gradient(180deg,transparent,var(--sx-line) 30%,#d6efff 50%,var(--sx-line) 70%,transparent);box-shadow:0 0 10px 1px rgba(124,196,255,.55);border-radius:2px;opacity:.9}
+.sx-home svg{width:26px;height:26px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;transition:transform .2s ease}
+.sx-home:hover svg{transform:scale(1.1)}
+.sx-home:focus-visible{outline:2px solid var(--sx-focus);outline-offset:-4px;border-radius:6px}
+
+.sx-burger{display:none}
+
+/* ноутбуки и планшеты-горизонт: чуть плотнее */
+@media (max-width:1279px){
+  .sx-topbar__inner{min-height:68px}
+  .sx-nav__link{padding-inline:8px;letter-spacing:.015em}
+  .sx-lang{gap:8px;padding-right:12px}
+}
+
+/* меньше 1100px — компактная шапка + выпадающее меню */
+@media (max-width:1099px){
+  .sx-topbar{position:sticky;top:0}
+  .sx-topbar__inner{flex-wrap:wrap;align-items:center;min-height:52px;padding:0 16px}
+  .sx-lang{padding-right:0;gap:0}   /* равные интервалы между флагами: поля внутри кнопок (касание 44px сохраняется) */
+  .sx-lang__btn{flex-direction:row;gap:6px;min-width:0;padding:0 10px;font-size:13px}
+  .sx-lang__btn img{width:24px;height:17px}
+  .sx-lang__btn span{display:none}
+  .sx-lang__btn[aria-current="true"] span{display:inline;border:0}
+  .sx-home{display:none}
+  .sx-lang,.sx-burger{margin-block:4px}   /* строка флагов и бургера всегда 52px — не «подпрыгивает» при открытии списка */
+  .sx-burger{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;width:44px;height:44px;margin-left:auto;cursor:pointer;border-radius:8px}
+  .sx-burger span{display:block;width:24px;height:2px;background:var(--sx-text);border-radius:2px;transition:transform .25s ease,opacity .2s ease}
+  .sx-burger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .sx-burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+  .sx-burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  .sx-burger:focus-visible{outline:2px solid var(--sx-focus);outline-offset:2px}
+  .sx-nav{display:none;flex:0 0 100%;order:3;padding:0 0 14px}
+  /* низкий экран (телефон в альбомной ориентации): список прокручивается внутри меню, «На главную» всегда доступна */
+  .sx-nav{max-height:calc(100vh - 56px);max-height:calc(100dvh - 56px);overflow-y:auto;overscroll-behavior:contain}
+  .sx-topbar.is-open .sx-nav{display:block}
+  .sx-nav__list{flex-direction:column}
+  /* пункты по высоте содержимого: при flex:1 1 0 и сброшенном min-height они схлопывались в 0 и накладывались друг на друга */
+  .sx-nav__item{flex:0 0 auto;min-height:52px}
+  .sx-nav__item::before{left:0;top:0;width:100%;height:1px;transform:none;background:linear-gradient(90deg,transparent,var(--sx-line),transparent);box-shadow:none}
+  .sx-nav__item--home{display:flex}
+  .sx-nav__link{min-height:52px;font-size:14px;padding:10px 16px;flex-direction:row;gap:10px;justify-content:flex-start;text-align:left}
+  .sx-nav__link small{margin:0}
+  .sx-nav__link[aria-current="page"]{box-shadow:inset 3px 0 0 var(--sx-sub)}
+  .sx-nav__link[aria-current="page"] small{color:#c4eaff}   /* подпись «B2Q · B2B · B2C» в подсвеченной строке: контраст ≥4,5:1 */
+}
+@media (prefers-reduced-motion:reduce){.sx-topbar *{transition:none!important}}
