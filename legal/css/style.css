@@ -11,3 +11,16 @@
 
 /* NEW_SIMURG: мобильные правки по результатам аудита на 390px */
 @media(max-width:760px){.eyebrow{font-size:.6875rem;max-width:none}.footer-brand small,.footer-motto{font-size:.6875rem}}
+
+/* Форма договора — ссылка на скачивание документа (файл кладут в legal/docs/, см. js/doc-download.js): тот же вид плашки + значок «скачать», подсветка при наведении */
+a.contract-note{color:#193d73;text-decoration:none;cursor:pointer;transition:background-color .2s ease,box-shadow .2s ease}
+a.contract-note:hover{background:linear-gradient(110deg,#e1edf8,#e8f1fa);box-shadow:inset 0 0 0 1px #b4cde4}
+a.contract-note:active{background:#d9e7f3}
+.doc-download__icon{flex:0 0 1.25rem;width:1.25rem;height:1.25rem;margin-left:auto;fill:none;stroke:#3d68ad;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;transition:transform .2s ease}
+a.contract-note:hover .doc-download__icon{transform:translateY(.1875rem)}
+.doc-sr{position:absolute;width:1px;height:1px;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+/* короткое сообщение, пока документ не приложен */
+.doc-toast{position:fixed;left:50%;bottom:1.5rem;z-index:30;max-width:min(92vw,28rem);padding:.75rem 1.125rem;border-radius:.5rem;background:#102e54;color:#eaf3fd;font-size:.875rem;font-weight:700;line-height:1.35;text-align:center;box-shadow:0 0 0 1px rgba(150,190,230,.45),0 10px 28px rgba(8,24,57,.4);opacity:0;transform:translate(-50%,.5rem);transition:opacity .2s ease,transform .2s ease;pointer-events:none}
+.doc-toast.is-on{opacity:1;transform:translate(-50%,0)}
+@media(prefers-reduced-motion:reduce){a.contract-note,.doc-download__icon,.doc-toast{transition:none}a.contract-note:hover .doc-download__icon{transform:none}}
+
