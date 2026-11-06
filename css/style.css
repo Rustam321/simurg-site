@@ -50,10 +50,7 @@
   --rule-h: 2px;   /* толщина разделительных линий первого экрана (меню | баннер | видеоряд) */
   /* заливка линий — палитра названия баннера (#fff → #d6e4fc → #7fa8ee), по краям экрана плавно гаснет, как светящиеся разделители в меню */
   --rule-grad: linear-gradient(90deg, rgba(127, 168, 238, 0) 0%, #7fa8ee 12%, #d6e4fc 32%, #ffffff 50%, #d6e4fc 68%, #7fa8ee 88%, rgba(127, 168, 238, 0) 100%);
-  --rule-glow: drop-shadow(0 0 calc(var(--rule-h) * 2) rgba(150, 190, 255, 0.9)) drop-shadow(0 0 calc(var(--rule-h) * 6) rgba(70, 130, 255, 0.6));   /* голубое свечение, как у названия */
-}
-@media (min-width: 1700px) {
-  :root { --rule-h: 3px; }
+  --rule-glow: drop-shadow(0 0 calc(var(--rule-h) * 1) rgba(150, 190, 255, 0.85)) drop-shadow(0 0 calc(var(--rule-h) * 2.5) rgba(70, 130, 255, 0.45));   /* голубое свечение, как у названия */
 }
 @supports (height: 100svh) {
   :root { --first-h: 100svh; }
@@ -2642,20 +2639,20 @@ body.menu-open { overflow: hidden; }
   position: absolute;
   left: 0;
   right: 0;
-  height: calc(var(--rule-h) * 7);
+  height: calc(var(--rule-h) * 3);
   z-index: 3;   /* выше роликов (0–2), ниже текста (4) */
   pointer-events: none;
   -webkit-mask: linear-gradient(90deg, transparent 0%, #000 14%, #000 86%, transparent 100%);
   mask: linear-gradient(90deg, transparent 0%, #000 14%, #000 86%, transparent 100%);
 }
-.hero-stage::after { bottom: 0; background: linear-gradient(0deg, rgba(110, 160, 255, 0.32) 0%, rgba(110, 160, 255, 0) 100%); }
+.hero-stage::after { bottom: 0; background: linear-gradient(0deg, rgba(110, 160, 255, 0.2) 0%, rgba(110, 160, 255, 0) 100%); }
 .hero-stage::before {
   content: "";
   position: absolute;
   left: 0;
   right: 0;
   top: 0;
-  background: linear-gradient(180deg, rgba(110, 160, 255, 0.32) 0%, rgba(110, 160, 255, 0) 100%);
+  background: linear-gradient(180deg, rgba(110, 160, 255, 0.2) 0%, rgba(110, 160, 255, 0) 100%);
 }
 
 @media (max-width: 860px) {
