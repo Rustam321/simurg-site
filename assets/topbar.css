@@ -1,7 +1,7 @@
 /* высота меню — для страниц, считающих «экран минус меню» */
-:root{--sx-bar-h:61px}
+:root{--sx-bar-h:62px}
 @media (max-width:1279px){:root{--sx-bar-h:58px}}
-@media (max-width:1099px){:root{--sx-bar-h:46px}}
+@media (max-width:1099px){:root{--sx-bar-h:56px}}
 
 /* SIMURG — общее верхнее меню (все страницы). Префикс sx- изолирует его от стилей страниц. */
 @font-face{font-family:'SX Manrope';font-weight:500;font-display:swap;src:url('fonts/manrope-500-latin.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
