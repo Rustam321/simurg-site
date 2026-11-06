@@ -1106,36 +1106,10 @@ h1{
     text-shadow:0 1px 3px rgba(12,34,54,.85),0 0 8px rgba(12,34,54,.5)   /* белый на тёмной скале с птицей */
   }
 }
-/* Match the condensed serif capitals visible in the supplied raster. */
-h1{
-  transform:scaleX(.87);
-  transform-origin:center
-}
-.deal-architecture h2{
-  transform:scaleX(.8);
-  transform-origin:center
-}
-.site-footer h2{
-  transform:scaleX(.86);
-  transform-origin:center
-}
-.architecture-card h2{
-  width:calc(100% / .86);
-  transform:scaleX(.86);
-  transform-origin:left center
-}
-.finance-card h2{
-  width:calc(100% / .93);
-  transform:scaleX(.93)
-}
+/* Заголовки больше не сжимаются по горизонтали (раньше scaleX .8–.93 «под узкие засечные капители» старого макета: у Manrope, который шире,
+   буквы получались искажёнными, вытянутыми) — у всех заголовков естественные пропорции шрифта, как на остальных страницах. */
 .trade-card h2{
-  width:calc(100% / .8);
-  transform:scaleX(.8);
-  font-size:1.23rem
-}
-.risks-card h2{
-  width:calc(100% / .88);
-  transform:scaleX(.88)
+  font-size:1.18rem   /* самая длинная подпись карточек («ТОРГОВАЯ АРХИТЕКТУРА») — с запасом ~6% по ширине колонки */
 }
 .architecture-card p{
   font-size:.875rem
@@ -1269,11 +1243,7 @@ img{
 }
 @media(max-width:570px){
   h1{
-    transform:none;
     font-size:clamp(1.75rem,7vw,2.125rem)
-  }
-  .deal-architecture h2,.site-footer h2{
-    transform:none
   }
   .architecture-diagram{
     grid-template-columns:minmax(0,1fr)
@@ -1328,10 +1298,6 @@ img{
   }
 }
 @media(min-width:1221px){
-  .trade-card h2{
-    width:calc(100% / .78);
-    transform:scaleX(.82)
-  }
   .architecture-card p{
     width:calc(100% + 1.9375rem)
   }
