@@ -431,7 +431,7 @@ body.menu-open { overflow: hidden; }
    Высота: окно минус баннер .top-banner (меню в расчёт не входит), см. --hs-h в :root. Ролики — object-fit: cover.
    ========================================================================== */
 .hero-stage {
-  --hs-fs: clamp(17px, min(2.667vw, calc(var(--hs-h) * 0.0767)), 46.7px);   /* в 1,5 раза меньше прежнего (4vw/0.115/70px) — по просьбе пользователя */
+  --hs-fs: clamp(22px, min(3.47vw, calc(var(--hs-h) * 0.0997)), 60.7px);   /* в 1,5 раза меньше прежнего (4vw/0.115/70px) — по просьбе пользователя */
   --hs-left: var(--side);
   position: relative;
   width: 100%;
@@ -2569,7 +2569,7 @@ body.menu-open { overflow: hidden; }
   transform: translateY(-50%);
   display: grid;
   grid-template-columns: auto auto;
-  grid-template-areas: "logo title" "portal portal";
+  grid-template-areas: "logo title" "logo portal";
   align-items: center;
   column-gap: clamp(14px, 1.4vw, 32px);
   row-gap: calc(var(--tb-h) * 0.05);
@@ -2597,14 +2597,14 @@ body.menu-open { overflow: hidden; }
   filter: drop-shadow(0 0 9px rgba(110, 160, 255, 0.5)) drop-shadow(0 2px 10px rgba(2, 8, 24, 0.55));
 }
 .top-banner__title span {
-  display: block;
+  display: inline;
   width: fit-content;
   background: linear-gradient(180deg, #ffffff 0%, #ffffff 20%, #d6e4fc 50%, #7fa8ee 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-stroke: 0.028em transparent;   /* чуть плотнее начертание, как в образце */
 }
-.top-banner__portal { font-family: var(--font-banner); grid-area: portal; --pb-h: max(44px, min(3.4vw, calc(var(--tb-h) * 0.16))); }
+.top-banner__portal { font-family: var(--font-banner); grid-area: portal; justify-self: start; align-self: start; --pb-h: max(44px, min(3.4vw, calc(var(--tb-h) * 0.16))); }
 
 /* Разделительные линии: верхняя (меню | видеоряд) и нижняя (видеоряд | баннер). Цвета — как у названия баннера
    (белый #fff → #d6e4fc → #7fa8ee, см. --rule-grad) и то же голубое свечение. Рисуются поверх, места в раскладке не занимают

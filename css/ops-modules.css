@@ -111,7 +111,7 @@
     height: 100svh;
     display: flex;
     align-items: center;
-    padding: clamp(12px, 2.4vh, 28px) 0;
+    padding: clamp(4px, 0.8vh, 10px) 0 clamp(12px, 2.4vh, 28px);   /* светлый зазор между баннером и заголовком — меньше (~0,3 см) */
   }
   .ops__inner { height: 100%; display: flex; flex-direction: column; }
   .ops__head { flex: none; }
@@ -231,4 +231,10 @@ html.ops-lock { overflow: hidden; }
 }
 @media (prefers-reduced-motion: reduce) {
   .ops-js .ops-reveal { opacity: 1; transform: none; transition: none; }
+}
+
+/* Наведение на шарик модуля: он плавно чуть увеличивается (только для мыши; при «меньше анимации» — без движения) */
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .ops .de-module { transform-box: fill-box; transform-origin: center; transition: transform .22s ease-out; }
+  .ops .de-module:hover { transform: scale(1.07); }
 }

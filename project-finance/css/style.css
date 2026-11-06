@@ -1407,3 +1407,11 @@ html{font-size:clamp(16px,1.225vw,20px)}
   .funding-center{margin-bottom:1.75rem}
   .funding-center::after{content:"";position:absolute;left:50%;top:calc(100% + 1.1rem);width:2px;height:1.4rem;transform:translateX(-50%);background:linear-gradient(#2b6790,rgba(43,103,144,.15));border-radius:2px}
 }
+
+/* Горы внизу убраны: вместо подвала с панорамой — тёмная планка (assets/dark-foot.css); пустой хвост страницы под ней не нужен */
+.page-shell{min-height:0}
+@media(min-width:1230px){.page-shell::after{display:none}}
+@media(max-width:1229px){
+  .page-shell{background-image:url('../img/backgrounds/scene-top.png');background-size:100% auto;background-position:center top}
+}
+@media(max-width:800px){.page-shell{background-size:auto 50rem}}

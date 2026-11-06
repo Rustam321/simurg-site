@@ -1,0 +1,9 @@
+/* Тёмная планка подвала — как на странице «Юридическая ответственность» (legal): синий фон, узор из дуг, бренд | текст | девиз.
+   Подключена на «Международной экспертизе» и «Проектном финансировании» вместо подвала с горами. */
+.sx-dfoot{box-sizing:border-box;display:flex;align-items:center;gap:clamp(24px,5vw,80px);width:min(94%,1400px);margin:16px auto 22px;padding:20px clamp(20px,2.25vw,36px);min-height:100px;background:#102e54 repeating-radial-gradient(ellipse at 95% 120%,transparent 0 12px,#23466a 13px,transparent 14px 22px);color:#eaf3fd;border-radius:10px;position:relative;z-index:1}
+.sx-dfoot__brand{font-size:13px;letter-spacing:5px;color:#94c6e2;border-right:1px solid #a4bed9;padding-right:clamp(24px,4vw,65px);white-space:nowrap}
+.sx-dfoot__brand small{display:block;font-size:8px;letter-spacing:3px;margin-top:5px}
+.sx-dfoot__text{margin:0;font-size:clamp(17px,1.6vw,25px);line-height:1.2}
+.sx-dfoot__motto{margin:0 0 0 auto;font-size:8px;line-height:1.7;letter-spacing:2px;color:#99c5df;white-space:nowrap}
+@media(max-width:1049px){.sx-dfoot__motto{display:none}}
+@media(max-width:760px){.sx-dfoot{flex-direction:column;align-items:flex-start;gap:16px;padding:22px}.sx-dfoot__brand{border-right:0;padding-right:0}.sx-dfoot__motto{display:block;margin:0;font-size:11px}}
