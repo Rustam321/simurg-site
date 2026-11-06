@@ -111,7 +111,7 @@
     height: 100svh;
     display: flex;
     align-items: center;
-    padding: clamp(4px, 0.8vh, 10px) 0 clamp(12px, 2.4vh, 28px);   /* светлый зазор между баннером и заголовком — меньше (~0,3 см) */
+    padding: clamp(20px, 3.4vh, 40px) 0 clamp(12px, 2.4vh, 28px);   /* отступ между баннером и заголовком (~0,6–1 см) */
   }
   .ops__inner { height: 100%; display: flex; flex-direction: column; }
   .ops__head { flex: none; }
