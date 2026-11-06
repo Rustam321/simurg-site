@@ -268,6 +268,9 @@ html.sx-embedded .site-header,html.sx-embedded .skip-link{display:none!important
   .hero-art{right:calc((100% - 100vw) / 2);background-size:100% 100%;background-position:left top;mask-size:100% 100%;mask-position:left top}
   /* нижний слой — «чистая» сцена без надписей: занимает правую половину картинки и растягивается вместе с ней */
   .hero-shell::before{right:calc((100% - 100vw) / 2);background-size:50% 100%;background-position:right top}
+  /* левая кромка картинки (ровно на 50% рамки) — не резкая вертикаль, а плавный переход в фон: оба слоя картинки гаснут слева */
+  .hero-art{-webkit-mask-image:var(--hero-mask),linear-gradient(90deg,transparent 50%,rgba(0,0,0,.6) 52%,#000 57%);mask-image:var(--hero-mask),linear-gradient(90deg,transparent 50%,rgba(0,0,0,.6) 52%,#000 57%);-webkit-mask-size:100% 100%,100% 100%;mask-size:100% 100%,100% 100%;-webkit-mask-position:left top,left top;mask-position:left top,left top;-webkit-mask-repeat:no-repeat,no-repeat;mask-repeat:no-repeat,no-repeat;-webkit-mask-composite:source-in;mask-composite:intersect}
+  .hero-shell::before{-webkit-mask-image:linear-gradient(90deg,transparent 50%,rgba(0,0,0,.6) 52%,#000 57%);mask-image:linear-gradient(90deg,transparent 50%,rgba(0,0,0,.6) 52%,#000 57%)}
   .hero-note-top,.hero-note-bottom{right:auto;left:calc(var(--art-w) * .895);width:calc(var(--art-w) * .0816)}
   .hero-note-top{top:calc(var(--art-h) * .130)}
   .hero-note-bottom{top:auto;bottom:calc(var(--art-h) * .052)}
