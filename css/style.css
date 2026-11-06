@@ -443,7 +443,7 @@ body.menu-open { overflow: hidden; }
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: var(--focus, 50% 50%);
+  object-position: var(--focus, 50% 0%);   /* по верхнему краю */
   opacity: 0;
   z-index: 0;
   transition: opacity 0.5s linear;

@@ -28,7 +28,7 @@
     if (v.getAttribute('data-src') === url) return;
     v.setAttribute('data-src', url);
     v.setAttribute('data-scene', String(i));
-    v.style.setProperty('--focus', s.focus || '50% 50%');
+    v.style.setProperty('--focus', s.focus || '50% 0%');
     v.poster = s.poster;
     v.src = url;
     v.load();

@@ -9,12 +9,12 @@ window.SIMURG_HERO = {
     crossfade: 0.5       // с: мягкий переход к следующему ролику
   },
   scenes: [
-    { id: 'scene_01', focus: '66% 50%' },   // Глобус
-    { id: 'scene_02', focus: '70% 50%' },   // Финансовый сектор
-    { id: 'scene_03', focus: '72% 50%' },   // Логистика / порт
-    { id: 'scene_04', focus: '72% 50%' },   // Нефтехимическая промышленность
-    { id: 'scene_05', focus: '72% 50%' },   // Агро / продовольственный сектор
-    { id: 'scene_06', focus: '72% 50%' }    // Технологии / AI / Data / Communications
+    { id: 'scene_01', focus: '66% 0%' },   // Глобус
+    { id: 'scene_02', focus: '70% 0%' },   // Финансовый сектор
+    { id: 'scene_03', focus: '72% 0%' },   // Логистика / порт
+    { id: 'scene_04', focus: '72% 0%' },   // Нефтехимическая промышленность
+    { id: 'scene_05', focus: '72% 0%' },   // Агро / продовольственный сектор
+    { id: 'scene_06', focus: '72% 0%' }    // Технологии / AI / Data / Communications
   ].map(function (s, i) {
     var n = ('0' + (i + 1)).slice(-2);
     s.src = { hd: 'video/hero/scene-' + n + '-1080.mp4', sd: 'video/hero/scene-' + n + '-720.mp4' };
