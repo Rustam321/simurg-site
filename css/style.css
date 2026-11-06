@@ -43,7 +43,9 @@
   --tb-min: 176px;
   --tb-cap: 28vw;   /* на широких экранах баннер не выше 28% ширины (портретные планшеты/мониторы: иначе баннер получался бы слишком высоким) */
   --hs-min: 300px;
-  --tb-h: max(var(--tb-min), min(calc(var(--first-h) * var(--tb-share)), var(--tb-cap)));
+  --tb-ref: max(var(--tb-min), min(calc(var(--first-h) * var(--tb-share)), var(--tb-cap)));   /* опорная высота: от неё считаются размеры логотипа, названия и кнопки баннера (прежняя высота баннера) */
+  --tb-k: 0.775;   /* вертикальные отступы баннера сверху и снизу — вдвое меньше прежних: высота = (опорная + высота логотипа) / 2 = (1 + 0,55) / 2 */
+  --tb-h: calc(var(--tb-ref) * var(--tb-k));   /* фактическая высота баннера */
   --title-grad: linear-gradient(180deg, #ffffff 0%, #ffffff 20%, #d6e4fc 50%, #7fa8ee 100%);   /* заливка названия «ТОРГОВАЯ СИСТЕМА SIMURG»; ею же залита полоса-разрыв под видеорядом */
   --vb-gap: 1cm;   /* светлый разрыв между видеорядом и баннером (по просьбе пользователя — примерно 1 см) */
   --hs-h: max(var(--hs-min), calc(var(--first-h) - var(--sx-bar-h, 62px) - var(--vb-gap)));   /* меню + видеоряд + светлый разрыв = ровно одно окно (100svh); баннер лежит ниже */
@@ -58,10 +60,10 @@
   :root { --first-h: 100svh; }
 }
 @media (max-width: 860px) {
-  :root { --side: 6vw; --tb-min: 120px; --tb-share: 0.22; --tb-cap: 100vw; }   /* телефон и узкий планшет: баннер ниже, видеоряд выше (ограничение по ширине не нужно) */
+  :root { --side: 6vw; --tb-min: 120px; --tb-share: 0.22; --tb-cap: 100vw; --tb-k: 0.73; }   /* телефон и узкий планшет: баннер ниже, видеоряд выше (ограничение по ширине не нужно) */
 }
 @media (max-width: 950px) and (max-height: 520px) and (orientation: landscape) {
-  :root { --tb-min: 80px; --tb-share: 0.25; --tb-cap: 100vw; --hs-min: 200px; }   /* горизонтальный телефон */
+  :root { --tb-min: 80px; --tb-share: 0.25; --tb-cap: 100vw; --tb-k: 0.83; --hs-min: 200px; }   /* горизонтальный телефон */
 }
 
 /* ==========================================================================
@@ -2290,6 +2292,14 @@ body.menu-open { overflow: hidden; }
   .footer__contact-list a { font-size: 15px; }
 }
 
+/* Подвал — все элементы (текст, значки, отступы, высота) пропорционально меньше на 30%: zoom .7 от 861px.
+   Боковые отступы остаются единой --side (делим на коэффициент: внутри zoom они тоже уменьшились бы), поэтому выравнивание с блоками главной не меняется.
+   На телефонах не уменьшаем: там действуют касания ≥44px и читаемый размер текста. */
+@media (min-width: 861px) {
+  .footer { zoom: 0.7; }
+  .footer .container { max-width: none; width: 100%; padding-inline: calc(var(--side) / 0.7); }
+}
+
 /* ==========================================================================
    Back to top
    ========================================================================== */
@@ -2551,7 +2561,7 @@ body.menu-open { overflow: hidden; }
   height: var(--tb-h);
   overflow: hidden;
   isolation: isolate;
-  background: #020b24 url('../img/banner-city.webp') right 25% / cover no-repeat;
+  background: #020b24 url('../img/banner-city.webp') right top / cover no-repeat;   /* картинка прижата к верхнему краю: при подрезке баннера обрезается нижняя часть */
 }
 .top-banner__lines {
   position: absolute;
@@ -2573,12 +2583,12 @@ body.menu-open { overflow: hidden; }
   grid-template-areas: "logo title" "logo portal";
   align-items: center;
   column-gap: clamp(14px, 1.4vw, 32px);
-  row-gap: calc(var(--tb-h) * 0.05);
+  row-gap: calc(var(--tb-ref) * 0.05);
 }
 .top-banner__logo {
   grid-area: logo;
   justify-self: start;
-  height: calc(var(--tb-h) * 0.55);
+  height: calc(var(--tb-ref) * 0.55);
   width: auto;
   user-select: none;
 }
@@ -2589,7 +2599,7 @@ body.menu-open { overflow: hidden; }
   margin: 0;
   font-family: var(--font-banner);
   font-weight: 700;
-  font-size: min(2.667vw, calc(var(--tb-h) * 0.18));   /* в 1,5 раза меньше прежнего (4vw) и не больше доли высоты баннера */
+  font-size: min(2.667vw, calc(var(--tb-ref) * 0.18));   /* в 1,5 раза меньше прежнего (4vw) и не больше доли высоты баннера */
   line-height: 1.06;
   text-transform: uppercase;
   white-space: nowrap;
@@ -2605,7 +2615,7 @@ body.menu-open { overflow: hidden; }
   background-clip: text;
   -webkit-text-stroke: 0.028em transparent;   /* чуть плотнее начертание, как в образце */
 }
-.top-banner__portal { font-family: var(--font-banner); grid-area: portal; justify-self: start; align-self: start; --pb-h: max(44px, min(3.4vw, calc(var(--tb-h) * 0.16))); }
+.top-banner__portal { font-family: var(--font-banner); grid-area: portal; justify-self: start; align-self: start; --pb-h: max(44px, min(3.4vw, calc(var(--tb-ref) * 0.16))); }
 
 /* Разделительные линии: верхняя (меню | видеоряд) и нижняя (видеоряд | баннер). Цвета — как у названия баннера
    (белый #fff → #d6e4fc → #7fa8ee, см. --rule-grad) и то же голубое свечение. Рисуются поверх, места в раскладке не занимают
@@ -2665,10 +2675,10 @@ body.menu-open { overflow: hidden; }
     /* слева темнее (под текстом), справа фото ярче; градиент — верхний слой фона */
     background:
       linear-gradient(90deg, rgba(2, 8, 26, 0.88) 0%, rgba(2, 8, 26, 0.6) 55%, rgba(2, 8, 26, 0.2) 100%),
-      #020b24 url('../img/banner-city.webp') 78% 30% / cover no-repeat;
+      #020b24 url('../img/banner-city.webp') 78% 0% / cover no-repeat;
   }
-  .top-banner__content { position: relative; left: auto; top: auto; transform: none; padding: 0 var(--side); column-gap: 12px; row-gap: calc(var(--tb-h) * 0.05); }
-  .top-banner__logo { height: min(calc(var(--tb-h) * 0.46), 124px); }
+  .top-banner__content { position: relative; left: auto; top: auto; transform: none; padding: 0 var(--side); column-gap: 12px; row-gap: calc(var(--tb-ref) * 0.05); }
+  .top-banner__logo { height: min(calc(var(--tb-ref) * 0.46), 124px); }
   .top-banner__title { font-size: clamp(14px, 3.9vw, 26px); }
   .top-banner__portal { --pb-h: 44px; }
 }
@@ -2679,6 +2689,15 @@ body.menu-open { overflow: hidden; }
   .hero-stage { --hs-left: var(--side); }
   .top-banner { display: flex; align-items: center; }
   .top-banner__content { position: relative; left: auto; top: auto; transform: none; grid-template-columns: auto 1fr auto; grid-template-areas: "logo title portal"; align-items: center; column-gap: 16px; width: 100%; padding: 0 6%; }
-  .top-banner__logo { height: calc(var(--tb-h) * 0.66); }
+  .top-banner__logo { height: calc(var(--tb-ref) * 0.66); }
   .top-banner__portal { --pb-h: 44px; justify-self: end; }
+}
+
+/* ---- вторая страница главной: баннер + «Единая цифровая среда» = ровно высота окна (широкие окна от 1200×640, пропорция от 3:2) ----
+   Баннер — высоты --tb-h (доля окна, отступы сверху и снизу вдвое меньше прежних); остаток окна занимает блок «Единая цифровая среда» (css/ops-modules.css: min-height = окно − баннер,
+   схема и размер текста подбираются js/fold-fit.js). .fold — одна остановка прокрутки (assets/snap.css): баннер и блок отдельно не «примагничиваются»,
+   а если страница всё же выше окна (очень низкое окно), она листается свободно. */
+@media (min-width: 1200px) and (min-height: 640px) and (min-aspect-ratio: 3/2) {
+  .fold { min-height: var(--first-h); scroll-snap-align: start; }
+  .fold .top-banner { scroll-snap-align: none; }
 }

@@ -401,3 +401,46 @@ h1 span { color: #356798; }
   .hero-caption { color: #4d6172; font-size: .625rem; }
   .hero { padding-right: 6.5rem; }   /* подпись справа не прилипает к заголовку (было 4 px) */
 }
+
+/* ==========================================================================
+   NEW_SIMURG (06.11.2026): блоки чуть темнее + карточки B2Q / B2B / B2C
+   ========================================================================== */
+/* Блоки: прежняя почти прозрачная белая заливка (32% → 21%) сливалась с фоном страницы — теперь спокойный голубой тон одного ряда с палитрой страницы
+   (фон #eef7fd, рамка #bfd4e5, акцент #436fa1), общая мягкая тень: единая глубина у строк, контейнера и карточек. Тёмный текст на заливке — контраст > 11:1. */
+.info-row {
+  background: linear-gradient(110deg, #dde9f4 0%, #e6eff8 100%);
+  border-color: #b4cbdf;
+  box-shadow: inset 0 1px 0 #ffffffb3, 0 1px 2px #12346014, 0 10px 22px -16px #12346059;
+}
+.trade-ecosystem {
+  background: #e4eff8;
+  border-color: #b4cbdf;
+  box-shadow: inset 0 1px 0 #ffffffb3, 0 1px 2px #12346014, 0 12px 26px -18px #12346059;
+}
+/* карточки — на тон глубже (белый текст ≥ 4,9:1 даже в самой светлой точке заливки) */
+.segment {
+  background: radial-gradient(ellipse at 60% 4%, #4f7399 0, #3f6590 52%, #385b84 100%);
+  border-color: #5b83a8;
+  box-shadow: 0 1px 2px #0f2a4f33, 0 12px 24px -16px #0f2a4f99;
+}
+
+/* Подписи справа от иконки («BUSINESS TO GOVERNMENT» и т. д.) — всегда в одну строку: кегль подгоняется под ширину карточки
+   (единицы контейнера .segment-heading: ширина карточки минус колонка иконки и зазор ≈ 7,8rem; самая длинная подпись ≈ 10,9 em), но не меньше 11px. */
+.segment-heading { container-type: inline-size; }
+.segment-heading h3, .segment-heading p { white-space: nowrap; }
+.segment-heading p { font-size: clamp(.6875rem, calc((100cqw - 7.8rem) / 11.2), 1.0625rem); }
+
+/* Тексты карточек — на одном уровне: три карточки делят общие строки сетки (subgrid): заголовок, 1-й, 2-й и 3-й абзац.
+   Строка каждого абзаца по высоте равна самому длинному из трёх, поэтому абзацы стоят на одной линии при любых переносах.
+   Лишняя высота (min-height карточки) уходит в последнюю строку, а не растягивает промежутки между абзацами. */
+.segments { grid-template-rows: auto auto auto minmax(4.6rem, 1fr); }   /* последняя строка не ниже 4,6rem: карточка той же высоты, что была (≈15,25rem), лишнее место не раздувает промежутки между абзацами */
+.segment { display: grid; grid-row: span 4; grid-template-rows: subgrid; row-gap: .375rem; align-items: start; }
+.segment-description { display: contents; }
+.segment-description p, .segment-description p + p { margin: 0; }
+@media (max-width: 53.75rem) {   /* две колонки: третья карточка — во втором ряду */
+  .segments { grid-template-rows: repeat(2, auto auto auto minmax(3.6rem, 1fr)); }
+}
+@media (max-width: 38.75rem) {   /* одна колонка */
+  .segments { grid-template-rows: repeat(3, auto auto auto 1fr); }
+}
+

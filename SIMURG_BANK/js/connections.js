@@ -1,6 +1,7 @@
-/* Линии-связки блока «Экосистема глобальных возможностей»: считаются по реальным размерам карточек и медальона, поэтому на любой
-   ширине начинаются точно на краю карточки и заканчиваются на кольце медальона (раньше это был растянутый svg с фиксированными
-   координатами, а точки на кольце были «запечены» в картинку медальона — при другом масштабе получались двойные точки). */
+/* Линии-связки блока «Экосистема глобальных возможностей»: плавные кривые Безье от края карточки до точки на кольце медальона.
+   Считаются по реальным размерам карточек и медальона, поэтому на любой ширине начинаются точно на краю карточки и приходят точно в точку,
+   нарисованную на кольце картинки (раньше это был растянутый svg с фиксированными координатами — при другом масштабе получались сдвиги:
+   Manrope шире прежнего шрифта, карточки выходят выше, и растянутые линии разъезжались с точками картинки). */
 (function () {
   'use strict';
   var grid = document.querySelector('.ecosystem-grid');
@@ -9,9 +10,10 @@
   if (!svg || !core) return;
 
   var NS = 'http://www.w3.org/2000/svg';
-  var ANGLE = 17.5 * Math.PI / 180;   // под каким углом линия подходит к кольцу
-  var RING = 0.985;                   // радиус кольца в долях половины ширины картинки
-  var LEVEL = 0.44;                   // доля высоты карточки: где на её краю стоит точка
+  // точки на кольце картинки медальона (1254×1254, bank-ecosystem.webp): доли ширины и высоты картинки
+  var DOT = { tl: [0.0313, 0.3319], bl: [0.0280, 0.6240], tr: [0.9653, 0.3325], br: [0.9709, 0.6246] };
+  var LEVEL = 0.44;    // доля высоты карточки: где на её краю стоит точка
+  var HANDLE = 0.5;    // «ручки» кривой — доля горизонтального расстояния (как в исходной вёрстке: S-образный изгиб с горизонтальными концами)
 
   function el(name, attrs) {
     var n = document.createElementNS(NS, name);
@@ -33,20 +35,17 @@
 
     svg.setAttribute('viewBox', '0 0 ' + s.width + ' ' + s.height);
     svg.setAttribute('preserveAspectRatio', 'none');
-    var R = c.width / 2, cx = c.left + R - s.left, cy = c.top + c.height / 2 - s.top, r = R * RING, k = R / 135;
-    var lines = el('g', { fill: 'none', stroke: '#8a9fa8', 'stroke-width': '1.1' });
+    var lines = el('g', { fill: 'none', stroke: '#8a9fa8', 'stroke-width': '1.1', 'stroke-linecap': 'round' });
     var dots = el('g', { fill: '#4d89b5', stroke: '#eef7fc', 'stroke-width': '1.2' });
 
     ['tl', 'bl', 'tr', 'br'].forEach(function (key) {
       var b = cards[key].getBoundingClientRect();
-      var left = key.charAt(1) === 'l', top = key.charAt(0) === 't';
+      var left = key.charAt(1) === 'l';
       var sx = (left ? b.right : b.left) - s.left, sy = b.top + b.height * LEVEL - s.top;
-      var ex = cx + (left ? -1 : 1) * r * Math.cos(ANGLE), ey = cy + (top ? -1 : 1) * r * Math.sin(ANGLE);
-      var run = Math.min(33 * k, Math.max(0, Math.abs(ex - sx) - 8 * k)) * (left ? 1 : -1);
-      var d = 'M' + num(sx) + ' ' + num(sy) + (run ? 'H' + num(sx + run) : '') + 'L' + num(ex) + ' ' + num(ey);
-      lines.appendChild(el('path', { d: d }));
-      dots.appendChild(el('circle', { cx: num(sx), cy: num(sy), r: 4.5 }));
-      dots.appendChild(el('circle', { cx: num(ex), cy: num(ey), r: 4 }));
+      var ex = c.left + c.width * DOT[key][0] - s.left, ey = c.top + c.height * DOT[key][1] - s.top;
+      var h = (ex - sx) * HANDLE;
+      lines.appendChild(el('path', { d: 'M' + num(sx) + ' ' + num(sy) + 'C' + num(sx + h) + ' ' + num(sy) + ' ' + num(ex - h) + ' ' + num(ey) + ' ' + num(ex) + ' ' + num(ey) }));
+      dots.appendChild(el('circle', { cx: num(sx), cy: num(sy), r: 4.5 }));   // точка у карточки; точки на кольце уже нарисованы в картинке
     });
     svg.appendChild(lines);
     svg.appendChild(dots);

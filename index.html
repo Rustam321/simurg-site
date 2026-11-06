@@ -9,8 +9,8 @@
 <title>SIMURG — Торговая система</title>
 <meta name="description" content="SIMURG — интеллектуальная система управления международными торговыми сделками. B2Q, B2B, B2C платформа с полным циклом от запроса до исполнения.">
 <link rel="stylesheet" href="css/fonts.css?v=20261038">
-<link rel="stylesheet" href="css/style.css?v=20261191">
-<link rel="stylesheet" href="css/ops-modules.css?v=16">
+<link rel="stylesheet" href="css/style.css?v=20261196">
+<link rel="stylesheet" href="css/ops-modules.css?v=24">
 <link rel="stylesheet" href="assets/topbar.css?v=20261185">
 <link rel="stylesheet" href="assets/no-overlay.css?v=2"><script src="assets/no-overlay.js?v=2" defer></script><link rel="stylesheet" href="assets/snap.css?v=2">
 </head>
@@ -37,6 +37,9 @@
     </div>
 
   </section>
+
+  <!-- ВТОРАЯ СТРАНИЦА: баннер + «Единая цифровая среда» вместе занимают высоту окна (баннер прежней высоты, блок — остаток окна; подгонка схемы и текста — js/fold-fit.js) -->
+  <div class="fold" id="fold">
 
   <!-- БАННЕР после видеоряда: фото города + логотип, название и вход в ВЭБ-ПОРТАЛ -->
   <section class="top-banner" aria-label="Торговая система SIMURG">
@@ -66,12 +69,6 @@
   <!-- ОПЕРАЦИОННЫЕ МОДУЛИ: слева схема из SIMURG_Digital_Environment_v0.1 (sticky; на ≤700px — карточки модулей), справа текст; стили css/ops-modules.css, скрипт js/ops-modules.js -->
   <section class="ops" id="ops-modules" aria-labelledby="ops-title">
     <div class="ops__inner">
-      <header class="ops__head ops-reveal">
-        <h2 class="ops__title" id="ops-title"><span>ЕДИНАЯ ЦИФРОВАЯ СРЕДА</span> <span class="ops__title-sub">ДЛЯ ИСПОЛНЕНИЯ СДЕЛОК</span></h2>
-        <span class="ops__rule" aria-hidden="true"></span>
-        <p class="ops__lead">SIMURG объединяет участников сделки, данные, документы, коммуникации и управленческие решения в единую цифровую среду. Система обеспечивает последовательное сопровождение сделки — от постановки задачи и анализа до исполнения, контроля и итогового результата.</p>
-      </header>
-
       <div class="ops__body">
       <div class="ops__figure ops-reveal">
         <figure class="de-radial">
@@ -320,6 +317,11 @@
       </div>
       </div>
       <div class="ops__side">
+        <header class="ops__head ops-reveal">
+          <h2 class="ops__title" id="ops-title"><span>ЕДИНАЯ ЦИФРОВАЯ СРЕДА</span> <span class="ops__title-sub">ДЛЯ ИСПОЛНЕНИЯ СДЕЛОК</span></h2>
+          <span class="ops__rule" aria-hidden="true"></span>
+          <p class="ops__lead">SIMURG объединяет участников сделки, данные, документы, коммуникации и управленческие решения в единую цифровую среду. Система обеспечивает последовательное сопровождение сделки — от постановки задачи и анализа до исполнения, контроля и итогового результата.</p>
+        </header>
       <div class="ops__items">
         <div class="ops__item ops-reveal">
           <h3>ИНДИВИДУАЛЬНОЕ РАБОЧЕЕ ПРОСТРАНСТВО</h3>
@@ -350,9 +352,11 @@
     </dialog>
   </section>
 
+  </div>
+
   <!-- SIMURG-БАНК: готовая страница под видеоблоком (в изолированной рамке — у неё свои стили и масштаб) -->
   <section class="bank-embed" id="bank" aria-label="SIMURG-БАНК">
-    <iframe class="embed__frame" src="SIMURG_BANK/index.html?v=20261189" title="SIMURG-БАНК — финансовая инфраструктура для глобальной торговли" scrolling="no" loading="lazy"></iframe>
+    <iframe class="embed__frame" src="SIMURG_BANK/index.html?v=20261198" title="SIMURG-БАНК — финансовая инфраструктура для глобальной торговли" scrolling="no" loading="lazy"></iframe>
   </section>
 
 </main>
@@ -415,7 +419,8 @@
 
 <script src="js/hero-data.js?v=20261108" defer></script>
 <script src="js/hero.js?v=20261134" defer></script>
-<script src="js/ops-modules.js?v=6" defer></script>
+<script src="js/ops-modules.js?v=7" defer></script>
+<script src="js/fold-fit.js?v=3" defer></script>
 <script src="js/embed-host.js?v=20261107" defer></script>
 <script src="js/main.js?v=20261104"></script>
 <script src="assets/topbar.js?v=20261038" defer></script>
