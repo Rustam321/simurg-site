@@ -1,0 +1,19 @@
+/* Постраничная прокрутка: колесо/тачпад/клавиши «долистывают» до начала следующего блока (CSS scroll-snap).
+   Блок выше экрана листается свободно — «примагничиваются» только его начало и конец. Не включается при «меньше анимации»
+   и внутри встроенного банка (html.sx-embedded: он не прокручивается сам). */
+@media (prefers-reduced-motion: no-preference) {
+  html:not(.sx-embedded) { scroll-snap-type: y mandatory; }
+  .sx-topbar,
+  .top-banner, .bank-embed,
+  main > section, main > header, main > .principles,
+  main > div > section, main > .container > section,
+  .sections > section,
+  .page-shell > header.hero, body > header.hero,
+  body > footer, main + footer, .sx-dfoot, .page-shell > footer { scroll-snap-align: start; }
+  #hero { scroll-snap-align: none; }   /* главная: меню и видеоряд — один экран, останавливаемся на самом верху */
+}
+/* на телефоне и узком планшете меню «липкое» — блоки останавливаются под ним */
+@media (max-width: 1099px) {
+  html { scroll-padding-top: var(--sx-bar-h, 56px); }
+  .sx-topbar { scroll-snap-align: none; }
+}
