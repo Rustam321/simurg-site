@@ -8,12 +8,12 @@
   <title>SIMURG-БАНК — финансовая инфраструктура для глобальной торговли</title>
   <meta name="description" content="SIMURG-БАНК — финансовый центр глобальных сделок. Расчеты, торговое финансирование, управление рисками и капитал для международного бизнеса.">
   <meta name="theme-color" content="#082040">
-  <link rel="stylesheet" href="css/style.css?v=20261196">
+  <link rel="stylesheet" href="css/style.css?v=20261200">
+  <link rel="stylesheet" href="css/ecosystem.css?v=1">
 <link rel="stylesheet" href="../css/fonts.css?v=20261120">
 <link rel="stylesheet" href="../assets/type.css?v=20261177">
   <script src="js/config.js" defer></script>
   <script src="js/main.js" defer></script>
-  <script src="js/connections.js?v=2" defer></script>
 <script>if(window.self!==window.top)document.documentElement.classList.add('sx-embedded')</script>
 <link rel="stylesheet" href="../assets/no-overlay.css?v=2"><script src="../assets/no-overlay.js?v=2" defer></script><link rel="stylesheet" href="../assets/snap.css?v=2">
 </head>
@@ -59,22 +59,92 @@
         <article class="leader-card"><img class="portrait" src="img/sections/kuznetsova.webp" alt="Кузнецова Ольга" width="230" height="125"><div class="leader-info"><h3>Кузнецова Ольга</h3><p class="leader-role">Директор по развитию</p><p class="leader-handle"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="4.5" r="2.5"/><path d="M3 14v-2a5 5 0 0 1 10 0v2z"/></svg>@o.kuznetsova</p></div></article>
       </div>
     </section>
-    <section class="ecosystem container" id="ecosystem" aria-labelledby="ecosystem-title">
-      <header class="section-heading"><h2 id="ecosystem-title">ЭКОСИСТЕМА ГЛОБАЛЬНЫХ ВОЗМОЖНОСТЕЙ</h2><span class="heading-rule" aria-hidden="true"></span><p>ОБЪЕДИНЯЕМ ФИНАНСЫ. ДВИЖЕМ ТОРГОВЛЮ. СОЗДАЕМ БУДУЩЕЕ.</p></header>
-      <div class="ecosystem-grid">
-        <figure class="bank-core"><img src="img/sections/bank-ecosystem.webp?v=4" alt="SIMURG-БАНК — финансовый центр глобальных сделок" width="1254" height="1254"></figure>
-        <svg class="ecosystem-connections" aria-hidden="true"></svg>
-        <article class="ecosystem-card payments" id="payments"><h3>РАСЧЕТЫ</h3><p>международные платежи, <br> эскроу-счета, быстрые <br> и безопасные расчеты</p></article>
-        <article class="ecosystem-card financing" id="financing"><h3>ФИНАНСИРОВАНИЕ</h3><p>торговое финансирование, <br> финансовые инструменты, <br> факторинг</p></article>
-        <article class="ecosystem-card risks" id="risks"><h3>УПРАВЛЕНИЕ РИСКАМИ</h3><p>валютные риски, <br> страновые риски, <br> санкционные риски</p></article>
-        <article class="ecosystem-card capital" id="capital"><h3>КАПИТАЛ</h3><p>структурирование сделок, <br> инвестиционные решения, <br> управление активами, <br> совместные проекты</p></article>
-      </div>
-      <ul class="qualities" aria-label="Принципы SIMURG"><li>надежно</li><li>быстро</li><li>глобально</li><li>эффективно</li></ul>
-    </section>
+    <div class="eco" id="ecosystem">
+      <section class="eco-ecosystem eco-container" aria-labelledby="ecosystem-title">
+            <header class="eco-section-heading">
+              <h2 id="ecosystem-title">ЭКОСИСТЕМА ГЛОБАЛЬНЫХ ВОЗМОЖНОСТЕЙ</h2>
+              <span class="eco-heading-rule" aria-hidden="true"></span>
+              <p class="eco-section-motto">ОБЪЕДИНЯЕМ ФИНАНСЫ. ДВИЖЕМ ТОРГОВЛЮ. СОЗДАЕМ БУДУЩЕЕ.</p>
+            </header>
+
+            <div class="eco-ecosystem-grid">
+              <div class="eco-service-column eco-service-column--left">
+                <article class="eco-service-card" id="payments" aria-labelledby="payments-title">
+                  <img class="eco-service-icon" src="img/ecosystem/payments.svg" alt="" width="48" height="48">
+                  <div class="eco-service-copy">
+                    <h2 id="payments-title">РАСЧЕТЫ</h2>
+                    <p>международные платежи,<br class="eco-desktop-break"> эскроу-счета, быстрые<br class="eco-desktop-break"> и безопасные расчеты</p>
+                  </div>
+                </article>
+                <article class="eco-service-card" id="financing" aria-labelledby="financing-title">
+                  <img class="eco-service-icon" src="img/ecosystem/financing.svg" alt="" width="48" height="48">
+                  <div class="eco-service-copy">
+                    <h2 id="financing-title">ФИНАНСИРОВАНИЕ</h2>
+                    <p>торговое финансирование,<br class="eco-desktop-break"> финансовые инструменты,<br class="eco-desktop-break"> факторинг</p>
+                  </div>
+                </article>
+              </div>
+
+              <div class="eco-globe-stage">
+                <svg class="eco-connections" viewBox="0 0 564 424" fill="none" aria-hidden="true">
+                  <g stroke="#70e8ff" stroke-width="1.4">
+                    <path d="M0 108C37 108 46 145 82 145"/>
+                    <path d="M564 108C527 108 518 145 482 145"/>
+                    <path d="M0 318C37 318 46 276 82 276"/>
+                    <path d="M564 318C527 318 518 276 482 276"/>
+                  </g>
+                  <g fill="#eaffff" stroke="#5feaff" stroke-width="2">
+                    <circle cx="0" cy="108" r="3.7"/><circle cx="82" cy="145" r="3.7"/>
+                    <circle cx="564" cy="108" r="3.7"/><circle cx="482" cy="145" r="3.7"/>
+                    <circle cx="0" cy="318" r="3.7"/><circle cx="82" cy="276" r="3.7"/>
+                    <circle cx="564" cy="318" r="3.7"/><circle cx="482" cy="276" r="3.7"/>
+                  </g>
+                </svg>
+                <div class="eco-globe">
+                  <div class="eco-globe-surface">
+                    <img class="eco-globe-art" src="img/ecosystem/globe.webp" alt="Серебряная птица Симург на голубом земном шаре" width="1254" height="1254" loading="lazy" decoding="async">
+                  </div>
+                  <div class="eco-globe-copy">
+                    <h2>SIMURG-БАНК</h2>
+                    <p>финансовый центр<br>глобальных сделок</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="eco-service-column eco-service-column--right">
+                <article class="eco-service-card" id="risks" aria-labelledby="risk-title">
+                  <img class="eco-service-icon" src="img/ecosystem/risk.svg" alt="" width="48" height="48">
+                  <div class="eco-service-copy">
+                    <h2 id="risk-title">УПРАВЛЕНИЕ РИСКАМИ</h2>
+                    <p>валютные риски,<br class="eco-desktop-break"> страновые риски,<br class="eco-desktop-break"> санкционные риски</p>
+                  </div>
+                </article>
+                <article class="eco-service-card" id="capital" aria-labelledby="capital-title">
+                  <img class="eco-service-icon" src="img/ecosystem/capital.svg" alt="" width="48" height="48">
+                  <div class="eco-service-copy">
+                    <h2 id="capital-title">КАПИТАЛ</h2>
+                    <p>структурирование сделок,<br class="eco-desktop-break"> инвестиционные решения,<br class="eco-desktop-break"> управление активами,<br class="eco-desktop-break"> совместные проекты</p>
+                  </div>
+                </article>
+              </div>
+            </div>
+
+            <ul class="eco-benefits" aria-label="Преимущества">
+              <li>надежно</li>
+              <li>быстро</li>
+              <li>глобально</li>
+              <li>эффективно</li>
+            </ul>
+          </section>
+
+      <section class="eco-closing" aria-labelledby="closing-title">
+            <div class="eco-closing-heading eco-container">
+              <h2 id="closing-title">SIMURG-БАНК — ФИНАНСОВАЯ СИЛА ВАШИХ СДЕЛОК</h2>
+            </div>
+            <div class="eco-skyline" role="img" aria-label="Вечерняя панорама международного делового центра и порта у воды"></div>
+          </section>
+    </div>
   </main>
-  <footer class="site-footer" aria-labelledby="footer-title">
-    <div class="footer-shell"><div class="footer-art" aria-hidden="true"></div><h2 id="footer-title">SIMURG-БАНК — ФИНАНСОВАЯ СИЛА ВАШИХ СДЕЛОК</h2></div>
-  </footer>
   <dialog class="modal search-dialog" aria-labelledby="search-title"><button class="dialog-close" type="button" aria-label="Закрыть поиск">×</button><h2 id="search-title">Поиск по странице</h2><form class="search-form" role="search"><label for="site-search">Что найти?</label><div class="search-field"><input id="site-search" type="search" name="q" placeholder="Например, финансирование" autocomplete="off"><button type="submit">Найти</button></div></form><p class="search-status" aria-live="polite"></p><ul class="search-results"></ul></dialog>
   <dialog class="modal account-dialog" aria-labelledby="account-title"><button class="dialog-close" type="button" aria-label="Закрыть">×</button><h2 id="account-title">Личный кабинет</h2><p>Личный кабинет пока недоступен.</p></dialog>
 <script src="../assets/embed.js?v=20261107"></script>

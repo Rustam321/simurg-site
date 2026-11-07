@@ -41,7 +41,7 @@ h1>span{display:block;font-size:2.75rem}
 h1 small{display:block;font-size:2rem;line-height:1.13;font-weight:400;letter-spacing:-.04rem;margin-top:.4375rem}
 .hero-description{font-size:.8125rem;line-height:1.2;margin-top:.375rem;color:#233b4c}
 .benefits{display:grid;grid-template-columns:187fr 215fr 184fr;gap:.5625rem;width:37.75rem;max-width:calc(100% - 4.375rem);margin:.90625rem 0 0 2.1875rem}
-.benefit,.ecosystem-card{color:#f7fcff;background:linear-gradient(125deg,var(--card-top),var(--card-bottom));border:1px solid #7892a8;border-radius:var(--radius);box-shadow:0 7px 18px #3352690a}
+.benefit{color:#f7fcff;background:linear-gradient(125deg,var(--card-top),var(--card-bottom));border:1px solid #7892a8;border-radius:var(--radius);box-shadow:0 7px 18px #3352690a}
 .benefit{min-width:0;min-height:8.6875rem;padding:.8125rem .9375rem .875rem}
 .benefit h2{font-size:1.125rem;line-height:1.18;font-weight:700;letter-spacing:-.03125rem}
 .benefit p{font-size:.8125rem;line-height:1.4;margin-top:.5rem;letter-spacing:-.01875rem}
@@ -66,27 +66,27 @@ h1 small{display:block;font-size:2rem;line-height:1.13;font-weight:400;letter-sp
 .leader-role{font-size:.6875rem;line-height:1.25;color:#4b6270;margin-top:.125rem}
 .leader-handle{display:flex;gap:.375rem;align-items:center;font-size:.75rem;line-height:1.2;margin-top:.1875rem;color:#213d52}
 .leader-handle svg{width:.75rem;height:.75rem;fill:none;stroke:currentColor;stroke-width:1.3;flex-shrink:0}
-.ecosystem{margin-top:1.125rem}
-.ecosystem .section-heading{gap:1rem}
-.ecosystem .section-heading h2{font-size:.78125rem;letter-spacing:.0625rem}
-.ecosystem .section-heading p{font-size:.46875rem;letter-spacing:.065rem}
-.ecosystem-grid{position:relative;display:grid;grid-template-columns:minmax(0,1fr)16.875rem minmax(0,1fr);grid-template-areas:"payments bank risks" "financing bank capital";gap:.875rem 3.5rem;align-items:stretch;margin-top:1.125rem}
-.ecosystem-card{min-width:0;padding:.6875rem 1.4375rem .625rem;position:relative;z-index:1}
-.ecosystem-card h3{font-size:1.1rem;line-height:1.25;letter-spacing:-.025rem}
-.ecosystem-card p{font-size:1rem;line-height:1.04;margin-top:.25rem;letter-spacing:-.0125rem}
+
+
+
+
+
+
+
+
 .payments{grid-area:payments;min-height:7.1875rem}.financing{grid-area:financing;min-height:7.75rem}.risks{grid-area:risks;min-height:7.1875rem}.capital{grid-area:capital;min-height:7.75rem}
-.bank-core{grid-area:bank;align-self:center;position:relative;z-index:1;width:16.875rem;justify-self:center;height:0}
-.bank-core img{width:100%;height:auto;mix-blend-mode:multiply;border-radius:50%;position:absolute;top:-.5rem;transform:translateY(-50%)}
-.ecosystem-connections{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:2}
-.qualities{display:flex;justify-content:center;gap:4.125rem;align-items:center;font-size:.9375rem;line-height:1.3;margin-top:.9375rem;padding-bottom:1rem;position:relative}
-.qualities li{position:relative;white-space:nowrap;font-weight:700}
-.qualities li+li::before{content:"";position:absolute;left:-2.1875rem;top:.55em;width:.25rem;height:.25rem;border-radius:50%;background:var(--color-primary)}
-.qualities li{color:#153e59}
-.qualities::after{content:"";position:absolute;bottom:0;left:8.25%;right:8.25%;height:1px;background:#c5d9e5}
-.site-footer{background:linear-gradient(90deg,#e9f4fb,#eff8fe 50%,#e5f2fc)}
-.footer-shell{max-width:var(--scene-width);min-height:11.75rem;margin-inline:auto;position:relative;isolation:isolate;padding-top:.8125rem}
-.footer-art{position:absolute;inset:0;z-index:-1;background:url("../img/backgrounds/city-clean.webp?v=1") center bottom/66.625rem 11.625rem no-repeat;mask:var(--footer-mask) center bottom/66.625rem 11.625rem no-repeat}
-.site-footer h2{max-width:60.625rem;margin-inline:auto;width:calc(100% - 6rem);text-align:center;font-size:1.875rem;line-height:1.2;letter-spacing:-.025rem;color:#002445}
+
+
+
+
+
+
+
+
+
+
+
+
 .skip-link{position:fixed;top:.5rem;left:.5rem;z-index:10;padding:.75rem 1rem;background:#fff;transform:translateY(-200%)}
 .skip-link:focus{transform:none}
 .modal{width:min(calc(100% - 2rem),30rem);max-height:calc(100% - 2rem);padding:1.75rem;border:1px solid #c4d8e7;border-radius:.75rem;background:#f5faff;color:var(--color-primary);box-shadow:0 15px 70px #0a294e40}
@@ -118,16 +118,16 @@ h1 small{display:block;font-size:2rem;line-height:1.13;font-weight:400;letter-sp
  .leaders .section-heading p{margin-right:0}
  .leader-info{padding-inline:.625rem}
  .leader-role{font-size:.6875rem}
- .ecosystem-grid{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-areas:"bank bank" "payments risks" "financing capital";gap:1rem}
- .ecosystem-connections{display:none}
- .bank-core{width:16.875rem;height:auto}
- .bank-core img{position:static;transform:none}
- .ecosystem-card{padding-inline:1.125rem}
- .ecosystem-card h3{font-size:1.1rem}
- .ecosystem-card p{font-size:.9375rem;line-height:1.15}
- .ecosystem .section-heading{flex-wrap:wrap}
- .ecosystem .section-heading p{margin-left:auto}
- .site-footer h2{font-size:1.75rem}
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 }
 @media(max-width:900px){
  :root{--gutter:1.5rem}
@@ -145,15 +145,15 @@ h1 small{display:block;font-size:2rem;line-height:1.13;font-weight:400;letter-sp
  .leader-info h3{font-size:1rem;letter-spacing:0}
  .leader-role,.leader-handle{font-size:.875rem;line-height:1.35}
  .leader-handle svg{width:.875rem;height:.875rem}
- .ecosystem-grid{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-areas:"bank bank" "payments risks" "financing capital";gap:1rem;margin-top:1rem}
- .ecosystem-connections{display:none}
- .bank-core{width:16.875rem}
- .ecosystem-card{padding:1rem 1.25rem;min-height:0}
- .ecosystem-card h3{font-size:1.2rem}
- .ecosystem-card p{font-size:1rem;line-height:1.25;margin-top:.5rem}
- .qualities{margin-top:1.25rem;gap:3.25rem}
- .qualities li+li::before{left:-1.75rem}
- .site-footer h2{font-size:1.625rem;width:calc(100% - 3rem)}
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 }
 @media(max-width:700px){
  .header-shell{grid-template-columns:10.5rem minmax(0,1fr)2.75rem;gap:.75rem}
@@ -180,19 +180,17 @@ h1 small{display:block;font-size:2rem;line-height:1.13;font-weight:400;letter-sp
  .hero-note-top br,.hero-note-bottom br{display:none}
  .hero-note-bottom{margin-top:.5rem;line-height:1.6}
  .section-heading{flex-wrap:wrap;gap:.625rem 1rem}
- .section-heading p,.ecosystem .section-heading p{white-space:normal;font-size:.5625rem;line-height:1.5}
+ .section-heading p{white-space:normal;font-size:.5625rem;line-height:1.5}
  .leaders .section-heading p{margin-left:0;flex-basis:100%}
- .section-heading h2,.ecosystem .section-heading h2{white-space:normal;line-height:1.4}
- .ecosystem .heading-rule{display:none}
- .ecosystem .section-heading p{margin-left:0}
- .qualities{font-size:.875rem;gap:2rem}
- .qualities li+li::before{left:-1.125rem}
- .footer-shell{min-height:16rem;padding-top:1rem}
- .footer-art{background-position:center bottom;mask-position:center bottom}
+ .section-heading h2{white-space:normal;line-height:1.4}
+ 
+ 
+ 
+ 
+ 
+ 
 }
-@media(max-width:640px){
- .ecosystem-grid{grid-template-columns:minmax(0,1fr);grid-template-areas:"bank" "payments" "financing" "risks" "capital"}
-}
+
 @media(max-width:600px){
  .benefits{grid-template-columns:minmax(0,1fr)}
  .benefit{padding:1rem 1.125rem}
@@ -224,23 +222,23 @@ h1 small{display:block;font-size:2rem;line-height:1.13;font-weight:400;letter-sp
  .leader-info h3{font-size:1.0625rem}
  .leader-role,.leader-handle{font-size:.9375rem;line-height:1.4}
  .leader-handle{margin-top:.375rem}
- .ecosystem{margin-top:1.5rem}
- .ecosystem-grid{grid-template-columns:minmax(0,1fr);grid-template-areas:"bank" "payments" "financing" "risks" "capital";gap:.875rem}
- .bank-core{width:min(100%,16.875rem)}
- .ecosystem-card{padding:1rem 1.125rem}
- .ecosystem-card h3{font-size:1.1rem;line-height:1.2;letter-spacing:-.02rem}
- .ecosystem-card p{font-size:.9375rem;line-height:1.35}
- .ecosystem-card br{display:none}
- .qualities{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));text-align:center;gap:.625rem 1.5rem;font-size:.875rem;padding-bottom:1.25rem}
- .qualities li+li::before{display:none}
- .site-footer h2{font-size:1.375rem;line-height:1.25;width:calc(100% - 2.25rem)}
- .footer-shell{min-height:18.5rem}
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  .modal{padding:1.25rem}
  .search-field{flex-direction:column}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 
-:root{--hero-mask:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%201066%20422%22%3E%3Cdefs%3E%3Cfilter%20id%3D%22blur%22%3E%3CfeGaussianBlur%20stdDeviation%3D%224%22%2F%3E%3C%2Ffilter%3E%3Cmask%20id%3D%22art%22%3E%3Cpath%20fill%3D%22white%22%20d%3D%22M0%200h1066v422H0z%22%2F%3E%3Cpath%20fill%3D%22black%22%20filter%3D%22url%28%23blur%29%22%20d%3D%22M30%2018h510v227H30zM22%20254h629v158H22zM946%2048h99v66h-99zM950%20331h103v77h-103z%22%2F%3E%3C%2Fmask%3E%3C%2Fdefs%3E%3Cpath%20fill%3D%22white%22%20mask%3D%22url%28%23art%29%22%20d%3D%22M0%200h1066v422H0z%22%2F%3E%3C%2Fsvg%3E");--mobile-mask:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20531%20422%22%3E%3Cdefs%3E%3Cfilter%20id%3D%22blur%22%3E%3CfeGaussianBlur%20stdDeviation%3D%224%22%2F%3E%3C%2Ffilter%3E%3Cmask%20id%3D%22art%22%3E%3Cpath%20fill%3D%22white%22%20d%3D%22M0%200h531v422H0z%22%2F%3E%3Cpath%20fill%3D%22black%22%20filter%3D%22url%28%23blur%29%22%20d%3D%22M0%20254h116v158H0zM411%2048h99v66h-99zM415%20331h103v77h-103z%22%2F%3E%3C%2Fmask%3E%3C%2Fdefs%3E%3Cpath%20fill%3D%22white%22%20mask%3D%22url%28%23art%29%22%20d%3D%22M0%200h531v422H0z%22%2F%3E%3C%2Fsvg%3E");--footer-mask:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%201066%20186%22%3E%3Cdefs%3E%3Cfilter%20id%3D%22blur%22%3E%3CfeGaussianBlur%20stdDeviation%3D%224%22%2F%3E%3C%2Ffilter%3E%3Cmask%20id%3D%22art%22%3E%3Cpath%20fill%3D%22white%22%20d%3D%22M0%200h1066v186H0z%22%2F%3E%3Cpath%20fill%3D%22black%22%20filter%3D%22url%28%23blur%29%22%20d%3D%22M104%207h865v44H104z%22%2F%3E%3C%2Fmask%3E%3C%2Fdefs%3E%3Cpath%20fill%3D%22white%22%20mask%3D%22url%28%23art%29%22%20d%3D%22M0%200h1066v186H0z%22%2F%3E%3C%2Fsvg%3E")}
+:root{--hero-mask:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%201066%20422%22%3E%3Cdefs%3E%3Cfilter%20id%3D%22blur%22%3E%3CfeGaussianBlur%20stdDeviation%3D%224%22%2F%3E%3C%2Ffilter%3E%3Cmask%20id%3D%22art%22%3E%3Cpath%20fill%3D%22white%22%20d%3D%22M0%200h1066v422H0z%22%2F%3E%3Cpath%20fill%3D%22black%22%20filter%3D%22url%28%23blur%29%22%20d%3D%22M30%2018h510v227H30zM22%20254h629v158H22zM946%2048h99v66h-99zM950%20331h103v77h-103z%22%2F%3E%3C%2Fmask%3E%3C%2Fdefs%3E%3Cpath%20fill%3D%22white%22%20mask%3D%22url%28%23art%29%22%20d%3D%22M0%200h1066v422H0z%22%2F%3E%3C%2Fsvg%3E");--mobile-mask:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20531%20422%22%3E%3Cdefs%3E%3Cfilter%20id%3D%22blur%22%3E%3CfeGaussianBlur%20stdDeviation%3D%224%22%2F%3E%3C%2Ffilter%3E%3Cmask%20id%3D%22art%22%3E%3Cpath%20fill%3D%22white%22%20d%3D%22M0%200h531v422H0z%22%2F%3E%3Cpath%20fill%3D%22black%22%20filter%3D%22url%28%23blur%29%22%20d%3D%22M0%20254h116v158H0zM411%2048h99v66h-99zM415%20331h103v77h-103z%22%2F%3E%3C%2Fmask%3E%3C%2Fdefs%3E%3Cpath%20fill%3D%22white%22%20mask%3D%22url%28%23art%29%22%20d%3D%22M0%200h531v422H0z%22%2F%3E%3C%2Fsvg%3E");}
 
 /* NEW_SIMURG: единый масштаб светлых страниц (содержимое ~90% ширины экрана, как у остальных) */
 html{font-size:clamp(16px,1.35vw,21px)}
@@ -269,9 +267,7 @@ html.sx-embedded .site-header,html.sx-embedded .skip-link{display:none!important
   .hero-note-top,.hero-note-bottom{right:auto;left:calc(var(--art-w) * .895);width:calc(var(--art-w) * .0816)}
   .hero-note-top{top:calc(var(--art-h) * .130)}
   .hero-note-bottom{top:auto;bottom:calc(var(--art-h) * .052)}
-  /* нижняя панорама — на всю ширину */
-  .footer-art{left:calc((100% - 100vw) / 2);right:calc((100% - 100vw) / 2);background-size:100% auto;mask-size:100% auto}
-}
+  }
 
 /* NEW_SIMURG: выравнивание Manrope по высоте строчных старого шрифта (см. assets/type.css) */
 :root{--sx-xh:.46}

@@ -1,0 +1,326 @@
+/* Блок «Экосистема глобальных возможностей» и заключительная панорама — вёрстка из присланного архива simurg-bank (07.11.2026).
+   Изоляция от остальной страницы банка: все классы с префиксом eco-, обёртка .eco; rem переведены в px (у банка root font-size плавающий,
+   а размеры из архива рассчитаны на 16px); глобальных правил (html/body/main/:root) и @font-face нет — шрифт Manrope задаёт assets/type.css. */
+
+.eco {
+  --color-background: #03182e;
+  --color-text: #f4f7ff;
+  --color-secondary: #c5e5ff;
+  --color-accent: #4bddff;
+  --color-border: #4a9bbb;
+  --container-width: 1500px;
+  --gutter: clamp(16px, 2.7vw, 48px);
+  --card-radius: 19.2px;
+  font-synthesis: none;
+}
+
+.eco, .eco *, .eco *::before, .eco *::after { box-sizing: border-box; }
+
+.eco {
+  position: relative;
+  color: var(--color-text);
+  -webkit-font-smoothing: antialiased;
+}
+
+.eco h2, .eco p { margin: 0; }
+
+.eco img { display: block; max-width: 100%; }
+
+.eco-container {
+  width: min(calc(100% - 2 * var(--gutter)), var(--container-width));
+  margin-inline: auto;
+}
+
+.eco {
+  display: flex;
+  flex-direction: column;
+  background:
+    radial-gradient(ellipse 608px 496px at 50% 320px, #08477860, transparent 82%),
+    linear-gradient(110deg, #03172b, #041b32 52%, #02152a);
+}
+
+.eco-ecosystem { padding-top: clamp(24px, 3.3vw, 52px); }
+
+.eco-section-heading {
+  display: flex;
+  align-items: center;
+  gap: clamp(16px, 1.8vw, 28.8px);
+  margin: 0 4.8px clamp(22.4px, 1.5vw, 24px);
+}
+
+.eco-section-heading h2 {
+  flex: 0 1 auto;
+  font-size: clamp(14px, 1.52vw, 24px);
+  line-height: 1.3;
+  font-weight: 750;
+  letter-spacing: -.012em;
+}
+
+.eco-heading-rule {
+  height: 1px;
+  background: #3895bf;
+  flex: 1 1 96px;
+  min-width: 16px;
+}
+
+.eco-section-motto {
+  flex: 0 1 auto;
+  font-size: clamp(8px, .93vw, 14.4px);
+  line-height: 1.55;
+  font-weight: 500;
+  letter-spacing: .085em;
+  color: #d2e7ff;
+}
+
+.eco-ecosystem-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr 1fr;
+  align-items: stretch;
+  container-type: inline-size;
+}
+
+.eco-service-column {
+  display: grid;
+  grid-template-rows: 1fr 1.04fr;
+  gap: clamp(16px, 1.7vw, 26px);
+  padding-block: clamp(8px, 1.2vw, 18px) 2px;
+  min-width: 0;
+}
+
+.eco-service-card {
+  display: grid;
+  grid-template-columns: clamp(32px, 3.1vw, 48px) minmax(0, 1fr);
+  align-content: start;
+  gap: clamp(16px, 2.5vw, 40px);
+  padding: clamp(16px, 1.85vw, 30px) clamp(16px, 2vw, 32px);
+  padding-block: clamp(16px, 1.8vw, 28px) clamp(9.6px, .8vw, 12px);
+  border: 1px solid var(--color-border);
+  border-radius: var(--card-radius);
+  background:
+    radial-gradient(ellipse at 100% 0, #37678f45, transparent 64%),
+    linear-gradient(120deg, #163c54c9, #0a2037d9 64%, #153850e6);
+  box-shadow: inset 0 1px 8px #7be3ff13, inset 0 -2px 4px #50d6ff16;
+  min-width: 0;
+}
+
+.eco-service-card:nth-child(1) { border-top-color: #8ce9fa; }
+
+.eco-service-card:nth-child(2) { border-bottom-color: #67d5ed; }
+
+.eco-service-icon {
+  width: 100%;
+  height: auto;
+  margin-top: 0.8px;
+  filter: drop-shadow(0 0 5px #49dfff35);
+}
+
+.eco-service-copy { position: relative; min-width: 0; }
+
+.eco-service-copy::before {
+  content: "";
+  position: absolute;
+  inset-inline-start: calc(clamp(16px, 2.5vw, 40px) / -2);
+  inset-block-start: 0;
+  width: 1px;
+  height: clamp(28.8px, 2.5vw, 40px);
+  background: #b2def0;
+}
+
+.eco-service-copy h2 {
+  font-size: clamp(16px, 1.73cqi, 26px);
+  line-height: 1.2;
+  font-weight: 750;
+  letter-spacing: -.025em;
+  margin-bottom: clamp(9.6px, .75vw, 12px);
+}
+
+.eco-service-copy p {
+  font-size: clamp(14px, 1.47cqi, 22px);
+  line-height: 1.22;
+  font-weight: 400;
+  letter-spacing: -.02em;
+  color: var(--color-secondary);
+}
+
+.eco-globe-stage {
+  position: relative;
+  display: grid;
+  place-items: center;
+  align-self: center;
+  aspect-ratio: 564 / 424;
+  min-width: 0;
+}
+
+.eco-connections {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  inset: 0;
+  overflow: visible;
+  filter: drop-shadow(0 0 4px #24d6ff99);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.eco-globe {
+  position: relative;
+  width: 75.18%;
+  aspect-ratio: 1;
+  flex-shrink: 0;
+  border: 1.5px solid #c2f8ff;
+  border-radius: 50%;
+  box-shadow: 0 0 15px #3bcfff73, 0 0 65px #0d8bcc40, inset 0 0 12px #14afff6b;
+  container-type: inline-size;
+}
+
+.eco-globe-surface {
+  position: absolute;
+  inset: 2.5%;
+  border: 1px solid #94f5ff;
+  border-radius: 50%;
+  overflow: clip;
+  background: #138bc6;
+  box-shadow: 0 0 9px #22ceffa0;
+}
+
+.eco-globe-art {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transform: scale(1.06);
+}
+
+.eco-globe-copy {
+  position: absolute;
+  top: 44%;
+  inset-inline: 2.5%;
+  text-align: center;
+  color: #031c36;
+}
+
+.eco-globe-copy h2 {
+  font-size: 10.6cqi;
+  line-height: 1.18;
+  letter-spacing: -.035em;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.eco-globe-copy p {
+  margin-top: .05em;
+  font-size: 6.75cqi;
+  line-height: 1.08;
+  letter-spacing: -.025em;
+  font-weight: 500;
+}
+
+.eco-benefits {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  padding: 0;
+  margin: clamp(20px, 1.5vw, 24px) auto 0;
+  font-size: clamp(16px, 1.6vw, 26px);
+  line-height: 1.4;
+  letter-spacing: -.03em;
+  font-weight: 500;
+}
+
+.eco-benefits li { display: flex; align-items: center; }
+
+.eco-benefits li + li::before {
+  content: "";
+  display: block;
+  width: .4em;
+  height: .4em;
+  margin-inline: clamp(22.4px, 3.5vw, 56px);
+  border-radius: 50%;
+  background: #0fcaef;
+  box-shadow: inset 0 1px 1px #8ae7ff;
+}
+
+.eco-closing { display: flex; flex-direction: column; flex: 1; margin-top: clamp(24px, 1.65vw, 26.4px); }
+
+.eco-closing-heading {
+  width: min(calc(100% - 4 * var(--gutter)), 1408px);
+  border-top: 1px solid #245775;
+  padding-top: clamp(24px, 1.9vw, 30.4px);
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.eco-closing h2 {
+  font-size: clamp(22.4px, 2.8vw, 44.8px);
+  line-height: 1.25;
+  font-weight: 750;
+  letter-spacing: -.025em;
+}
+
+.eco-skyline {
+  flex: 1;
+  min-height: clamp(256px, 18.2vw, 336px);
+  margin-top: 10.4px;
+  background-image: linear-gradient(to bottom, #031b31 0%, #031b3100 24%), url("../img/ecosystem/skyline.webp");
+  background-size: 100% 100%, cover;
+  background-position: center, center bottom;
+  background-repeat: no-repeat;
+}
+
+@media (min-width: 62.5rem) and (max-width: 78rem) {
+  .eco-service-card { gap: 16px; padding: 19.2px 14.4px; grid-template-columns: 32px minmax(0, 1fr);}
+  .eco-service-copy::before { inset-inline-start: -8px;}
+  .eco-service-copy h2 { font-size: clamp(14.4px, 1.73cqi, 20.8px);}
+  .eco-service-copy p { font-size: 1.47cqi;}
+}
+
+@media (max-width: 62.499rem) {
+  .eco-section-heading { display: grid; grid-template-columns: 1fr; gap: 13.6px; padding-bottom: 20.8px; border-bottom: 1px solid #245775;}
+  .eco-section-heading h2 { font-size: clamp(18px, 2.8vw, 25.6px);}
+  .eco-section-motto { font-size: 12px; max-width: 704px;}
+  .eco-heading-rule { display: none;}
+  .eco-ecosystem-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px;}
+  .eco-globe-stage { grid-column: 1 / -1; grid-row: 1; width: min(100%, 464px); margin-inline: auto; aspect-ratio: 1;}
+  .eco-globe { width: 90%;}
+  .eco-connections { display: none;}
+  .eco-service-column { gap: 20px; padding-block: 0;}
+  .eco-service-card { padding: 24px 19.2px; gap: 20px; grid-template-columns: 40px minmax(0, 1fr);}
+  .eco-service-copy::before { inset-inline-start: -10px; height: 38.4px;}
+  .eco-service-copy h2 { font-size: 18px; line-height: 1.3;}
+  .eco-service-copy p { font-size: 16.8px; line-height: 1.45;}
+  .eco-desktop-break { display: none;}
+  .eco-benefits { font-size: 17.6px; margin-top: 28.8px;}
+  .eco-benefits li + li::before { margin-inline: 24px;}
+  .eco-closing-heading { width: min(calc(100% - 2 * var(--gutter)), var(--container-width));}
+  .eco-closing h2 { font-size: clamp(24px, 3.2vw, 32px);}
+  .eco-skyline { min-height: 256px; background-position: center, 48% bottom;}
+}
+
+@media (max-width: 39.999rem) {
+  .eco { --card-radius: 16px;}
+  .eco-ecosystem { padding-top: 25.6px;}
+  .eco-section-heading { margin-inline: 0; margin-bottom: 16px;}
+  .eco-section-heading h2 { font-size: clamp(16.8px, 4.7vw, 22.4px); line-height: 1.35;}
+  .eco-section-motto { font-size: 10.4px; line-height: 1.7; letter-spacing: .07em;}
+  .eco-ecosystem-grid { grid-template-columns: minmax(0, 1fr); gap: 16px;}
+  .eco-globe-stage { width: min(100%, 368px);}
+  .eco-globe { width: 94%;}
+  .eco-service-column { grid-template-rows: auto auto; gap: 16px;}
+  .eco-service-card { display: block; position: relative; padding: 20px;}
+  .eco-service-icon { position: absolute; top: 20px; left: 20px; width: 32px; height: 32px;}
+  .eco-service-copy { position: static;}
+  .eco-service-copy::before { display: none;}
+  .eco-service-copy h2 { margin: 0 0 16px 44.8px; min-height: 32px; display: flex; align-items: center; font-size: clamp(15.2px, 3.8vw, 17.6px); line-height: 1.3;}
+  .eco-service-copy p { font-size: 17px; line-height: 1.5; letter-spacing: -.012em;}
+  .eco-benefits { display: grid; grid-template-columns: 1fr 1fr; gap: 16px 8px; justify-items: center; font-size: 17px;}
+  .eco-benefits li + li::before { display: none;}
+  .eco-benefits li::before { content: ""; width: 4.8px; height: 4.8px; border-radius: 50%; margin-right: 9.6px; background: #0fcaef;}
+  .eco-benefits li + li::before { display: block; width: 4.8px; height: 4.8px; margin: 0 9.6px 0 0;}
+  .eco-closing { margin-top: 28px;}
+  .eco-closing-heading { padding-top: 24px;}
+  .eco-closing h2 { font-size: clamp(21.6px, 5.1vw, 28.8px); line-height: 1.35;}
+  .eco-skyline { min-height: 208px; margin-top: 16px; background-size: 100% 100%, auto 170%;}
+}

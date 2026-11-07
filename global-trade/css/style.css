@@ -417,12 +417,17 @@ h1 span { color: #356798; }
   border-color: #b4cbdf;
   box-shadow: inset 0 1px 0 #ffffffb3, 0 1px 2px #12346014, 0 12px 26px -18px #12346059;
 }
-/* карточки — на тон глубже (белый текст ≥ 4,9:1 даже в самой светлой точке заливки) */
+/* карточки B2Q/B2B/B2C — светлые пастельные (замечание заказчика 07.11); текст и иконки тёмно-синие:
+   #0f2a4d на заливке ≥ 9,4:1, заголовок #0f356e ≥ 7,8:1, подписи #2d5588 ≥ 5:1 (на самом тёмном краю заливки) */
 .segment {
-  background: radial-gradient(ellipse at 60% 4%, #4f7399 0, #3f6590 52%, #385b84 100%);
-  border-color: #5b83a8;
-  box-shadow: 0 1px 2px #0f2a4f33, 0 12px 24px -16px #0f2a4f99;
+  color: #0f2a4d;
+  background: radial-gradient(ellipse at 60% 4%, #d8e8f8 0, #c9ddf3 52%, #bcd4ed 100%);
+  border-color: #9dbde0;
+  box-shadow: 0 1px 2px #0f2a4f1f, 0 12px 24px -16px #0f2a4f66;
 }
+.segment h3 { color: #0f356e; }
+.segment-heading p { color: #2d5588; }
+.segment-glow { background: linear-gradient(90deg, transparent, #4a7fc1de, transparent); box-shadow: 0 -.125rem .5rem .125rem #4a7fc138; }
 
 /* Подписи справа от иконки («BUSINESS TO GOVERNMENT» и т. д.) — всегда в одну строку: кегль подгоняется под ширину карточки
    (единицы контейнера .segment-heading: ширина карточки минус колонка иконки и зазор ≈ 7,8rem; самая длинная подпись ≈ 10,9 em), но не меньше 11px. */

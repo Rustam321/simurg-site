@@ -2114,8 +2114,9 @@ body.menu-open { overflow: hidden; }
    Footer
    ========================================================================== */
 .footer {
+  --foot-rgb: 18, 46, 98;   /* основной тон подвала (раньше почти чёрный 4, 9, 20 / #050810); светлее — увеличить числа */
   position: relative;
-  background: var(--bg-deep);
+  background: #0e2850;
   overflow: hidden;
 }
 
@@ -2123,14 +2124,7 @@ body.menu-open { overflow: hidden; }
 .footer__banner { position: relative; overflow: hidden; }
 .footer__bgimg {
   position: absolute; inset: 0; z-index: 0;
-  background: url('../img/trd.webp') center / cover no-repeat;
-}
-/* затемнение: слева темнее (под панелью), справа скайлайн виднее */
-.footer__scrim {
-  position: absolute; inset: 0; z-index: 1;
-  background:
-    linear-gradient(90deg, rgba(4,9,20,.95) 0%, rgba(4,9,20,.86) 34%, rgba(4,9,20,.5) 66%, rgba(4,9,20,.72) 100%),
-    linear-gradient(180deg, rgba(4,9,20,.55) 0%, rgba(4,9,20,.28) 26%, rgba(4,9,20,.28) 74%, rgba(4,9,20,.6) 100%);
+  background: url('../img/footer-water.webp') center / cover no-repeat;   /* присланный заказчиком фон «ночная вода»; по центру картинки — тёмная часть, надписи ≥5:1 на ширинах 390–2000 */
 }
 
 /* HUD-рамка: линия + центр-ромб + уголки */
@@ -2164,7 +2158,7 @@ body.menu-open { overflow: hidden; }
 .footer__panel {
   border: 1px solid rgba(96,162,255,.35);
   border-radius: 14px;
-  background: rgba(6,14,28,.62);
+  background: rgba(var(--foot-rgb),.6);
   backdrop-filter: blur(3px);
   padding: 4px 20px;
   box-shadow: inset 0 0 34px rgba(12,34,72,.45), 0 8px 30px rgba(0,0,0,.35);
@@ -2272,7 +2266,7 @@ body.menu-open { overflow: hidden; }
 /* ─── Копирайт ─────────────────────────────────────────────────────────── */
 .footer__bottom { position: relative; padding: 10px 0; border-top: 1px solid var(--border-subtle); }
 .footer__bottom p {
-  font-size: 13px; color: var(--text-muted);
+  font-size: 13px; color: var(--text-secondary);   /* на светлом подвале --text-muted давал 4,1:1 (<4,5) */
   text-align: center; letter-spacing: 0.02em;
 }
 
@@ -2552,7 +2546,7 @@ body.menu-open { overflow: hidden; }
 }
 
 /* Баннер под меню (перед видеоблоком): фото города на всю ширину, слева стандартный логотип сайта, название и кнопка «ВЭБ-ПОРТАЛ».
-   Картинка img/banner-city.webp — без светлых полос и линий по краям, масштабируется «cover» с привязкой к правому краю (небоскрёбы всегда в кадре).
+   Картинка img/banner-night-city.webp (присланный заказчиком «Ночной город», 3840×588; слева тёмный фон, город справа) масштабируется «cover» с привязкой к правому верхнему краю (небоскрёбы всегда в кадре).
    Высота: доля первого экрана --tb-share (меню не считается), см. --tb-h в :root; логотип, название и кнопка считаются от высоты баннера,
    чтобы всё помещалось на любом экране. */
 .top-banner {
@@ -2561,7 +2555,7 @@ body.menu-open { overflow: hidden; }
   height: var(--tb-h);
   overflow: hidden;
   isolation: isolate;
-  background: #020b24 url('../img/banner-city.webp') right top / cover no-repeat;   /* картинка прижата к верхнему краю: при подрезке баннера обрезается нижняя часть */
+  background: #020b24 url('../img/banner-night-city.webp') right top / cover no-repeat;   /* картинка прижата к верхнему краю: при подрезке баннера обрезается нижняя часть */
 }
 .top-banner__lines {
   position: absolute;
@@ -2615,7 +2609,7 @@ body.menu-open { overflow: hidden; }
   background-clip: text;
   -webkit-text-stroke: 0.028em transparent;   /* чуть плотнее начертание, как в образце */
 }
-.top-banner__portal { font-family: var(--font-banner); grid-area: portal; justify-self: start; align-self: start; --pb-h: max(44px, min(3.4vw, calc(var(--tb-ref) * 0.16))); }
+.top-banner__portal { font-family: var(--font-banner); grid-area: portal; justify-self: start; align-self: start; --pb-h: calc(max(44px, min(3.4vw, calc(var(--tb-ref) * 0.16))) * 0.7); }   /* на 30% меньше (замечание 07.11); на ≤860px ниже вернуто 44px — касание */
 
 /* Разделительные линии: верхняя (меню | видеоряд) и нижняя (видеоряд | баннер). Цвета — как у названия баннера
    (белый #fff → #d6e4fc → #7fa8ee, см. --rule-grad) и то же голубое свечение. Рисуются поверх, места в раскладке не занимают
@@ -2675,7 +2669,7 @@ body.menu-open { overflow: hidden; }
     /* слева темнее (под текстом), справа фото ярче; градиент — верхний слой фона */
     background:
       linear-gradient(90deg, rgba(2, 8, 26, 0.88) 0%, rgba(2, 8, 26, 0.6) 55%, rgba(2, 8, 26, 0.2) 100%),
-      #020b24 url('../img/banner-city.webp') 78% 0% / cover no-repeat;
+      #020b24 url('../img/banner-night-city.webp') 100% 0% / cover no-repeat;
   }
   .top-banner__content { position: relative; left: auto; top: auto; transform: none; padding: 0 var(--side); column-gap: 12px; row-gap: calc(var(--tb-ref) * 0.05); }
   .top-banner__logo { height: min(calc(var(--tb-ref) * 0.46), 124px); }
