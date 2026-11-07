@@ -16,6 +16,10 @@
 
 .eco, .eco *, .eco *::before, .eco *::after { box-sizing: border-box; }
 
+/* assets/type.css уменьшает Manrope через font-size-adjust (подгонка под прежние шрифты страниц); размеры этого блока заданы макетом,
+   поэтому подгонка снята — иначе текст на 18–22% мельче макета (замер 07.11.2026 по reference.png из архива). */
+.eco, .eco * { font-size-adjust: none !important; }
+
 .eco {
   position: relative;
   color: var(--color-text);
