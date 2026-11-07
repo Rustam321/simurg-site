@@ -2546,7 +2546,7 @@ body.menu-open { overflow: hidden; }
 }
 
 /* Баннер под меню (перед видеоблоком): фото города на всю ширину, слева стандартный логотип сайта, название и кнопка «ВЭБ-ПОРТАЛ».
-   Картинка img/banner-night-city.webp (присланный заказчиком «Ночной город», 3840×588; слева тёмный фон, город справа) масштабируется «cover» с привязкой к правому верхнему краю (небоскрёбы всегда в кадре).
+   Картинка img/banner-night-city-half.webp (присланный заказчиком SIMURG_Night_City_Banner_Half_3840x588: слева чистый тёмный фон под текстом, город занимает правую половину; 3840×588) масштабируется «cover» с привязкой к правому верхнему краю (небоскрёбы всегда в кадре).
    Высота: доля первого экрана --tb-share (меню не считается), см. --tb-h в :root; логотип, название и кнопка считаются от высоты баннера,
    чтобы всё помещалось на любом экране. */
 .top-banner {
@@ -2555,7 +2555,7 @@ body.menu-open { overflow: hidden; }
   height: var(--tb-h);
   overflow: hidden;
   isolation: isolate;
-  background: #020b24 url('../img/banner-night-city.webp') right top / cover no-repeat;   /* картинка прижата к верхнему краю: при подрезке баннера обрезается нижняя часть */
+  background: #020b24 url('../img/banner-night-city-half.webp') right top / cover no-repeat;   /* картинка прижата к верхнему краю: при подрезке баннера обрезается нижняя часть */
 }
 .top-banner__lines {
   position: absolute;
@@ -2669,7 +2669,7 @@ body.menu-open { overflow: hidden; }
     /* слева темнее (под текстом), справа фото ярче; градиент — верхний слой фона */
     background:
       linear-gradient(90deg, rgba(2, 8, 26, 0.88) 0%, rgba(2, 8, 26, 0.6) 55%, rgba(2, 8, 26, 0.2) 100%),
-      #020b24 url('../img/banner-night-city.webp') 100% 0% / cover no-repeat;
+      #020b24 url('../img/banner-night-city-half.webp') 100% 0% / cover no-repeat;
   }
   .top-banner__content { position: relative; left: auto; top: auto; transform: none; padding: 0 var(--side); column-gap: 12px; row-gap: calc(var(--tb-ref) * 0.05); }
   .top-banner__logo { height: min(calc(var(--tb-ref) * 0.46), 124px); }

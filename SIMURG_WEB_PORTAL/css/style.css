@@ -38,10 +38,10 @@ a:focus-visible,button:focus-visible{outline:3px solid #56a6ff;outline-offset:4p
 .ai-tagline{font-size:.875rem;font-weight:700;line-height:1.25;border-radius:1rem;background:#032969;padding:.1875rem 1.5rem;display:table;margin:0 auto .25rem}
 h1{font-size:1.875rem;line-height:1.12;font-weight:700;letter-spacing:.005rem}
 .hero-description{font-size:.9375rem;line-height:1.4;margin:.375rem auto .5rem;max-width:36rem}
-/* кнопки «голосовой диалог / написать сообщение»: сами кнопки меньше прежних (07.11.2026, просьба заказчика: «уменьшить только кнопки»): высота −30%, ширина −25% (уже не помещается подпись «ГОЛОСОВОЙ ДИАЛОГ» 17px), значок 36px, скругление −30%; размер текста прежний, поэтому отступы внутри минимальные */
-.communication-actions{display:grid;grid-template-columns:1.1fr 1fr;gap:.83125rem;max-width:28.25rem;margin-inline:auto}
-.communication-button{display:flex;align-items:center;gap:.5rem;justify-content:flex-start;min-height:3.4125rem;padding:.15rem .5rem;border-radius:.525rem;color:white;border:1px solid #63a3fc;font-size:1.0625rem;font-weight:700;line-height:1.35;text-align:center}
-.communication-button img{width:2.25rem;height:2.25rem;object-fit:contain;border-radius:50%;flex-shrink:0}
+/* кнопки «голосовой диалог / написать сообщение»: обе одного размера 208×46px (07.11.2026, просьба заказчика: «ещё уменьшить» и «одного размера»; было 305×78 и 278×78); подпись 15px (при 17px «ГОЛОСОВОЙ ДИАЛОГ» не помещается в 208px), значок 30px, высота ≥44px — касание */
+.communication-actions{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;max-width:26.75rem;margin-inline:auto}
+.communication-button{display:flex;align-items:center;gap:.5rem;justify-content:flex-start;min-height:2.875rem;padding:.1rem .5rem;border-radius:.45rem;color:white;border:1px solid #63a3fc;font-size:.9375rem;font-weight:700;line-height:1.35;text-align:center}
+.communication-button img{width:1.875rem;height:1.875rem;object-fit:contain;border-radius:50%;flex-shrink:0}
 .communication-button span{flex:1}
 .voice-button{background:linear-gradient(160deg,#074cd0,#003087 60%,#052963);box-shadow:inset 0 0 16px #3784d72b}
 .message-button{background:linear-gradient(140deg,#00595c,#008b7d);border-color:#00d4c4}
@@ -112,7 +112,7 @@ h1{font-size:1.875rem;line-height:1.12;font-weight:700;letter-spacing:.005rem}
  .hero-intro{padding-left:2rem}
  .hero-global{padding-right:1.5rem}
  .hero-global p{font-size:.8125rem}
- .communication-actions{width:min(calc((100% - 3rem)*.75),28.25rem);margin-inline:auto}
+ .communication-actions{width:min(calc(100% - 3rem),26.75rem);margin-inline:auto}
  .opportunity-card{padding-bottom:3.75rem}
  .hero-description{padding-inline:1rem}
  .hero-description .wide-break{display:none}
@@ -175,9 +175,7 @@ h1{font-size:1.875rem;line-height:1.12;font-weight:700;letter-spacing:.005rem}
  .ai-wordmark{font-size:2.625rem}
  h1{font-size:1.625rem}
  .hero-description{font-size:.875rem;line-height:1.4;padding-inline:.5rem}
- .communication-actions{width:75%;margin-inline:auto;gap:.525rem}
- .communication-button{gap:.5rem;padding:.15rem .5rem;font-size:.9375rem}
- .communication-button img{width:2.25rem;height:2.25rem}
+ .communication-actions{width:100%;margin-inline:auto}
  .privacy-note{font-size:.75rem}
 }
 @media(max-width:780px){
@@ -196,8 +194,6 @@ h1{font-size:1.875rem;line-height:1.12;font-weight:700;letter-spacing:.005rem}
  .ai-wordmark{font-size:2.75rem}
  h1{font-size:1.75rem}
  .hero-description{font-size:.9375rem;max-width:34rem;margin-block:.75rem 1rem}
- .communication-actions{max-width:28.25rem;margin-inline:auto}
- .communication-button{font-size:1rem}
  .privacy-note{font-size:.8125rem;margin-top:1rem}
  .hero-intro{grid-row:2;grid-column:1;padding:1rem 1.25rem 1.25rem;justify-content:flex-start}
  .entry-title{font-size:.9375rem}
@@ -245,9 +241,7 @@ h1{font-size:1.875rem;line-height:1.12;font-weight:700;letter-spacing:.005rem}
  h1{font-size:1.5rem;line-height:1.18}
  h1 br{display:none}
  .hero-description{font-size:1rem;line-height:1.4;padding:0;margin-block:.875rem 1rem}
- .communication-actions{grid-template-columns:minmax(0,1fr);gap:.525rem;width:max(75%,13.75rem)}
- .communication-button{font-size:1rem;min-height:3.4125rem;padding:.15rem .5rem}
- .communication-button img{width:2.25rem;height:2.25rem}
+ .communication-actions{grid-template-columns:min(100%,13rem);justify-content:center;gap:.5rem}
  .privacy-note{font-size:.8125rem;align-items:flex-start;max-width:15rem;margin-inline:auto;line-height:1.4}
  .privacy-note svg{margin-top:.125rem}
  .hero-intro{grid-column:1;grid-row:2;padding:1rem 1rem 1.25rem}
