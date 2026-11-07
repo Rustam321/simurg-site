@@ -464,7 +464,7 @@ body.menu-open { overflow: hidden; }
   left: var(--hs-left);
   top: 50%;
   transform: translateY(-50%);
-  width: calc(50% - var(--hs-left) - 6px);   /* только текст, у левого края; не заходит дальше середины экрана, длинные строки переносятся */
+  width: calc(55% - var(--hs-left) - 6px);   /* только текст, у левого края; до 55% ширины экрана (заказчик 07.11: «разрешаю, но не на много»; было 50% — середина), длинные строки переносятся */
 }
 /* минимальная высота фиксирована: текст не «прыгает» между сценами из 1, 2 и 3 строк */
 .hero-stage__text {
@@ -568,9 +568,9 @@ body.menu-open { overflow: hidden; }
   .hero-stage__title { line-height: 1.12; }
   .hero-stage__plate::before { inset: calc(var(--hs-fs) * -1.4) calc(var(--hs-fs) * -2.2); background: radial-gradient(ellipse closest-side at 50% 50%, rgba(2, 8, 22, 0.8) 0%, rgba(2, 8, 22, 0.72) 50%, rgba(2, 8, 22, 0.45) 80%, rgba(2, 8, 22, 0) 100%); }
 }
-/* планшеты и горизонтальные телефоны: текст по-прежнему не заходит дальше середины экрана (на узких телефонах половины не хватает на слово) */
+/* планшеты и горизонтальные телефоны: та же ширина текста — до 55% экрана (на узких телефонах доли экрана не хватает на слово) */
 @media (min-width: 600px) and (max-width: 860px) {
-  .hero-stage__content { right: auto; width: calc(50% - var(--hs-left) - 6px); }
+  .hero-stage__content { right: auto; width: calc(55% - var(--hs-left) - 6px); }
 }
 /* Мониторы и большие планшеты (от 768px): текст видеоряда — РОВНО в 2 строки, без автопереноса (строки заданы в js/hero-data.js);
    кегль подбирает js/hero.js (applyCommonSize) так, чтобы самая длинная строка помещалась в блок до середины экрана. На телефонах (<768px)

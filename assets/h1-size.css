@@ -1,9 +1,0 @@
-/* Заголовок h1 — того же размера, что на «Международной экспертизе» (07.11.2026, просьба заказчика).
-   Копия правил h1 из expertise/css/style.css: ≥1051px — clamp(2R, 3,565vw, 2,5R), где R = html{font-size:clamp(16px,1.34vw,21px)};
-   801–1050 — 2,375rem; 561–800 — clamp(1.75rem,4.7vw,2.25rem); ≤560 — clamp(1.625rem,5.8vw,2rem) (rem = 16px).
-   Подключён на «Проектном финансировании», «Гарантии исполнения», «Юридической ответственности»: у каждой свой корневой размер шрифта, поэтому здесь px/vw, а не rem.
-   Изменили заголовок на экспертизе — поправьте и здесь. */
-h1{--h1r:clamp(16px,1.34vw,21px);font-size:clamp(2*var(--h1r),3.565vw,2.5*var(--h1r))!important}
-@media(max-width:1050px){h1{font-size:38px!important}}
-@media(max-width:800px){h1{font-size:clamp(28px,4.7vw,36px)!important}}
-@media(max-width:560px){h1{font-size:clamp(26px,5.8vw,32px)!important}}

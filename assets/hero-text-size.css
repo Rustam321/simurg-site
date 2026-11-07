@@ -1,0 +1,12 @@
+/* Размеры текста героя — как на «Международной экспертизе» (07.11.2026, просьба заказчика: «такой же размер», «соответствующие размеры шрифта»).
+   Копия правил expertise/css/style.css: h1, .hero-subtitle (подзаголовок), .hero-description (вводный абзац) и html{font-size:clamp(16px,1.34vw,21px)} (= --hr).
+   Подключён на «Проектном финансировании», «Гарантии исполнения», «Юридической ответственности»: у каждой свой корневой размер шрифта, поэтому здесь px/vw, а не rem.
+   Соответствие: подзаголовок — .hero-subtitle (экспертиза, проектное финансирование); вводный абзац — .hero-description (экспертиза, проектное финансирование,
+   два абзаца в шапке гарантии, синий .subtitle юридической). Изменили эти размеры на экспертизе — поправьте и здесь. */
+:root{--hr:clamp(16px,1.34vw,21px)}
+h1{font-size:clamp(2*var(--hr),3.565vw,2.5*var(--hr))!important}
+.hero-subtitle{font-size:calc(1.625*var(--hr))!important}
+.hero-description{font-size:calc(1.0625*var(--hr))!important}
+@media(max-width:1050px){h1{font-size:38px!important}.hero-subtitle{font-size:24px!important}.hero-description{font-size:16px!important}}
+@media(max-width:800px){h1{font-size:clamp(28px,4.7vw,36px)!important}.hero-subtitle{font-size:22.4px!important}}
+@media(max-width:560px){h1{font-size:clamp(26px,5.8vw,32px)!important}.hero-subtitle{font-size:20px!important}}
