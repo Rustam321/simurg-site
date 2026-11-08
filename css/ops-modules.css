@@ -135,7 +135,6 @@
     display: flex;
     align-items: center;
     padding: var(--ops-pad-t) 0 var(--ops-pad-b);
-    scroll-snap-align: none;
   }
   .ops__body { gap: clamp(28px, 4vw, 72px); }
   /* правая колонка не ниже схемы и заканчивается на уровне нижней границы нижнего круга (край кольца на y=1122 из 1140 → 98,8% ширины схемы):
