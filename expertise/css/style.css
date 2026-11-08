@@ -18,7 +18,7 @@ ul,ol{margin:0;padding:0;list-style:none}
 .container{width:min(calc(100% - var(--gutter)*2),var(--container-width));margin-inline:auto}
 .marginal{font-family:var(--font-caption);font-size:.5rem;line-height:1.65;letter-spacing:.125rem;font-weight:400;color:var(--color-note)}
 .opening{position:relative;isolation:isolate}
-.hero-art{position:absolute;inset:0;z-index:-1;width:min(100%,var(--frame-width));height:19.875rem;margin-inline:auto;background:url("../img/hero/scene-clean.webp") center top/70.125rem 19.875rem no-repeat}
+.hero-art{position:absolute;inset:0;z-index:-1;width:min(100%,var(--frame-width));height:19.875rem;margin-inline:auto;background:url("../img/hero/scene-soft.webp") center top/70.125rem 19.875rem no-repeat}
 .site-header{height:5.25rem;padding: .625rem 2.9375rem 0 3.375rem;display:flex;align-items:flex-start;position:relative;gap:4.3125rem}
 .brand{flex:0 0 10.9375rem}
 .brand img{width:10.9375rem;mix-blend-mode:multiply}
@@ -46,7 +46,7 @@ main,.footer-statement{font-family:"Simurg Reference",var(--font-body)}
 .section-heading h2{grid-column:2;grid-row:1}
 .section-heading::after{grid-column:3;grid-row:1}
 .section-heading h2{font-size:1.8125rem;line-height:1.1;text-align:center;flex:0 1 auto;letter-spacing:-.025rem}
-.section-heading .marginal{position:absolute;right:0;top:50%;transform:translateY(-50%);padding-left:1rem;background:var(--color-background);min-width:6.125rem}
+.section-heading .marginal{position:absolute;right:0;top:50%;transform:translateY(-50%);padding-left:1rem;min-width:6.125rem}
 .section-heading::after{margin-right:7.5rem}
 .glass-card{border:1px solid #fff;border-radius:var(--radius);background:linear-gradient(120deg,rgba(255,255,255,.23),rgba(255,255,255,.06));min-width:0}
 .intelligence-grid,.geography-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.625rem}
