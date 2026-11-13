@@ -53,7 +53,7 @@ document.querySelectorAll('.modal').forEach(dialog => {
 const searchEntries = [
   ['about', 'О компании — финансовая инфраструктура'],
   ['trade', 'Международная торговля — единая цифровая среда'],
-  ['leaders', 'Руководители — контакты'],
+  ['leaders', 'Руководители'],
   ['payments', 'Расчеты'], ['financing', 'Финансирование'],
   ['risks', 'Управление рисками'], ['capital', 'Капитал']
 ].map(([id, title]) => ({ id, title, text: document.getElementById(id).textContent.toLocaleLowerCase('ru') + ' ' + title.toLocaleLowerCase('ru') }));

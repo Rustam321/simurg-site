@@ -195,28 +195,21 @@
   transform: scale(1.06);
 }
 
+/* 13.11.2026, просьба заказчика: на глобусе убраны логотип и «SIMURG-БАНК» — единственная надпись «финансовый центр глобальных сделок», жирнее, по центру */
 .eco-globe-copy {
   position: absolute;
-  top: 44%;
+  top: 50%;
+  transform: translateY(-50%);
   inset-inline: 2.5%;
   text-align: center;
   color: #031c36;
 }
 
-.eco-globe-copy h2 {
-  font-size: 10.6cqi;
-  line-height: 1.18;
-  letter-spacing: -.035em;
-  font-weight: 800;
-  white-space: nowrap;
-}
-
 .eco-globe-copy p {
-  margin-top: .05em;
-  font-size: 6.75cqi;
+  font-size: 7.8cqi;
   line-height: 1.08;
-  letter-spacing: -.025em;
-  font-weight: 500;
+  letter-spacing: -.03em;
+  font-weight: 700;
 }
 
 .eco-benefits {

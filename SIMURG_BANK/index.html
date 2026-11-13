@@ -8,12 +8,14 @@
   <title>SIMURG-БАНК — финансовая инфраструктура для глобальной торговли</title>
   <meta name="description" content="SIMURG-БАНК — финансовый центр глобальных сделок. Расчеты, торговое финансирование, управление рисками и капитал для международного бизнеса.">
   <meta name="theme-color" content="#082040">
-  <link rel="stylesheet" href="css/style.css?v=20261200">
-  <link rel="stylesheet" href="css/ecosystem.css?v=2">
+  <link rel="stylesheet" href="css/style.css?v=20261201">
+  <link rel="stylesheet" href="css/ecosystem.css?v=3">
+  <link rel="stylesheet" href="css/leadership.css?v=1">
 <link rel="stylesheet" href="../css/fonts.css?v=20261120">
 <link rel="stylesheet" href="../assets/type.css?v=20261177">
   <script src="js/config.js" defer></script>
   <script src="js/main.js" defer></script>
+  <script src="js/leadership.js?v=1" defer></script>
 <script>if(window.self!==window.top)document.documentElement.classList.add('sx-embedded')</script>
 <link rel="stylesheet" href="../assets/no-overlay.css?v=2"><script src="../assets/no-overlay.js?v=2" defer></script><link rel="stylesheet" href="../assets/scroll-padding.css?v=1">
 </head>
@@ -52,12 +54,40 @@
     </section>
     <section class="leaders wide-container" id="leaders" aria-labelledby="leaders-title">
       <header class="section-heading"><h2 id="leaders-title">РУКОВОДИТЕЛИ</h2><span class="heading-rule" aria-hidden="true"></span><p>ЛЮДИ. ОПЫТ. ГЛОБАЛЬНЫЕ РЕШЕНИЯ.</p></header>
-      <div class="leaders-grid">
-        <article class="leader-card"><img class="portrait" src="img/sections/ivanov.webp" alt="Иванов Александр" width="227" height="125"><div class="leader-info"><h3>Иванов Александр</h3><p class="leader-role">Председатель Правления</p><p class="leader-handle"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="4.5" r="2.5"/><path d="M3 14v-2a5 5 0 0 1 10 0v2z"/></svg>@a.ivanov</p></div></article>
-        <article class="leader-card"><img class="portrait" src="img/sections/petrova.webp" alt="Петрова Елена" width="237" height="125"><div class="leader-info"><h3>Петрова Елена</h3><p class="leader-role">Заместитель Председателя Правления</p><p class="leader-handle"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="4.5" r="2.5"/><path d="M3 14v-2a5 5 0 0 1 10 0v2z"/></svg>@e.petrova</p></div></article>
-        <article class="leader-card"><img class="portrait" src="img/sections/smirnov.webp" alt="Смирнов Дмитрий" width="233" height="125"><div class="leader-info"><h3>Смирнов Дмитрий</h3><p class="leader-role">Директор по международному бизнесу</p><p class="leader-handle"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="4.5" r="2.5"/><path d="M3 14v-2a5 5 0 0 1 10 0v2z"/></svg>@d.smirnov</p></div></article>
-        <article class="leader-card"><img class="portrait" src="img/sections/kuznetsova.webp" alt="Кузнецова Ольга" width="230" height="125"><div class="leader-info"><h3>Кузнецова Ольга</h3><p class="leader-role">Директор по развитию</p><p class="leader-handle"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="4.5" r="2.5"/><path d="M3 14v-2a5 5 0 0 1 10 0v2z"/></svg>@o.kuznetsova</p></div></article>
-      </div>
+      <section class="simurg-leadership" aria-label="Руководство SIMURG" lang="ru">
+        <div class="simurg-leadership__row">
+          <article class="simurg-leadership__card is-active">
+            <button class="simurg-leadership__trigger" type="button"
+                    aria-expanded="true" aria-controls="sl-marina">
+              <img class="simurg-leadership__photo simurg-leadership__photo--marina"
+                   src="img/leadership/marina-panasovskaya.webp" alt="" width="1007" height="1280" loading="lazy" decoding="async">
+              <span class="simurg-leadership__caption">Марина Панасовская</span>
+            </button>
+            <div class="simurg-leadership__details" id="sl-marina">
+              <h3 class="simurg-leadership__name">Марина Панасовская</h3>
+              <p class="simurg-leadership__role" lang="en">Director of Deal Execution, Risk and Compliance</p>
+              <p class="simurg-leadership__description">Сопровождение сделок, управление рисками и комплаенс.</p>
+              <!-- Замените span ссылкой после согласования URL профиля. -->
+              <span class="simurg-leadership__profile">Личный профиль · готовится</span>
+            </div>
+          </article>
+          <article class="simurg-leadership__card">
+            <button class="simurg-leadership__trigger" type="button"
+                    aria-expanded="false" aria-controls="sl-nikita">
+              <img class="simurg-leadership__photo simurg-leadership__photo--nikita"
+                   src="img/leadership/nikita-semkovskiy.webp" alt="" width="1800" height="1800" loading="lazy" decoding="async">
+              <span class="simurg-leadership__caption">Никита Семковский</span>
+            </button>
+            <div class="simurg-leadership__details" id="sl-nikita" inert>
+              <h3 class="simurg-leadership__name">Никита Семковский</h3>
+              <p class="simurg-leadership__role" lang="en">Director of Analytics and Data Intelligence</p>
+              <p class="simurg-leadership__description">Аналитика и работа с данными для поддержки решений.</p>
+              <!-- Замените span ссылкой после согласования URL профиля. -->
+              <span class="simurg-leadership__profile">Личный профиль · готовится</span>
+            </div>
+          </article>
+        </div>
+      </section>
     </section>
     <div class="eco" id="ecosystem">
       <section class="eco-ecosystem eco-container" aria-labelledby="ecosystem-title">
@@ -102,10 +132,9 @@
                 </svg>
                 <div class="eco-globe">
                   <div class="eco-globe-surface">
-                    <img class="eco-globe-art" src="img/ecosystem/globe.webp" alt="Серебряная птица Симург на голубом земном шаре" width="1254" height="1254" loading="lazy" decoding="async">
+                    <img class="eco-globe-art" src="img/ecosystem/globe-clean.webp" alt="Земной шар с сетью международных связей" width="1254" height="1254" loading="lazy" decoding="async">
                   </div>
                   <div class="eco-globe-copy">
-                    <h2>SIMURG-БАНК</h2>
                     <p>финансовый центр<br>глобальных сделок</p>
                   </div>
                 </div>

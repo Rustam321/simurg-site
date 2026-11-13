@@ -58,14 +58,6 @@ h1 small{display:block;font-size:2rem;line-height:1.13;font-weight:400;letter-sp
 .heading-rule{height:1px;flex:1;background:#92a7b4;min-width:2rem}
 .leaders .heading-rule{flex:0 1 5.75rem}
 .leaders .section-heading p{margin-left:auto;margin-right:5.625rem}
-.leaders-grid{display:grid;grid-template-columns:.98fr 1.02fr 1.01fr 1fr;gap:.875rem;margin-top:.75rem}
-.leader-card{min-width:0;border:1px solid #d4e2ec;border-radius:.375rem;background:linear-gradient(#ecf5fc,#e5f0fa);box-shadow:0 1px 2px #5b7d9620}
-.portrait{width:100%;height:7.75rem;object-fit:cover;object-position:center top;border-radius:.3125rem .3125rem 0 0}
-.leader-info{padding:.5rem .8125rem .375rem;min-height:4.0625rem}
-.leader-info h3{font-size:.875rem;line-height:1.15;color:#102d48;font-weight:700;letter-spacing:-.025rem}
-.leader-role{font-size:.6875rem;line-height:1.25;color:#4b6270;margin-top:.125rem}
-.leader-handle{display:flex;gap:.375rem;align-items:center;font-size:.75rem;line-height:1.2;margin-top:.1875rem;color:#213d52}
-.leader-handle svg{width:.75rem;height:.75rem;fill:none;stroke:currentColor;stroke-width:1.3;flex-shrink:0}
 
 
 
@@ -116,8 +108,6 @@ h1 small{display:block;font-size:2rem;line-height:1.13;font-weight:400;letter-sp
  h1 small{font-size:1.875rem}
  .hero-note-top,.hero-note-bottom{right:1rem}
  .leaders .section-heading p{margin-right:0}
- .leader-info{padding-inline:.625rem}
- .leader-role{font-size:.6875rem}
  
  
  
@@ -139,12 +129,6 @@ h1 small{display:block;font-size:2rem;line-height:1.13;font-weight:400;letter-sp
  .hero-note-bottom{display:block;position:static;width:auto;max-width:39rem;margin:1rem 1.5rem 0;color:#26495f;text-shadow:none;letter-spacing:.1rem}
  .hero-note-bottom br{display:none}
  .leaders{padding:1rem 1.25rem}
- .leaders-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
- .portrait{height:auto;aspect-ratio:1.85;object-fit:cover}
- .leader-info{padding:.75rem 1rem;min-height:5.25rem}
- .leader-info h3{font-size:1rem;letter-spacing:0}
- .leader-role,.leader-handle{font-size:.875rem;line-height:1.35}
- .leader-handle svg{width:.875rem;height:.875rem}
  
  
  
@@ -217,11 +201,6 @@ h1 small{display:block;font-size:2rem;line-height:1.13;font-weight:400;letter-sp
  .benefit h2{font-size:1.25rem}.benefit p{font-size:1rem;line-height:1.45;margin-top:.5rem}
  .hero-note-top,.hero-note-bottom{margin-inline:1.125rem;font-size:.5625rem;letter-spacing:.08125rem}
  .leaders{padding:1rem;margin-top:1rem}
- .leaders-grid{grid-template-columns:minmax(0,1fr);gap:1rem}
- .leader-info{padding:.875rem 1rem;min-height:0}
- .leader-info h3{font-size:1.0625rem}
- .leader-role,.leader-handle{font-size:.9375rem;line-height:1.4}
- .leader-handle{margin-top:.375rem}
  
  
  
