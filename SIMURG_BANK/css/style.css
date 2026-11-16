@@ -56,8 +56,6 @@ h1 small{display:block;font-size:2rem;line-height:1.13;font-weight:400;letter-sp
 .section-heading h2{color:#1a3043;font-size:.8125rem;line-height:1.3;font-weight:700;letter-spacing:.075rem;white-space:nowrap}
 .section-heading p{font-size:.46875rem;line-height:1.4;letter-spacing:.0875rem;color:#647a89;white-space:nowrap}
 .heading-rule{height:1px;flex:1;background:#92a7b4;min-width:2rem}
-.leaders .heading-rule{flex:0 1 5.75rem}
-.leaders .section-heading p{margin-left:auto;margin-right:5.625rem}
 
 
 
@@ -107,7 +105,6 @@ h1 small{display:block;font-size:2rem;line-height:1.13;font-weight:400;letter-sp
  h1>span{font-size:2.625rem}
  h1 small{font-size:1.875rem}
  .hero-note-top,.hero-note-bottom{right:1rem}
- .leaders .section-heading p{margin-right:0}
  
  
  
@@ -165,7 +162,6 @@ h1 small{display:block;font-size:2rem;line-height:1.13;font-weight:400;letter-sp
  .hero-note-bottom{margin-top:.5rem;line-height:1.6}
  .section-heading{flex-wrap:wrap;gap:.625rem 1rem}
  .section-heading p{white-space:normal;font-size:.5625rem;line-height:1.5}
- .leaders .section-heading p{margin-left:0;flex-basis:100%}
  .section-heading h2{white-space:normal;line-height:1.4}
  
  
