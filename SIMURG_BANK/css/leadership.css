@@ -1,7 +1,8 @@
 /* «Команда SIMURG» — присланный пакет SIMURG-component-wide (заказчик, 15.11.2026): 4 карточки, фото 4:3 (1448×1086), дизайн и поведение пакета.
    Отличия: (1) px переведены в rem — страница банка масштабируется по корневому размеру шрифта, блок растёт вместе с ней; (2) число колонок 4/2/1
    переключается по ширине самого блока (@container, пороги в rem), а не окна; (3) по просьбе заказчика нет подписи «Иллюстрация для макета»,
-   примечания под блоком и счётчика «01 — 04»; (4) font-size-adjust из assets/type.css снят (кегли заданы макетом). Карточки без ссылок. */
+   примечания под блоком и счётчика «01 — 04»; (4) font-size-adjust из assets/type.css снят (кегли заданы макетом). Карточки без ссылок.
+   16.11.2026, просьба заказчика: ФИО и должность — в тёмно-серых плашках с белым текстом (как карточки вверху страницы), текст мельче; анимация фото — «живой портрет» (наклон за курсором, блик, приближение, приглушение соседей). */
 .simurg-leadership {
   container: simurg-leadership / inline-size;
   --sl-border: #b7c8d5;
@@ -14,21 +15,35 @@
 .simurg-leadership, .simurg-leadership * { box-sizing: border-box; font-size-adjust: none !important; }
 .simurg-leadership__label { margin: 0; padding: 1.375rem 0 1rem; border-top: 1px solid #b7c8d580; font-size: .75rem; font-weight: 400; line-height: 1.3; color: var(--sl-muted); }
 .simurg-leadership__grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.375rem; padding-top: .5rem; }
-.simurg-leadership__card { min-width: 0; margin: 0; }
-.simurg-leadership__photo { aspect-ratio: 4 / 3; background: #d4dee6; border: 1px solid var(--sl-border); border-radius: .8125rem; box-shadow: 0 3px 8px #18334f06; overflow: hidden; transition: transform 350ms ease-out, border-color 350ms ease-out, box-shadow 350ms ease-out; }
-.simurg-leadership__photo img { display: block; width: 100%; height: 100%; object-fit: contain; }
-.simurg-leadership__caption { padding: 1.0625rem .125rem 0; }
-.simurg-leadership__name { margin: 0 0 .5625rem; font-size: 1.0625rem; font-weight: 600; line-height: 1.35; letter-spacing: -.025em; }
-.simurg-leadership__role { margin: 0; min-height: 5.25rem; font-size: .875rem; line-height: 1.5; color: var(--sl-muted); }
-@media (hover: hover) and (pointer: fine) { .simurg-leadership__card:hover .simurg-leadership__photo { transform: translateY(-4px); border-color: var(--sl-hover); box-shadow: 0 7px 15px #18334f12; } }
+.simurg-leadership__card { position: relative; display: flex; flex-direction: column; min-width: 0; margin: 0; transition: opacity .3s ease, transform .4s cubic-bezier(.2, .7, .2, 1); }
+.simurg-leadership__photo { position: relative; aspect-ratio: 4 / 3; background: #d4dee6; border: 1px solid var(--sl-border); border-radius: .8125rem; box-shadow: 0 3px 8px #18334f06; overflow: hidden; transform: perspective(60rem) translateY(var(--sl-lift, 0)) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)); transition: transform .28s cubic-bezier(.2, .7, .2, 1), border-color .35s ease-out, box-shadow .4s ease-out; will-change: transform; }
+.simurg-leadership__photo img { display: block; width: 100%; height: 100%; object-fit: contain; transform: translate3d(var(--px, 0%), var(--py, 0%), 0) scale(var(--sc, 1)); transition: transform .4s cubic-bezier(.2, .7, .2, 1); }
+.simurg-leadership__photo::after { content: ""; position: absolute; inset: 0; pointer-events: none; opacity: 0; background: radial-gradient(circle at var(--gx, 50%) var(--gy, 35%), #ffffff42, transparent 58%); transition: opacity .35s ease-out; }
+/* Подпись — тёмно-серая плашка с белым текстом, как карточки «Единая цифровая среда» вверху страницы (те же цвета, рамка и скругление из style.css) */
+.simurg-leadership__caption { flex: 1; margin-top: .625rem; padding: .6875rem .875rem .75rem; color: #f7fcff; background: linear-gradient(125deg, var(--card-top, #506b85), var(--card-bottom, #405e78)); border: 1px solid #7892a8; border-radius: var(--radius, .4375rem); box-shadow: 0 7px 18px #3352690a; transition: transform .4s cubic-bezier(.2, .7, .2, 1), border-color .35s ease-out, box-shadow .4s ease-out; }
+.simurg-leadership__name { margin: 0; font-size: .9375rem; font-weight: 700; line-height: 1.2; letter-spacing: -.025em; }
+.simurg-leadership__role { margin: .375rem 0 0; font-size: .75rem; line-height: 1.4; letter-spacing: -.01em; color: #edf4f9; }
+/* Наведение (мышь/тачпад): фото приподнимается и наклоняется вслед за курсором (js/team.js), портрет приближается и сдвигается, по рамке бегает блик,
+   плашка поднимается, остальные карточки приглушаются — движение «собирается» вокруг выбранного человека */
+@media (hover: hover) and (pointer: fine) {
+  .simurg-leadership__card:hover { z-index: 2; }
+  .simurg-leadership__card:hover .simurg-leadership__photo { --sl-lift: -.5rem; border-color: var(--sl-hover); box-shadow: 0 1.1rem 1.9rem #18334f2e, 0 .25rem .6rem #18334f1a; }
+  .simurg-leadership__card:hover .simurg-leadership__photo img { --sc: 1.08; }
+  .simurg-leadership__card:hover .simurg-leadership__photo::after { opacity: 1; }
+  .simurg-leadership__card:hover .simurg-leadership__caption { transform: translateY(-.25rem); border-color: #a9c4d8; box-shadow: 0 .6rem 1.2rem #33526933; }
+  .simurg-leadership__grid:has(.simurg-leadership__card:hover) .simurg-leadership__card:not(:hover) { opacity: .62; transform: scale(.97); }
+}
 @container simurg-leadership (max-width: 52rem) {
   .simurg-leadership__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.875rem 1.375rem; max-width: 36.375rem; margin-inline: auto; }
-  .simurg-leadership__role { min-height: 3.9375rem; }
 }
 @container simurg-leadership (max-width: 24rem) {
   .simurg-leadership__grid { grid-template-columns: 1fr; gap: 2rem; }
   .simurg-leadership__card { width: min(100%, 17.5rem); justify-self: center; }
-  .simurg-leadership__role { min-height: 0; }
-  .simurg-leadership__name { font-size: 1.125rem; }
+  .simurg-leadership__name { font-size: 1rem; }
+  .simurg-leadership__role { font-size: .8125rem; }
 }
-@media (prefers-reduced-motion: reduce) { .simurg-leadership__photo { transition: none !important; transform: none !important; } }
+@media (prefers-reduced-motion: reduce) {
+  .simurg-leadership__card, .simurg-leadership__photo, .simurg-leadership__photo img, .simurg-leadership__caption { transition: none !important; transform: none !important; }
+  .simurg-leadership__photo::after { display: none; }
+  .simurg-leadership__grid .simurg-leadership__card { opacity: 1 !important; }
+}
