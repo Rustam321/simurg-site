@@ -14,7 +14,7 @@
   -webkit-font-smoothing: antialiased;
   /* фон из архива simurg-bank: глубокий синий с мягким радиальным светом за центральным элементом (возвращён 16.11.2026) */
   background:
-    radial-gradient(ellipse 608px 496px at 50% 320px, #08477860, transparent 82%),
+    radial-gradient(ellipse 608px 496px at 50% 390px, #08477860, transparent 82%),
     linear-gradient(110deg, #03172b, #041b32 52%, #02152a);
 }
 
