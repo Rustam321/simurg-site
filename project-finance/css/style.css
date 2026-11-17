@@ -187,16 +187,19 @@ h1{
 .hero-side-left .caption-line{
   width:2rem
 }
-.coordinates{
-  position:absolute;
-  right:1.375rem;
-  top:9.875rem;
-  font-size:.625rem;
-  letter-spacing:.05rem;
-  text-align:left
-}
 .architecture{
   position:relative
+}
+/* Пояснения под схемой и под последовательностью этапов (ТЗ 17.11.2026): обычным читаемым шрифтом, под соответствующим блоком */
+.pf-note{
+  max-width:44rem;
+  margin:2rem auto 1rem;
+  padding-inline:1rem;
+  text-align:center;
+  font-size:.9375rem;
+  line-height:1.45;
+  color:#345f7d;
+  text-wrap:balance
 }
 .architecture-diagram{
   width:min(calc(100% - 10rem),66rem);
@@ -335,12 +338,12 @@ h1{
 .architecture-side-left{
   position:absolute;
   left:2.3125rem;
-  top:17.6875rem
+  bottom:0   /* 17.11.2026: новые подписи длиннее и схема выше — подписи уходят в нижние углы блока, рядом с пояснением, и не заходят на карточки */
 }
 .architecture-side-right{
   position:absolute;
   right:1.4375rem;
-  top:17.6875rem;
+  bottom:0;
   letter-spacing:.08rem;
   font-size:.5rem
 }
@@ -558,7 +561,8 @@ h1{
     width:.5625rem
   }
   .architecture-side-left,.architecture-side-right{
-    top:18.25rem;
+    top:auto;
+    bottom:0;
     font-size:.4375rem
   }
   .deal-architecture{
@@ -653,7 +657,7 @@ h1{
   .header-caption .caption-line{
     margin-top:.375rem
   }
-  .hero-side-left,.coordinates{
+  .hero-side-left{
     position:static;
     display:inline-block;
     vertical-align:top;
@@ -668,13 +672,6 @@ h1{
     display:none
   }
   .hero-side-left .caption-line{
-    margin-top:.4375rem
-  }
-  .coordinates{
-    font-size:.4375rem;
-    text-align:left
-  }
-  .coordinates .caption-line{
     margin-top:.4375rem
   }
   .hero{
@@ -712,7 +709,8 @@ h1{
   }
   .process li{
     font-size:.8125rem;
-    gap:.625rem
+    gap:.625rem;
+    white-space:normal   /* 17.11.2026: «СОГЛАСОВАНИЕ ФИНАНСИРОВАНИЯ» длиннее прежней подписи и на планшете переносится по словам */
   }
   .process img{
     width:3rem;
@@ -926,9 +924,6 @@ h1{
     margin-right:.5rem;
     font-size:.4375rem;
     letter-spacing:.06rem
-  }
-  .coordinates{
-    font-size:.4375rem
   }
   .architecture-diagram{
     grid-template-columns:minmax(0,1fr);

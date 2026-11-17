@@ -29,7 +29,7 @@ ul,ol{margin:0;padding:0;list-style:none}
 .down-chevron{width:.375rem;height:.375rem;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg);margin-top:-.2rem}
 .header-note{margin-left:auto;padding-top:.35rem;min-width:5.6rem}
 .header-note::after,.hero-note-left::after,.hero-note-right::after,.footer-note-left::after,.footer-note-right::after{content:"";display:block;width:2.0625rem;height:1px;background:var(--color-secondary);margin-top:.875rem}
-.hero{height:14.25rem;position:relative;text-align:center;padding-top:.6875rem;font-family:var(--font-body)}
+.hero{height:auto;min-height:14.25rem;position:relative;text-align:center;padding-top:.6875rem;padding-bottom:1.25rem;font-family:var(--font-body)}   /* 17.11.2026: шапка растёт вместе с новым текстом (было фиксированных 14,25rem) */
 .hero-copy{max-width:52rem;margin-inline:auto;padding-inline:1rem}
 h1{font-size:clamp(2rem,3.565vw,2.5rem);line-height:1.1;letter-spacing:-.035rem;white-space:normal}
 .hero-subtitle{font-size:1.625rem;line-height:1.14;margin-top:.375rem;color:#0b205c}
@@ -61,6 +61,7 @@ main,.footer-statement{font-family:"Simurg Reference",var(--font-body)}
 .intelligence-card:hover{border-color:#86accb}
 .geography{margin-top:1.1875rem}
 .geography .section-heading{margin-bottom:.25rem}
+.geography-note{max-width:60rem;margin:.375rem auto .875rem;padding-inline:1rem;text-align:center;font-size:.9375rem;line-height:1.4;color:var(--color-secondary);text-wrap:balance}   /* пояснение под заголовком «Направления поиска» (ТЗ 17.11.2026) */
 .geography .section-heading h2{font-size:1.625rem}
 .geography-card{min-height:13.8125rem;display:flex;flex-direction:column}
 .region-image{width:100%;aspect-ratio:255/124;object-fit:cover;border-radius:calc(var(--radius) - 1px) calc(var(--radius) - 1px) 0 0}

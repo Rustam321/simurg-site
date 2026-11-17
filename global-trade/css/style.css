@@ -93,23 +93,26 @@ h1, h2, h3, p { margin: 0; }
 .hero {
   position: relative;
   min-height: 14rem;
-  padding: 3.5625rem 8rem 0;
-  background: url("../img/hero/city.png") center bottom / cover no-repeat;
+  display: flex;   /* 17.11.2026: заголовок слева и по центру высоты шапки */
+  align-items: center;
+  padding: 0 8rem 0 1.75rem;   /* слева — по левому краю колонки с текстом (1,75rem = отступ блоков) */
+  background: url("../img/hero/glass-ribbons.webp?v=1") center bottom / cover no-repeat;   /* 17.11.2026: фон шапки по просьбе заказчика («Ледяная гармония стеклянных лент») вместо города */
 }
 h1 {
   font-family: "Roboto Condensed", "Arial Narrow", Arial, sans-serif;
   color: var(--navy);
   font-weight: 700;
-  font-size: clamp(1.875rem, 3.85vw, 2.5625rem);
+  font-size: clamp(2.75rem, 5.2vw, 4.5rem);   /* было clamp(1.875rem, 3.85vw, 2.5625rem), по центру — по просьбе заказчика 17.11.2026 крупнее и слева */
   line-height: 1.17;
-  text-align: center;
+  text-align: left;
 }
-h1 span { color: #356798; }
+h1 span { color: inherit; }   /* 17.11.2026: «О SIMURG» одним цветом (было: «SIMURG» голубым), по просьбе заказчика */
 .hero-caption {
   font-family: "Roboto Condensed", "Arial Narrow", Arial, sans-serif;
   position: absolute;
   inset: 2.5rem 3.9375rem auto auto;
-  color: #75899e;
+  color: #3b566e;   /* темнее прежнего #75899e: подпись лежит на серебристой ленте нового фона */
+  text-shadow: 0 0 .5rem #ffffffcc, 0 0 .125rem #ffffff99;
   font-size: .625rem;
   font-weight: 700;
   line-height: 1.5;
@@ -209,6 +212,7 @@ h1 span { color: #356798; }
 .info-row h2 .regular { font-weight: 400; }
 .model h2, .advantage h2 { font-size: 1.6875rem; }
 .model h2 { line-height: 1.3; }
+.model h2 .accent { font-size: .82em; }
 .accent { color: var(--blue); }
 .info-row > p {
   min-width: 0;
@@ -227,6 +231,8 @@ h1 span { color: #356798; }
   position: relative;
   min-height: 13.5rem;
   padding: .625rem .75rem;
+  border-radius: .5625rem;
+  background: url("../img/sections/world-connections.webp?v=1") right center / cover no-repeat;   /* 17.11.2026: фон блока по просьбе заказчика («Изысканная карта глобальных связей») вместо картинки-карты справа */
 }
 .ecosystem-copy { position: relative; z-index: 1; }
 .logo { width: 12.1875rem; height: auto; margin-left: -.3125rem; }
@@ -236,14 +242,6 @@ h1 span { color: #356798; }
   font-size: 1.5rem;
   line-height: 1.31;
   letter-spacing: -.035rem;
-}
-.world-map {
-  position: absolute;
-  top: -.3125rem;
-  right: 0;
-  width: 30.125rem;
-  height: auto;
-  mix-blend-mode: darken;
 }
 .segments { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .6875rem; }
 .segment {
@@ -275,7 +273,7 @@ h1 span { color: #356798; }
 }
 
 @media (max-width: 62.5rem) {
-  .hero { padding-inline: 6rem; }
+  .hero { padding-inline: 1.5rem 6rem; }
   .hero-caption { right: 1.9375rem; font-size: .5625rem; }
   .info-row { grid-template-columns: 14.875rem minmax(0, 1fr); gap: 1.375rem; padding-inline: 1.5rem; }
   .info-row h2 { font-size: 1.75rem; }
@@ -292,8 +290,8 @@ h1 span { color: #356798; }
 }
 @media (max-width: 53.75rem) {
   .container { width: calc(100% - 2.5rem); }
-  .hero { min-height: 14rem; padding: 3rem 5.5rem 0 1.25rem; }
-  h1 { max-width: 36rem; margin-inline: auto; font-size: 2.125rem; }
+  .hero { min-height: 14rem; padding: 0 5.5rem 0 1.25rem; }
+  h1 { max-width: none; font-size: clamp(2.5rem, 6vw, 3.25rem); }
   .hero-caption { right: 1.25rem; top: 2rem; }
   .info-row { grid-template-columns: 13.125rem minmax(0, 1fr); gap: 1.25rem; padding: 1rem 1.25rem; }
   .info-row h2 { font-size: 1.5rem; letter-spacing: -.02rem; }
@@ -302,7 +300,9 @@ h1 span { color: #356798; }
   .info-row > p { font-size: 1.25rem; line-height: 1.35; }
   .ecosystem-intro { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, .9fr); gap: .75rem; min-height: 0; padding-bottom: 1rem; }
   .ecosystem-copy > p { font-size: 1.25rem; line-height: 1.4; margin-top: 1rem; }
-  .world-map { position: static; width: 100%; align-self: center; }
+  /* на планшете и телефоне карта — отдельной полосой справа от текста / под ним (как была картинка), текст не ложится на карту */
+  .ecosystem-intro { background: none; }
+  .ecosystem-intro::after { content: ""; align-self: center; aspect-ratio: 2 / 1; background: url("../img/sections/world-connections.webp?v=1") right center / 200% auto no-repeat; }
   .segments { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .segment:last-child { grid-column: 1 / -1; width: calc((100% - .6875rem) / 2); justify-self: center; }
   .segment { min-height: 15rem; padding: 1rem 1.125rem 1.5rem; }
@@ -310,8 +310,8 @@ h1 span { color: #356798; }
 }
 @media (max-width: 43.75rem) {
   .container { width: calc(100% - 2rem); }
-  .hero { min-height: 13.5rem; padding: 2rem 6rem 0 1rem; }
-  h1 { max-width: 24rem; font-size: clamp(1.75rem, 5vw, 2rem); line-height: 1.1; }
+  .hero { min-height: 13.5rem; padding: 0 6rem 0 1rem; }
+  h1 { max-width: none; font-size: clamp(2.25rem, 8.5vw, 2.75rem); line-height: 1.1; }
   .hero-caption { top: 1.875rem; right: 1.125rem; }
   .info-row { grid-template-columns: minmax(0, 1fr); gap: 1.125rem; padding: 1.125rem 1.25rem; min-height: 0; }
   .info-row h2 { display: block; font-size: 1.625rem; line-height: 1.15; padding-bottom: .875rem; }
@@ -322,7 +322,7 @@ h1 span { color: #356798; }
   .info-row > p { font-size: 1.25rem; line-height: 1.35; letter-spacing: 0; }
   .ecosystem-intro { grid-template-columns: minmax(0, 1fr); gap: 1rem; padding: .875rem .625rem 1.125rem; }
   .ecosystem-copy > p { width: 100%; }
-  .world-map { width: min(100%, 30.125rem); justify-self: center; }
+  .ecosystem-intro::after { width: min(100%, 30.125rem); justify-self: center; }
 }
 @media (max-width: 38.75rem) {
   .segments { grid-template-columns: minmax(0, 1fr); gap: .625rem; }
@@ -337,8 +337,8 @@ h1 span { color: #356798; }
 }
 @media (max-width: 23.4375rem) {
   .container { width: calc(100% - 1.5rem); }
-  .hero { min-height: 13.25rem; padding: 1.5rem 5.25rem 0 .75rem; }
-  h1 { font-size: 1.625rem; }
+  .hero { min-height: 13.25rem; padding: 0 5.25rem 0 .75rem; }
+  h1 { font-size: 2.25rem; }
   .hero-caption { top: 1.5rem; right: .75rem; font-size: .5rem; letter-spacing: .0625rem; }
   .info-row { padding: 1rem; }
   .info-row h2 { font-size: 1.5rem; }
@@ -360,7 +360,7 @@ h1 span { color: #356798; }
   /* баннер «О торговой системе SIMURG» — на всю ширину окна, картинка пропорционально; текст остаётся на своих местах */
   .hero {
     margin-inline: calc(-1 * var(--bleed));
-    padding-inline: calc(8rem + var(--bleed));
+    padding-inline: calc(1.75rem + var(--bleed)) calc(8rem + var(--bleed));
     min-height: max(14rem, calc(100vw * 224 / 1055));
   }
   .hero-caption { right: calc(3.9375rem + var(--bleed)); }
@@ -429,11 +429,11 @@ h1 span { color: #356798; }
 .segment-heading p { color: #2d5588; }
 .segment-glow { background: linear-gradient(90deg, transparent, #4a7fc1de, transparent); box-shadow: 0 -.125rem .5rem .125rem #4a7fc138; }
 
-/* Подписи справа от иконки («BUSINESS TO GOVERNMENT» и т. д.) — всегда в одну строку: кегль подгоняется под ширину карточки
-   (единицы контейнера .segment-heading: ширина карточки минус колонка иконки и зазор ≈ 7,8rem; самая длинная подпись ≈ 10,9 em), но не меньше 11px. */
+/* Подписи справа от иконки («ГОСУДАРСТВЕННЫЕ ЗАКУПКИ И ПРОЕКТЫ» и т. д.) — переносятся по словам (ТЗ 17.11.2026: они длиннее прежних «BUSINESS TO …»);
+   кегль подгоняется под ширину карточки (единицы контейнера .segment-heading: ширина карточки минус колонка иконки и зазор ≈ 7,8rem; самое длинное слово ≈ 11 em), но не меньше 12px. */
 .segment-heading { container-type: inline-size; }
-.segment-heading h3, .segment-heading p { white-space: nowrap; }
-.segment-heading p { font-size: clamp(.6875rem, calc((100cqw - 7.8rem) / 11.2), 1.0625rem); }
+.segment-heading h3 { white-space: nowrap; }
+.segment-heading p { font-size: clamp(.75rem, calc((100cqw - 7.8rem) / 16), 1.0625rem); }
 
 /* Тексты карточек — на одном уровне: три карточки делят общие строки сетки (subgrid): заголовок, 1-й, 2-й и 3-й абзац.
    Строка каждого абзаца по высоте равна самому длинному из трёх, поэтому абзацы стоят на одной линии при любых переносах.
@@ -449,3 +449,7 @@ h1 span { color: #356798; }
   .segments { grid-template-rows: repeat(3, auto auto auto 1fr); }
 }
 
+
+/* 17.11.2026, просьба заказчика: «О SIMURG» — по центру ровной части фона, а не всей шапки. Внизу картинки глянцевый пол с бликами (≈ нижние 20 % картинки,
+   у шапки это полоса высотой ≈ 6,7vw; на узких окнах — не меньше 2,7rem); её исключаем из области центрирования, чтобы заголовок не «подчёркивался» текстурой. */
+.hero { padding-bottom: max(2.7rem, 6.7vw); }

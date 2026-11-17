@@ -51,11 +51,11 @@ document.querySelectorAll('.modal').forEach(dialog => {
   });
 });
 const searchEntries = [
-  ['about', 'О компании — финансовая инфраструктура'],
-  ['trade', 'Международная торговля — единая цифровая среда'],
+  ['about', 'Финансовое сопровождение международных сделок'],
+  ['trade', 'Международная торговля — решения для вашей сделки'],
   ['leaders', 'Команда SIMURG'],
-  ['payments', 'Расчеты'], ['financing', 'Финансирование'],
-  ['risks', 'Управление рисками'], ['capital', 'Капитал']
+  ['payments', 'Расчёты'], ['financing', 'Финансирование'],
+  ['risks', 'Риски и страхование'], ['capital', 'Привлечение инвестора']
 ].map(([id, title]) => ({ id, title, text: document.getElementById(id).textContent.toLocaleLowerCase('ru') + ' ' + title.toLocaleLowerCase('ru') }));
 const results = document.querySelector('.search-results');
 document.querySelector('.search-form').addEventListener('submit', event => {

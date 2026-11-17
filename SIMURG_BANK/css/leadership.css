@@ -1,7 +1,7 @@
 /* «Команда SIMURG» — присланный пакет SIMURG-component-wide (заказчик, 15.11.2026): 4 карточки, фото 4:3 (1448×1086), дизайн и поведение пакета.
    Отличия: (1) px переведены в rem — страница банка масштабируется по корневому размеру шрифта, блок растёт вместе с ней; (2) число колонок 4/2/1
    переключается по ширине самого блока (@container, пороги в rem), а не окна; (3) по просьбе заказчика нет подписи «Иллюстрация для макета»,
-   примечания под блоком и счётчика «01 — 04»; (4) font-size-adjust из assets/type.css снят (кегли заданы макетом). Карточки без ссылок.
+   примечания под блоком и счётчика «01 — 04»; (4) font-size-adjust из assets/type.css снят (кегли заданы макетом). Карточки без ссылок на страницы (с 17.11.2026 у двух — значок LinkedIn со ссылкой на профиль в третьей строке плашки).
    16.11.2026, просьба заказчика: ФИО и должность — в тёмно-серых плашках с белым текстом (как карточки вверху страницы), текст мельче; анимация фото — «живой портрет» (наклон за курсором, блик, приближение, приглушение соседей).
    16.11.2026 (вечер), просьба заказчика: подписи ещё мельче, чтобы должность у всех четырёх занимала 2 строки. В 4 колонки кегли .875/.65 rem (замер: .65 даёт 2 строки у всех при ширине плашки от 13,3 rem);
    4 колонки — только от 57,5 rem ширины блока (раньше 52 rem: при 12–13 rem плашки 2 строк без кегля <.6 rem не получить), ниже — 2×2 с прежними кеглями .9375/.75 rem. */
@@ -16,6 +16,7 @@
 }
 .simurg-leadership, .simurg-leadership * { box-sizing: border-box; font-size-adjust: none !important; }
 .simurg-leadership__label { margin: 0; padding: 1.375rem 0 1rem; border-top: 1px solid #b7c8d580; font-size: .75rem; font-weight: 400; line-height: 1.3; color: var(--sl-muted); }
+.simurg-leadership__lead { margin: 0; padding: 0 0 .75rem; font-size: 1rem; line-height: 1.5; color: var(--sl-text); text-wrap: balance; }
 .simurg-leadership__grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.375rem; padding-top: .5rem; }
 .simurg-leadership__card { position: relative; display: flex; flex-direction: column; min-width: 0; margin: 0; transition: opacity .3s ease, transform .4s cubic-bezier(.2, .7, .2, 1); }
 .simurg-leadership__photo { position: relative; aspect-ratio: 4 / 3; background: #d4dee6; border: 1px solid var(--sl-border); border-radius: .8125rem; box-shadow: 0 3px 8px #18334f06; overflow: hidden; transform: perspective(60rem) translateY(var(--sl-lift, 0)) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)); transition: transform .28s cubic-bezier(.2, .7, .2, 1), border-color .35s ease-out, box-shadow .4s ease-out; will-change: transform; }
@@ -25,6 +26,12 @@
 .simurg-leadership__caption { flex: 1; margin-top: .625rem; padding: .6875rem .875rem .75rem; color: #f7fcff; background: linear-gradient(125deg, var(--card-top, #506b85), var(--card-bottom, #405e78)); border: 1px solid #7892a8; border-radius: var(--radius, .4375rem); box-shadow: 0 7px 18px #3352690a; transition: transform .4s cubic-bezier(.2, .7, .2, 1), border-color .35s ease-out, box-shadow .4s ease-out; }
 .simurg-leadership__name { margin: 0; font-size: .875rem; font-weight: 700; line-height: 1.2; letter-spacing: -.025em; }
 .simurg-leadership__role { margin: .375rem 0 0; font-size: .65rem; line-height: 1.4; letter-spacing: -.01em; color: #edf4f9; text-wrap: balance; }
+/* Третья строка плашки — значок LinkedIn со ссылкой на профиль (17.11.2026, по просьбе заказчика; пока у двух карточек, у остальных строки нет) */
+.simurg-leadership__link { margin: .375rem 0 0; line-height: 0; }
+.simurg-leadership__link a { display: inline-flex; padding: .1875rem; margin: -.1875rem; color: #e6f3ff; border-radius: .25rem; transition: color .2s ease, transform .2s ease; }
+.simurg-leadership__link a:hover { color: #fff; transform: translateY(-.0625rem); }
+.simurg-leadership__link a:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+.simurg-leadership__link svg { width: 1.25rem; height: 1.25rem; fill: currentColor; }
 /* Наведение (мышь/тачпад): фото приподнимается и наклоняется вслед за курсором (js/team.js), портрет приближается и сдвигается, по рамке бегает блик,
    плашка поднимается, остальные карточки приглушаются — движение «собирается» вокруг выбранного человека */
 @media (hover: hover) and (pointer: fine) {
