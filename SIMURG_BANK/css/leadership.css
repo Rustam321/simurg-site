@@ -2,7 +2,9 @@
    Отличия: (1) px переведены в rem — страница банка масштабируется по корневому размеру шрифта, блок растёт вместе с ней; (2) число колонок 4/2/1
    переключается по ширине самого блока (@container, пороги в rem), а не окна; (3) по просьбе заказчика нет подписи «Иллюстрация для макета»,
    примечания под блоком и счётчика «01 — 04»; (4) font-size-adjust из assets/type.css снят (кегли заданы макетом). Карточки без ссылок.
-   16.11.2026, просьба заказчика: ФИО и должность — в тёмно-серых плашках с белым текстом (как карточки вверху страницы), текст мельче; анимация фото — «живой портрет» (наклон за курсором, блик, приближение, приглушение соседей). */
+   16.11.2026, просьба заказчика: ФИО и должность — в тёмно-серых плашках с белым текстом (как карточки вверху страницы), текст мельче; анимация фото — «живой портрет» (наклон за курсором, блик, приближение, приглушение соседей).
+   16.11.2026 (вечер), просьба заказчика: подписи ещё мельче, чтобы должность у всех четырёх занимала 2 строки. В 4 колонки кегли .875/.65 rem (замер: .65 даёт 2 строки у всех при ширине плашки от 13,3 rem);
+   4 колонки — только от 57,5 rem ширины блока (раньше 52 rem: при 12–13 rem плашки 2 строк без кегля <.6 rem не получить), ниже — 2×2 с прежними кеглями .9375/.75 rem. */
 .simurg-leadership {
   container: simurg-leadership / inline-size;
   --sl-border: #b7c8d5;
@@ -21,8 +23,8 @@
 .simurg-leadership__photo::after { content: ""; position: absolute; inset: 0; pointer-events: none; opacity: 0; background: radial-gradient(circle at var(--gx, 50%) var(--gy, 35%), #ffffff42, transparent 58%); transition: opacity .35s ease-out; }
 /* Подпись — тёмно-серая плашка с белым текстом, как карточки «Единая цифровая среда» вверху страницы (те же цвета, рамка и скругление из style.css) */
 .simurg-leadership__caption { flex: 1; margin-top: .625rem; padding: .6875rem .875rem .75rem; color: #f7fcff; background: linear-gradient(125deg, var(--card-top, #506b85), var(--card-bottom, #405e78)); border: 1px solid #7892a8; border-radius: var(--radius, .4375rem); box-shadow: 0 7px 18px #3352690a; transition: transform .4s cubic-bezier(.2, .7, .2, 1), border-color .35s ease-out, box-shadow .4s ease-out; }
-.simurg-leadership__name { margin: 0; font-size: .9375rem; font-weight: 700; line-height: 1.2; letter-spacing: -.025em; }
-.simurg-leadership__role { margin: .375rem 0 0; font-size: .75rem; line-height: 1.4; letter-spacing: -.01em; color: #edf4f9; }
+.simurg-leadership__name { margin: 0; font-size: .875rem; font-weight: 700; line-height: 1.2; letter-spacing: -.025em; }
+.simurg-leadership__role { margin: .375rem 0 0; font-size: .65rem; line-height: 1.4; letter-spacing: -.01em; color: #edf4f9; text-wrap: balance; }
 /* Наведение (мышь/тачпад): фото приподнимается и наклоняется вслед за курсором (js/team.js), портрет приближается и сдвигается, по рамке бегает блик,
    плашка поднимается, остальные карточки приглушаются — движение «собирается» вокруг выбранного человека */
 @media (hover: hover) and (pointer: fine) {
@@ -33,14 +35,15 @@
   .simurg-leadership__card:hover .simurg-leadership__caption { transform: translateY(-.25rem); border-color: #a9c4d8; box-shadow: 0 .6rem 1.2rem #33526933; }
   .simurg-leadership__grid:has(.simurg-leadership__card:hover) .simurg-leadership__card:not(:hover) { opacity: .62; transform: scale(.97); }
 }
-@container simurg-leadership (max-width: 52rem) {
+@container simurg-leadership (max-width: 57.5rem) {
   .simurg-leadership__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.875rem 1.375rem; max-width: 36.375rem; margin-inline: auto; }
+  .simurg-leadership__name { font-size: .9375rem; }
+  .simurg-leadership__role { font-size: .75rem; }
 }
 @container simurg-leadership (max-width: 24rem) {
   .simurg-leadership__grid { grid-template-columns: 1fr; gap: 2rem; }
   .simurg-leadership__card { width: min(100%, 17.5rem); justify-self: center; }
   .simurg-leadership__name { font-size: 1rem; }
-  .simurg-leadership__role { font-size: .8125rem; }
 }
 @media (prefers-reduced-motion: reduce) {
   .simurg-leadership__card, .simurg-leadership__photo, .simurg-leadership__photo img, .simurg-leadership__caption { transition: none !important; transform: none !important; }
