@@ -38,13 +38,13 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid #348a
 .eyebrow>span{width:5.1875rem;height:1px;background:#8398a7}
 h1{margin-top:1.375rem;color:#002443;font-weight:700;letter-spacing:0;line-height:1.04}
 h1>span{display:block;font-size:2.75rem}
-h1 small{display:block;font-size:2rem;line-height:1.13;font-weight:400;letter-spacing:-.04rem;margin-top:.4375rem}
+h1 small{display:block;font-size:2rem;line-height:1.13;font-weight:400;letter-spacing:0;margin-top:.4375rem}
 .hero-description{font-size:.8125rem;line-height:1.2;margin-top:.375rem;max-width:34rem;color:#233b4c}
 .benefits{display:grid;grid-template-columns:13fr 13.4fr 12.6fr;gap:.5625rem;width:40.5rem;max-width:calc(100% - 4.375rem);margin:.90625rem 0 0 2.1875rem}
 .benefit{color:#f7fcff;background:linear-gradient(125deg,var(--card-top),var(--card-bottom));border:1px solid #7892a8;border-radius:var(--radius);box-shadow:0 7px 18px #3352690a}
 .benefit{min-width:0;min-height:8.6875rem;padding:.8125rem .9375rem .875rem}
-.benefit h2{font-size:1.125rem;line-height:1.18;font-weight:700;letter-spacing:-.03125rem}
-.benefit p{font-size:.8125rem;line-height:1.4;margin-top:.5rem;letter-spacing:-.01875rem}
+.benefit h2{font-size:1.125rem;line-height:1.18;font-weight:700;letter-spacing:.02em}
+.benefit p{font-size:.8125rem;line-height:1.4;margin-top:.5rem;letter-spacing:0}
 .scene-note{font-size:.5rem;font-weight:700;line-height:1.5;letter-spacing:.125rem;color:#2e4b5f}
 .hero-note-top,.hero-note-bottom{position:absolute;right:1.5625rem;width:max-content}
 .hero-note-top{top:3.4375rem}
@@ -147,8 +147,8 @@ h1 small{display:block;font-size:2rem;line-height:1.13;font-weight:400;letter-sp
  .hero-copy{width:calc(100% - 3rem)}
  .eyebrow p{font-size:.5625rem}
  h1{margin-top:1.25rem}
- h1>span{font-size:clamp(1.875rem,6.1vw,2.625rem);line-height:1.08;letter-spacing:-.04375rem}
- h1 small{font-size:clamp(1.1875rem,4.3vw,1.75rem);line-height:1.2;letter-spacing:-.02rem;margin-top:.625rem}
+ h1>span{font-size:clamp(1.875rem,6.1vw,2.625rem);line-height:1.08;letter-spacing:.02em}
+ h1 small{font-size:clamp(1.1875rem,4.3vw,1.75rem);line-height:1.2;letter-spacing:0;margin-top:.625rem}
  .hero-description{font-size:1rem;line-height:1.4;margin-top:.875rem}
  .hero-description br{display:none}
  .mobile-scene{display:block;width:min(100%,33.1875rem);height:auto;aspect-ratio:531/422;justify-self:center;background:url("../img/hero/ship-routes.webp?v=1") center/contain no-repeat;margin-top:.5rem}
@@ -189,7 +189,7 @@ h1 small{display:block;font-size:2rem;line-height:1.13;font-weight:400;letter-sp
  .main-nav a{justify-content:center}
  .hero-copy{width:calc(100% - 2.25rem)}
  .eyebrow{gap:.75rem}.eyebrow>span{flex:1;max-width:4rem}
- h1>span{font-size:clamp(1.5625rem,6.2vw,2rem);letter-spacing:-.02rem}
+ h1>span{font-size:clamp(1.5625rem,6.2vw,2rem);letter-spacing:.02em}
  h1 small{font-size:clamp(1rem,4.2vw,1.375rem);letter-spacing:0;line-height:1.3}
  .mobile-scene{margin-top:.75rem}
  .benefits{grid-template-columns:minmax(0,1fr);margin-inline:1.125rem;gap:.75rem}

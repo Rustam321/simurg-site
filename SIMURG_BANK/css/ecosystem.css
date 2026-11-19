@@ -45,7 +45,7 @@
   font-size: clamp(22.4px, 2.8vw, 44.8px);
   line-height: 1.25;
   font-weight: 750;
-  letter-spacing: -.025em;
+  letter-spacing: .02em;
 }
 
 .eco-skyline {

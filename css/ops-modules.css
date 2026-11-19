@@ -15,6 +15,7 @@
   --ops-plate: #dce9fa;
   --ops-gutter: clamp(16px, 4vw, 56px);
   --ops-fs: max(14px, calc(0.875 * clamp(17px, 1.35vw, 21px) * var(--ops-s, 1)));   /* обычный текст блока — тот же размер, что у простого текста остальных страниц (legal: 0,875 rem; 17px на экране 1440px); --ops-s (0,82–1) при необходимости задаёт js/fold-fit.js */
+  --ops-ik: 0.88;   /* заказчик 19.11: шрифт четырёх разделов справа мельче (−12%); при подборе размера под окно js/fold-fit.js временно ставит 1, чтобы схема и лид остались прежними */
   position: relative;
   width: 100%;
   box-sizing: border-box;
@@ -50,7 +51,7 @@
   font-size: 0.727em;
   line-height: 1.13;
   font-weight: 400;
-  letter-spacing: -0.02em;
+  letter-spacing: .02em;
   margin-top: 0.22em;
 }
 .ops__rule { position: relative; display: block; height: 4px; width: min(100%, 420px); margin: 12px 0 12px; }
@@ -90,13 +91,13 @@
   margin: 0 0 8px;
   font-family: var(--font-heading);
   font-weight: 700;
-  font-size: calc(var(--ops-fs) * 1.06);
+  font-size: max(13px, calc(var(--ops-fs) * 1.06 * var(--ops-ik, 1)));
   line-height: 1.25;
   letter-spacing: 0.01em;
   text-transform: uppercase;
   color: var(--ops-blue);
 }
-.ops__item p { margin: 0; max-width: 70ch; font-size: var(--ops-fs); line-height: 1.5; color: var(--ops-text); }
+.ops__item p { margin: 0; max-width: 70ch; font-size: max(13px, calc(var(--ops-fs) * var(--ops-ik, 1))); line-height: 1.5; color: var(--ops-text); }
 .ops__final {
   margin-top: 16px;
   padding: 16px 24px;

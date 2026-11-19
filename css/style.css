@@ -2600,8 +2600,8 @@ body.menu-open { overflow: hidden; }
   margin: 0;
   font-family: var(--font-banner);
   font-weight: 700;
-  font-size: var(--tb-fs);
-  letter-spacing: 0;   /* общее правило h1 даёт 0,02em — у названия баннера интервала нет */
+  font-size: max(14px, calc(var(--tb-fs) * 0.8));   /* заказчик 19.11: надпись меньше (−20% к прежнему), на телефоне не мельче 14px; подзаголовок считается от --tb-fs и не менялся */
+  letter-spacing: 0.05em;   /* заказчик 19.11: буквы не слипаются (общее правило h1 даёт 0,02em — перекрыто) */
   line-height: 1.06;
   text-transform: uppercase;
   white-space: nowrap;

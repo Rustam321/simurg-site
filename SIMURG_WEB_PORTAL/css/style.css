@@ -62,8 +62,8 @@ h1{font-size:1.875rem;line-height:1.12;font-weight:700;letter-spacing:.005rem}
 .cooperation{--accent:var(--color-orange);--tint:#fff7ed;border-color:#fce9da}
 .opportunity-image{width:100%;height:7.9375rem;object-fit:contain;object-position:center top;border-radius:.375rem}
 .card-content{padding:.625rem .75rem 0}
-.card-content h3{font-size:1.125rem;line-height:1.2;color:var(--accent);font-weight:700;letter-spacing:-.015rem}
-.cooperation .card-content h3{font-size:1.0625rem;letter-spacing:-.035rem}
+.card-content h3{font-size:1.125rem;line-height:1.2;color:var(--accent);font-weight:700;letter-spacing:.02em}
+.cooperation .card-content h3{font-size:1.0625rem;letter-spacing:.02em}
 .card-description{color:var(--accent);font-size:.875rem;line-height:1.3;min-height:2.25rem;margin-top:.1875rem}
 .deals .card-description{color:#2e528c}
 .feature-list{display:grid;gap:.375rem;margin-top:1rem;font-size:.8125rem;line-height:1.38}

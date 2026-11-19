@@ -27,17 +27,17 @@
 .simurg-finance-ecosystem__icon{width:42px;height:42px;color:var(--sfe-accent);fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;margin-top:1px;filter:drop-shadow(0 0 5px #49dfff35)}
 .simurg-finance-ecosystem__copy{position:relative;padding-left:22px}
 .simurg-finance-ecosystem__copy::before{content:'';position:absolute;left:0;top:0;width:1px;height:40px;background:#b2def0}
-.simurg-finance-ecosystem__name{margin:0 0 15px;font-size:clamp(22px,1.48vw,26px);line-height:1.2;font-weight:600;letter-spacing:-.035em;overflow-wrap:normal}
-.simurg-finance-ecosystem__text{margin:0;font-size:clamp(18px,1.2vw,22px);line-height:1.36;color:var(--sfe-secondary);letter-spacing:-.025em}
+.simurg-finance-ecosystem__name{margin:0 0 15px;font-size:clamp(22px,1.48vw,26px);line-height:1.2;font-weight:600;letter-spacing:.02em;overflow-wrap:normal}
+.simurg-finance-ecosystem__text{margin:0;font-size:clamp(18px,1.2vw,22px);line-height:1.36;color:var(--sfe-secondary);letter-spacing:0}
 .simurg-finance-ecosystem__hub{grid-column:2;grid-row:1 / 3;align-self:center;min-height:330px;padding:38px 20px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;border:1px solid #6bb4d1;border-radius:34px;background:radial-gradient(ellipse at 50% 0,#3b86b866,transparent 72%),linear-gradient(150deg,#164a70e6,#0a2a47f2);box-shadow:inset 0 1px 8px #7be3ff1c,inset 0 -2px 4px #50d6ff18,0 0 44px #0d8bcc33;position:relative;z-index:2}
 .simurg-finance-ecosystem__hub{--sfe-hub-sweep-ms:1100ms;overflow:hidden;isolation:isolate;transition:border-color 250ms ease-out,box-shadow 250ms ease-out}
 .simurg-finance-ecosystem__hub>*{position:relative;z-index:1}
 .simurg-finance-ecosystem__hub::before{content:'';position:absolute;inset:0;border-radius:inherit;pointer-events:none;z-index:0;opacity:0;background:linear-gradient(110deg,transparent 35%,#e4f2fc06 42%,#e4f2fc24 50%,#e4f2fc06 58%,transparent 65%);background-size:250% 100%;background-position:180% 0}
 @media(hover:hover) and (pointer:fine){.simurg-finance-ecosystem__hub:hover{border-color:var(--sfe-accent);box-shadow:inset 0 0 22px #4bddff18,0 0 44px #0d8bcc40}.simurg-finance-ecosystem__hub:hover::before{animation:simurg-finance-ecosystem-hub-sheen var(--sfe-hub-sweep-ms) ease-in-out 1 both}}
 @keyframes simurg-finance-ecosystem-hub-sheen{0%{background-position:180% 0;opacity:0}15%{opacity:1}75%{opacity:1}100%{background-position:-80% 0;opacity:0}}
-.simurg-finance-ecosystem__brand{margin:0;font-size:clamp(48px,3.6vw,64px);line-height:1;font-weight:700;letter-spacing:-.025em}
+.simurg-finance-ecosystem__brand{margin:0;font-size:clamp(48px,3.6vw,64px);line-height:1;font-weight:700;letter-spacing:.02em}
 .simurg-finance-ecosystem__hub-rule{width:48%;max-width:160px;height:1px;background:var(--sfe-secondary);margin:30px 0 25px}
-.simurg-finance-ecosystem__hub-title{margin:0;font-size:clamp(17px,1.3vw,22px);font-weight:600;line-height:1.32;letter-spacing:-.035em}
+.simurg-finance-ecosystem__hub-title{margin:0;font-size:clamp(16.3px,1.25vw,21.2px);font-weight:600;line-height:1.32;letter-spacing:0}
 .simurg-finance-ecosystem__connections{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none;z-index:3;fill:none;color:var(--sfe-accent);filter:drop-shadow(0 0 4px #24d6ff66)}
 .simurg-finance-ecosystem__connection path{stroke:var(--sfe-accent);stroke-opacity:.6;stroke-width:1.5;vector-effect:non-scaling-stroke;transition:stroke-opacity var(--sfe-release-ms) ease-out}
 .simurg-finance-ecosystem__connection circle{r:3;fill:var(--sfe-accent);fill-opacity:.8;stroke:none;transition:fill-opacity var(--sfe-release-ms) ease-out}
@@ -45,7 +45,7 @@
 .simurg-finance-ecosystem__connection.is-active circle{fill-opacity:1;transition-duration:var(--sfe-highlight-ms)}
 .simurg-finance-ecosystem__pulse{fill:#eef8ff;stroke:var(--sfe-accent);stroke-width:4;stroke-opacity:.18;opacity:0;filter:drop-shadow(0 0 5px #4bddffcc);transition:opacity var(--sfe-release-ms) ease-out}
 .simurg-finance-ecosystem__card.is-active{border-color:var(--sfe-accent);box-shadow:inset 0 1px 8px #7be3ff22,inset 0 -2px 4px #50d6ff26,0 0 18px #4bddff22;transition-duration:var(--sfe-highlight-ms)}
-.simurg-finance-ecosystem__values{display:flex;align-items:center;justify-content:center;gap:clamp(28px,3.4vw,65px);padding:0;margin:42px 0 0;list-style:none;font-size:clamp(22px,1.5vw,28px);line-height:1.3;letter-spacing:-.035em;font-weight:500}
+.simurg-finance-ecosystem__values{display:flex;align-items:center;justify-content:center;gap:clamp(28px,3.4vw,65px);padding:0;margin:42px 0 0;list-style:none;font-size:clamp(22px,1.5vw,28px);line-height:1.3;letter-spacing:0;font-weight:500}
 .simurg-finance-ecosystem__values li{display:flex;align-items:center;gap:clamp(28px,3.4vw,65px)}
 .simurg-finance-ecosystem__values li+li::before{content:'';display:block;width:7px;height:7px;border-radius:50%;background:var(--sfe-dot);box-shadow:inset 0 1px 1px #8ae7ff}
 @media(hover:hover) and (pointer:fine){.simurg-finance-ecosystem__card:hover{border-color:var(--sfe-accent)}}

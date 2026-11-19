@@ -31,7 +31,7 @@ ul,ol{margin:0;padding:0;list-style:none}
 .header-note::after,.hero-note-left::after,.hero-note-right::after,.footer-note-left::after,.footer-note-right::after{content:"";display:block;width:2.0625rem;height:1px;background:var(--color-secondary);margin-top:.875rem}
 .hero{height:auto;min-height:14.25rem;position:relative;text-align:center;padding-top:.6875rem;padding-bottom:1.25rem;font-family:var(--font-body)}   /* 17.11.2026: шапка растёт вместе с новым текстом (было фиксированных 14,25rem) */
 .hero-copy{max-width:52rem;margin-inline:auto;padding-inline:1rem}
-h1{font-size:clamp(2rem,3.565vw,2.5rem);line-height:1.1;letter-spacing:-.035rem;white-space:normal}
+h1{font-size:clamp(2rem,3.565vw,2.5rem);line-height:1.1;letter-spacing:.02em;white-space:normal}
 .hero-subtitle{font-size:1.625rem;line-height:1.14;margin-top:.375rem;color:#0b205c}
 .hero-description{font-size:1.0625rem;line-height:1.23;margin-top:.5rem;color:var(--color-secondary)}
 .hero-rule{display:block;width:2.5rem;height:2px;background:var(--color-primary);margin:1.0625rem auto 1.125rem}
@@ -45,19 +45,19 @@ main,.footer-statement{font-family:"Simurg Reference",var(--font-body)}
 .section-heading::before{grid-column:1;grid-row:1}
 .section-heading h2{grid-column:2;grid-row:1}
 .section-heading::after{grid-column:3;grid-row:1}
-.section-heading h2{font-size:1.8125rem;line-height:1.1;text-align:center;flex:0 1 auto;letter-spacing:-.025rem}
+.section-heading h2{font-size:1.8125rem;line-height:1.1;text-align:center;flex:0 1 auto;letter-spacing:.02em}
 .section-heading .marginal{position:absolute;right:0;top:50%;transform:translateY(-50%);padding-left:1rem;min-width:6.125rem}
 .section-heading::after{margin-right:7.5rem}
 .glass-card{border:1px solid #fff;border-radius:var(--radius);background:linear-gradient(120deg,rgba(255,255,255,.23),rgba(255,255,255,.06));min-width:0}
 .intelligence-grid,.geography-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.625rem}
 .intelligence-card{position:relative;min-height:9.25rem;display:grid;grid-template-columns:3.875rem minmax(0,1fr);gap:.625rem;padding:.625rem .6875rem .625rem .875rem}
 .card-icon{width:3.875rem;border-radius:50%}
-.intelligence-card h3{font-size:1.25rem;line-height:1.1;margin-top:.875rem;padding-right:.25rem;letter-spacing:-.015rem}
+.intelligence-card h3{font-size:1.25rem;line-height:1.1;margin-top:.875rem;padding-right:.25rem;letter-spacing:0}
 .intelligence-card h3::after,.region-copy h3::after{content:"";display:block;width:1.5rem;height:1px;background:#7da9cb;margin-top:.5rem;margin-bottom:.4375rem}
 .intelligence-card p{font-size:.96875rem;line-height:1.2;color:var(--color-secondary)}
 .right-chevron{position:absolute;right:.8125rem;top:1.8125rem;width:.5rem;height:.5rem;border-right:1px solid #164a86;border-top:1px solid #164a86;transform:rotate(45deg)}
 .intelligence-card h3{padding-right:.625rem}
-.intelligence-card:last-child h3{font-size:.9375rem;letter-spacing:-.04rem}
+.intelligence-card:last-child h3{font-size:.9375rem;letter-spacing:0}
 .intelligence-card:hover{border-color:#86accb}
 .geography{margin-top:1.1875rem}
 .geography .section-heading{margin-bottom:.25rem}
@@ -78,7 +78,7 @@ main,.footer-statement{font-family:"Simurg Reference",var(--font-body)}
 .process-grid li>img{width:3.5625rem;margin:0 auto .375rem;border-radius:50%;position:relative;z-index:1}
 .process-grid li:not(:last-child)::after{content:"";position:absolute;left:calc(50% + 1.85rem);width:calc(100% - 3.7rem);top:1.75rem;height:1px;background:var(--color-line)}
 .process-grid li:not(:last-child)::before{content:"";position:absolute;top:1.5625rem;left:calc(100% - .375rem);width:.375rem;height:.375rem;border-right:1px solid var(--color-primary);border-top:1px solid var(--color-primary);transform:rotate(45deg);z-index:1}
-.process-grid h3{font-size:.9375rem;line-height:1.08;letter-spacing:-.025rem}
+.process-grid h3{font-size:.9375rem;line-height:1.08;letter-spacing:.02em}
 .process-grid p{font-size:.875rem;line-height:1.16;color:var(--color-secondary);margin-top:.375rem}
 .results{margin-top:.8125rem}
 .results .section-heading{margin-bottom:.375rem}
@@ -86,14 +86,14 @@ main,.footer-statement{font-family:"Simurg Reference",var(--font-body)}
 .results-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:.375rem}
 .result-card{display:grid;grid-template-columns:3.25rem minmax(0,1fr);gap:.5rem;padding:.5rem .5rem .625rem .5625rem;min-height:6.9375rem;--radius:.5rem}
 .result-card>img{width:3.25rem;height:3.25rem;object-fit:contain;border-radius:50%}
-.result-card h3{font-size:.6875rem;line-height:1.15;letter-spacing:-.012rem;margin-top:.625rem}
+.result-card h3{font-size:.6875rem;line-height:1.15;letter-spacing:.02em;margin-top:.625rem}
 .result-card p{font-size:.8125rem;line-height:1.2;color:var(--color-secondary);margin-top:.5625rem}
 .site-footer{margin-top:.25rem;position:relative;isolation:isolate;min-height:15.75rem}
 .footer-art{position:absolute;inset:0;z-index:-1;margin-inline:auto;max-width:var(--frame-width);background:url("../img/backgrounds/mountains.webp") center bottom/70.125rem 15.75rem no-repeat;mask:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%201122%20252%22%3E%0A%20%20%3Cdefs%3E%0A%20%20%20%20%3Cfilter%20id%3D%22soft%22%3E%3CfeGaussianBlur%20stdDeviation%3D%225%22%2F%3E%3C%2Ffilter%3E%0A%20%20%20%20%3Cmask%20id%3D%22art%22%20maskUnits%3D%22userSpaceOnUse%22%20x%3D%220%22%20y%3D%220%22%20width%3D%221122%22%20height%3D%22252%22%3E%0A%20%20%20%20%20%20%3Cpath%20fill%3D%22white%22%20d%3D%22M0%200h1122v252H0z%22%2F%3E%0A%20%20%20%20%20%20%3Cg%20fill%3D%22black%22%20filter%3D%22url%28%23soft%29%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M478%2022h169v36H478zM314%2050h494v80H314zM39%2020h155v65H39zM1010%2020h88v67h-88z%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fg%3E%0A%20%20%20%20%3C%2Fmask%3E%0A%20%20%3C%2Fdefs%3E%0A%20%20%3Cpath%20fill%3D%22white%22%20mask%3D%22url%28%23art%29%22%20d%3D%22M0%200h1122v252H0z%22%2F%3E%0A%3C%2Fsvg%3E%0A") center bottom/70.125rem 15.75rem no-repeat}
 .footer-inner{min-height:15.75rem;position:relative;padding:1.375rem 2.9375rem 1rem}
 .footer-statement{text-align:center;position:relative}
 .footer-statement h2{font-size:2.5rem;line-height:1.1;letter-spacing:.225rem}
-.footer-statement p{font-size:1.375rem;line-height:1.17;margin-top:.125rem;letter-spacing:-.025rem}
+.footer-statement p{font-size:1.375rem;line-height:1.17;margin-top:.125rem;letter-spacing:0}
 .footer-note-left{position:absolute;left:2.9375rem;top:1.4375rem}
 .footer-note-right{position:absolute;right:2.125rem;top:1.4375rem}
 .footer-bottom{position:absolute;bottom:1.625rem;left:2.9375rem;right:2.5rem;display:flex;justify-content:space-between;align-items:flex-end;color:white}
@@ -239,7 +239,7 @@ main,.footer-statement{font-family:"Simurg Reference",var(--font-body)}
 html{font-size:clamp(16px,1.34vw,21px)}
 
 /* NEW_SIMURG: на 1051–1250px четыре карточки узкие — заголовок «ИНФРАСТРУКТУРА» упирался в стрелку */
-@media(min-width:1051px) and (max-width:1250px){.intelligence-card:not(:last-child) h3{font-size:1.0625rem;letter-spacing:-.02rem}}
+@media(min-width:1051px) and (max-width:1250px){.intelligence-card:not(:last-child) h3{font-size:1.0625rem;letter-spacing:0}.intelligence-card:last-child h3{font-size:.84375rem}}
 
 /* NEW_SIMURG: фоны на всю ширину экрана — картинка масштабируется до ширины окна (без копий и размытия) */
 @media(min-width:1051px){

@@ -24,7 +24,7 @@
 .simurg-leadership__photo::after { content: ""; position: absolute; inset: 0; pointer-events: none; opacity: 0; background: radial-gradient(circle at var(--gx, 50%) var(--gy, 35%), #ffffff42, transparent 58%); transition: opacity .35s ease-out; }
 /* Подпись — тёмно-серая плашка с белым текстом, как карточки «Единая цифровая среда» вверху страницы (те же цвета, рамка и скругление из style.css) */
 .simurg-leadership__caption { flex: 1; margin-top: .625rem; padding: .6875rem .875rem .75rem; color: #f7fcff; background: linear-gradient(125deg, var(--card-top, #506b85), var(--card-bottom, #405e78)); border: 1px solid #7892a8; border-radius: var(--radius, .4375rem); box-shadow: 0 7px 18px #3352690a; transition: transform .4s cubic-bezier(.2, .7, .2, 1), border-color .35s ease-out, box-shadow .4s ease-out; }
-.simurg-leadership__name { margin: 0; font-size: .875rem; font-weight: 700; line-height: 1.2; letter-spacing: -.025em; }
+.simurg-leadership__name { margin: 0; font-size: .875rem; font-weight: 700; line-height: 1.2; letter-spacing: .02em; }
 .simurg-leadership__role { margin: .375rem 0 0; font-size: .65rem; line-height: 1.4; letter-spacing: -.01em; color: #edf4f9; text-wrap: balance; }
 /* Третья строка плашки — значок LinkedIn со ссылкой на профиль (17.11.2026, по просьбе заказчика; пока у двух карточек, у остальных строки нет) */
 .simurg-leadership__link { margin: .375rem 0 0; line-height: 0; }

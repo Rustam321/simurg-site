@@ -38,11 +38,13 @@
     var pad = parseFloat(cs.paddingTop) + parseFloat(cs.paddingBottom);
     var avail = window.innerHeight - banner.offsetHeight;   // остаток окна под блок
     var chosen = STEPS[STEPS.length - 1];
+    ops.style.setProperty('--ops-ik', 1);   // подбор идёт по прежним размерам четырёх разделов: схема и лид не растут из-за их уменьшения
     for (var i = 0; i < STEPS.length; i++) {
       apply(STEPS[i]);
       if (body.offsetHeight + pad <= avail) { chosen = STEPS[i]; break; }
     }
     apply(chosen);
+    ops.style.removeProperty('--ops-ik');   // дальше действует значение из css/ops-modules.css
   }
 
   function later() {                       // дебаунс: подгоняем, когда размер окна перестал меняться
