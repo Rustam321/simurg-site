@@ -28,10 +28,10 @@
 .sx-topbar :where(img,svg,svg *){mix-blend-mode:normal;filter:none;isolation:auto;mask:none;clip-path:none;backdrop-filter:none;outline:0}
 .sx-topbar :where(img){display:block;max-width:none;height:auto;opacity:1;object-fit:fill;object-position:50% 50%;border-radius:0;box-shadow:none;vertical-align:baseline;aspect-ratio:auto}
 
-.sx-topbar__inner{display:flex;align-items:stretch;width:100%;max-width:1920px;min-height:58px;margin:0 auto;padding:0 0 0 clamp(16px,2vw,40px)}   /* справа без поля: ячейка «на главную» доходит до края экрана */
+.sx-topbar__inner{display:flex;align-items:stretch;width:100%;max-width:1920px;min-height:58px;margin:0 auto;padding:0 clamp(16px,2vw,40px) 0 0}   /* слева без поля: ячейка «на главную» доходит до края экрана; справа поле у флагов */
 
-/* языки */
-.sx-lang{display:flex;align-items:center;gap:clamp(10px,1.2vw,22px);padding-right:clamp(16px,1.8vw,34px);flex:none}
+/* языки (справа; слева от них светящийся разделитель, как у пунктов) */
+.sx-lang{position:relative;display:flex;align-items:center;gap:clamp(10px,1.2vw,22px);padding-left:clamp(16px,1.8vw,34px);flex:none}
 .sx-lang__btn{display:flex;flex-direction:column;align-items:center;gap:5px;min-width:44px;min-height:44px;justify-content:center;cursor:default;font-size:12px;font-weight:600;letter-spacing:.02em;opacity:.92}
 .sx-lang__btn img{width:32px;height:22px;object-fit:cover;border-radius:2px;box-shadow:0 0 0 1px rgba(255,255,255,.18)}
 .sx-lang__btn[aria-current="true"]{opacity:1}
@@ -45,7 +45,7 @@
 .sx-nav{flex:1;min-width:0;display:flex}
 .sx-nav__list{display:flex;flex:1;min-width:0}
 .sx-nav__item{position:relative;flex:1 1 0;min-width:0;display:flex}
-.sx-nav__item::before{ /* светящийся вертикальный разделитель */
+.sx-nav__item::before,.sx-lang::before{ /* светящийся вертикальный разделитель */
   content:'';position:absolute;left:0;top:50%;width:2px;height:40px;transform:translateY(-50%);
   background:linear-gradient(180deg,transparent,var(--sx-line) 30%,#d6efff 50%,var(--sx-line) 70%,transparent);
   box-shadow:0 0 10px 1px rgba(124,196,255,.55);border-radius:2px;opacity:.9;
@@ -65,9 +65,8 @@ a.sx-nav__link:hover{background:rgba(120,190,255,.12);text-shadow:0 0 14px rgba(
 .sx-nav__link[aria-disabled="true"]:hover{background:none;text-shadow:none}
 .sx-nav__item--home{display:none}
 
-/* на главную (иконка справа, только десктоп) */
-.sx-home{flex:none;display:flex;align-items:center;justify-content:center;padding:0 clamp(24px,2.4vw,46px);position:relative}   /* разделитель вплотную к последнему пункту, значок по центру между разделителем и краем экрана */
-.sx-home::before{content:'';position:absolute;left:0;top:50%;width:2px;height:40px;transform:translateY(-50%);background:linear-gradient(180deg,transparent,var(--sx-line) 30%,#d6efff 50%,var(--sx-line) 70%,transparent);box-shadow:0 0 10px 1px rgba(124,196,255,.55);border-radius:2px;opacity:.9}
+/* на главную (иконка слева, только десктоп) */
+.sx-home{flex:none;display:flex;align-items:center;justify-content:center;padding:0 clamp(24px,2.4vw,46px)}   /* значок по центру между краем экрана и разделителем первого пункта */
 .sx-home svg{width:26px;height:26px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;transition:transform .2s ease}
 .sx-home:hover svg{transform:scale(1.1)}
 .sx-home:focus-visible{outline:2px solid var(--sx-focus);outline-offset:-4px;border-radius:6px}
@@ -78,14 +77,15 @@ a.sx-nav__link:hover{background:rgba(120,190,255,.12);text-shadow:0 0 14px rgba(
 @media (max-width:1279px){
   .sx-topbar__inner{min-height:54px}
   .sx-nav__link{padding-inline:8px;letter-spacing:.015em}
-  .sx-lang{gap:8px;padding-right:12px}
+  .sx-lang{gap:8px;padding-left:12px}
 }
 
 /* меньше 1100px — компактная шапка + выпадающее меню */
 @media (max-width:1099px){
   .sx-topbar{position:sticky;top:0}
   .sx-topbar__inner{flex-wrap:wrap;align-items:center;min-height:46px;padding:0 16px}
-  .sx-lang{padding-right:0;gap:0}   /* равные интервалы между флагами: поля внутри кнопок (касание 44px сохраняется) */
+  .sx-lang{order:-1;padding-left:0;gap:0}   /* в разметке флаги последние (десктоп: справа), в шапке телефона — первые; равные интервалы между флагами: поля внутри кнопок (касание 44px сохраняется) */
+  .sx-lang::before{display:none}
   .sx-lang__btn{flex-direction:row;gap:6px;min-width:0;padding:0 10px;font-size:13px}
   .sx-lang__btn img{width:24px;height:17px}
   .sx-lang__btn span{display:none}
