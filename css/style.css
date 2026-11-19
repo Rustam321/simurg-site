@@ -2578,6 +2578,7 @@ body.menu-open { overflow: hidden; }
   align-items: center;
   column-gap: clamp(14px, 1.4vw, 32px);
   row-gap: calc(var(--tb-ref) * 0.05);
+  --tb-fs: min(2.667vw, calc(var(--tb-ref) * 0.18));   /* кегль названия (в 1,5 раза меньше прежнего 4vw и не больше доли высоты баннера); подзаголовок — его доля */
 }
 .top-banner__logo {
   grid-area: logo;
@@ -2588,12 +2589,19 @@ body.menu-open { overflow: hidden; }
 }
 /* Заливка названия по образцу: у КАЖДОЙ строки свой вертикальный градиент — белый сверху, к низу букв насыщенный светло-синий;
    лёгкое голубое свечение вокруг букв. */
-.top-banner__title {
+.top-banner__text {   /* название (h1) и подзаголовок — одна колонка справа от логотипа; кнопка — под ней */
   grid-area: title;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--tb-fs) * 0.2);
+}
+.top-banner__title {
   margin: 0;
   font-family: var(--font-banner);
   font-weight: 700;
-  font-size: min(2.667vw, calc(var(--tb-ref) * 0.18));   /* в 1,5 раза меньше прежнего (4vw) и не больше доли высоты баннера */
+  font-size: var(--tb-fs);
+  letter-spacing: 0;   /* общее правило h1 даёт 0,02em — у названия баннера интервала нет */
   line-height: 1.06;
   text-transform: uppercase;
   white-space: nowrap;
@@ -2608,6 +2616,18 @@ body.menu-open { overflow: hidden; }
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-stroke: 0.028em transparent;   /* чуть плотнее начертание, как в образце */
+}
+/* подзаголовок под названием: обычным регистром, как в ТЗ; не мельче 12px */
+.top-banner__subtitle {
+  margin: 0;
+  font-family: var(--font-banner);
+  font-weight: 500;
+  font-size: max(12px, calc(var(--tb-fs) * 0.5));
+  line-height: 1.25;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  color: #dbe7ff;
+  filter: drop-shadow(0 0 6px rgba(110, 160, 255, 0.45)) drop-shadow(0 1px 6px rgba(2, 8, 24, 0.6));
 }
 .top-banner__portal { font-family: var(--font-banner); grid-area: portal; justify-self: start; align-self: start; --pb-h: calc(max(44px, min(3.4vw, calc(var(--tb-ref) * 0.16))) * 0.7); }   /* на 30% меньше (замечание 07.11); на ≤860px ниже вернуто 44px — касание */
 
@@ -2666,14 +2686,15 @@ body.menu-open { overflow: hidden; }
 @media (max-width: 860px) {
   .top-banner {
     display: flex; align-items: center;
+    height: auto; min-height: var(--tb-h); padding: 12px 0;   /* не ниже прежней высоты, но растёт по содержимому: название и подзаголовок переносятся на несколько строк, на низком окне телефона высота --tb-h меньше текста */
     /* слева темнее (под текстом), справа фото ярче; градиент — верхний слой фона */
     background:
       linear-gradient(90deg, rgba(2, 8, 26, 0.88) 0%, rgba(2, 8, 26, 0.6) 55%, rgba(2, 8, 26, 0.2) 100%),
       #020b24 url('../img/banner-night-city-half.webp') 100% 0% / cover no-repeat;
   }
-  .top-banner__content { position: relative; left: auto; top: auto; transform: none; padding: 0 var(--side); column-gap: 12px; row-gap: calc(var(--tb-ref) * 0.05); }
-  .top-banner__logo { height: min(calc(var(--tb-ref) * 0.46), 124px); }
-  .top-banner__title { font-size: clamp(14px, 3.9vw, 26px); }
+  .top-banner__content { position: relative; left: auto; top: auto; transform: none; width: 100%; box-sizing: border-box; grid-template-columns: auto minmax(0, 1fr); padding: 0 var(--side); column-gap: 12px; row-gap: calc(var(--tb-ref) * 0.05); --tb-fs: clamp(14px, 3.9vw, 26px); }
+  .top-banner__logo { height: min(calc(var(--tb-ref) * 0.46), 124px); max-width: none; }   /* логотип не сжимается: название и подзаголовок переносятся по словам */
+  .top-banner__title, .top-banner__subtitle { white-space: normal; text-wrap: balance; }
   .top-banner__portal { --pb-h: 44px; }
 }
 
