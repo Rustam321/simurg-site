@@ -2715,3 +2715,7 @@ body.menu-open { overflow: hidden; }
 @media (min-width: 1200px) and (min-height: 640px) and (min-aspect-ratio: 3/2) {
   .fold { min-height: var(--first-h); }
 }
+
+/* 20.11.2026 (проверка доступности): кнопка WEB PORTAL — кегль не меньше 12 px (было 11,9) и область нажатия около 44 px высотой: невидимое расширение, вид кнопки прежний (размер утверждён заказчиком 07.11) */
+.top-banner__portal { position: relative; font-size: max(12px, calc(var(--pb-h) * 0.385)); }
+.top-banner__portal::after { content: ""; position: absolute; inset: -9px; border-radius: 999px; }   /* отсчёт от внутреннего края рамки 2 px: наружу ≈ 7 px */

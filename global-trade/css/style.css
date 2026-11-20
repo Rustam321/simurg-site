@@ -85,7 +85,10 @@ body {
 img { display: block; max-width: 100%; height: auto; }
 h1, h2, h3, p { margin: 0; }
 .page-shell {
-  max-width: 65.9375rem;
+  /* 20.11.2026, просьба заказчика: боковые поля — как на остальных светлых страницах («Сопровождение исполнения», «Правовая информация»):
+     поле clamp(1rem, 2.6vw, 2.75rem), содержимое не шире 99,25rem; раньше колонка была 62,5rem и на мониторе оставляла поля по ≈15 % */
+  --gutter: clamp(1rem, 2.6vw, 2.75rem);
+  --side: max(var(--gutter), calc((100% - 99.25rem) / 2));
   margin-inline: auto;
   padding-bottom: 1.9375rem;
   background: radial-gradient(ellipse at 60% 42%, #f7fbff 0, #f0f8fe 48%, #eaf5fd 100%);
@@ -126,8 +129,7 @@ h1 span { color: inherit; }   /* 17.11.2026: «О SIMURG» одним цвето
   background: #488ac6;
 }
 .container {
-  width: calc(100% - 3.5rem);
-  max-width: 62.5rem;
+  width: calc(100% - 2 * var(--side));
   margin-inline: auto;
 }
 .section-divider {
@@ -159,7 +161,7 @@ h1 span { color: inherit; }   /* 17.11.2026: «О SIMURG» одним цвето
   background: #eff7fc;
   transform: rotate(30deg) skew(-25deg);
 }
-.principles { display: grid; gap: .5rem; }
+.principles { display: grid; gap: .875rem; }   /* 20.11.2026: было .5rem — расстояние между блоками чуть больше (просьба заказчика) */
 .info-row {
   display: grid;
   grid-template-columns: 16.4375rem minmax(0, 1fr);
@@ -221,7 +223,7 @@ h1 span { color: inherit; }   /* 17.11.2026: «О SIMURG» одним цвето
   letter-spacing: 0;
 }
 .trade-ecosystem {
-  margin-top: .6875rem;
+  margin-top: .875rem;
   padding: .625rem .625rem 1.25rem;
   border: .0625rem solid var(--border);
   border-radius: .625rem;
@@ -239,8 +241,8 @@ h1 span { color: inherit; }   /* 17.11.2026: «О SIMURG» одним цвето
 .ecosystem-copy > p {
   width: min(100%, 35.3125rem);
   margin-top: 1.1875rem;
-  font-size: 1.5rem;
-  line-height: 1.31;
+  font-size: 1.3125rem;   /* 20.11.2026: было 1.5rem — «чуть меньше» (просьба заказчика) */
+  line-height: 1.35;
   letter-spacing: 0;
 }
 .segments { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .6875rem; }
@@ -299,7 +301,7 @@ h1 span { color: inherit; }   /* 17.11.2026: «О SIMURG» одним цвето
   .advantage h2 { font-size: 1.3125rem; }
   .info-row > p { font-size: 1.25rem; line-height: 1.35; }
   .ecosystem-intro { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, .9fr); gap: .75rem; min-height: 0; padding-bottom: 1rem; }
-  .ecosystem-copy > p { font-size: 1.25rem; line-height: 1.4; margin-top: 1rem; }
+  .ecosystem-copy > p { font-size: 1.125rem; line-height: 1.4; margin-top: 1rem; }
   /* на планшете и телефоне карта — отдельной полосой справа от текста / под ним (как была картинка), текст не ложится на карту */
   .ecosystem-intro { background: none; }
   .ecosystem-intro::after { content: ""; align-self: center; aspect-ratio: 2 / 1; background: url("../img/sections/world-connections.webp?v=1") right center / 200% auto no-repeat; }
@@ -356,14 +358,12 @@ h1 span { color: inherit; }   /* 17.11.2026: «О SIMURG» одним цвето
 /* NEW_SIMURG: фон на всю ширину экрана — настоящая картинка масштабируется до края окна (без копий и размытия) */
 @media (min-width: 68.76rem) {
   html { overflow-x: clip; }
-  .page-shell { --bleed: max(0px, calc((100vw - 65.9375rem) / 2)); }
-  /* баннер «О торговой системе SIMURG» — на всю ширину окна, картинка пропорционально; текст остаётся на своих местах */
+  /* баннер «О торговой системе SIMURG» — на всю ширину окна, картинка пропорционально; заголовок — по левому краю содержимого, подпись — у правого (20.11: страница на всю ширину, прежний «выпуск» баннера за колонку не нужен) */
   .hero {
-    margin-inline: calc(-1 * var(--bleed));
-    padding-inline: calc(1.75rem + var(--bleed)) calc(8rem + var(--bleed));
+    padding-inline: var(--side) 8rem;
     min-height: max(14rem, calc(100vw * 224 / 1055));
   }
-  .hero-caption { right: calc(3.9375rem + var(--bleed)); }
+  .hero-caption { right: calc(var(--side) + 2.1875rem); }
 }
 
 /* NEW_SIMURG: выравнивание Manrope по высоте строчных старого шрифта (см. assets/type.css) */
@@ -393,7 +393,7 @@ h1 span { color: inherit; }   /* 17.11.2026: «О SIMURG» одним цвето
 .logo-lockup img { width: 3.5rem; height: auto; flex: 0 0 auto; }
 .logo-lockup__text { display: flex; flex-direction: column; line-height: 1.1; color: #12335f; }
 .logo-lockup__text b { font-size: 1.75rem; letter-spacing: .12em; }
-.logo-lockup__text small { font-size: .5625rem; letter-spacing: .14em; margin-top: .25rem; color: #4b6a8f; }
+.logo-lockup__text small { font-size: .625rem; letter-spacing: .14em; margin-top: .25rem; color: #4b6a8f; }
 
 /* мобильное: абзац экосистемы как в соседних карточках, без слипания букв; подпись баннера читаемее */
 @media (max-width: 43.75rem) {

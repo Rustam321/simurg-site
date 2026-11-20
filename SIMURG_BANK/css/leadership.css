@@ -28,7 +28,8 @@
 .simurg-leadership__role { margin: .375rem 0 0; font-size: .64rem; line-height: 1.4; letter-spacing: 0; color: #edf4f9; text-wrap: balance; }
 /* Третья строка плашки — значок LinkedIn со ссылкой на профиль (17.11.2026, по просьбе заказчика; пока у двух карточек, у остальных строки нет) */
 .simurg-leadership__link { margin: .375rem 0 0; line-height: 0; }
-.simurg-leadership__link a { display: inline-flex; padding: .1875rem; margin: -.1875rem; color: #e6f3ff; border-radius: .25rem; transition: color .2s ease, transform .2s ease; }
+.simurg-leadership__link a { position: relative; display: inline-flex; padding: .1875rem; margin: -.1875rem; color: #e6f3ff; border-radius: .25rem; transition: color .2s ease, transform .2s ease; }
+.simurg-leadership__link a::after { content: ""; position: absolute; inset: -9px; }   /* 20.11: область нажатия ≈ 44 px, значок прежний */
 .simurg-leadership__link a:hover { color: #fff; transform: translateY(-.0625rem); }
 .simurg-leadership__link a:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
 .simurg-leadership__link svg { width: 1.25rem; height: 1.25rem; fill: currentColor; }

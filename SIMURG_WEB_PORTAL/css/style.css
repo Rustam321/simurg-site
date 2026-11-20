@@ -70,7 +70,7 @@ h1{font-size:1.875rem;line-height:1.12;font-weight:700;letter-spacing:.005rem}
 .feature-list li{position:relative;padding-left:1.6875rem;min-width:0}
 .feature-list li::before{content:"";position:absolute;left:.1875rem;top:.25rem;width:.625rem;height:.375rem;border-left:2px solid var(--accent);border-bottom:2px solid var(--accent);transform:rotate(-45deg)}
 .trade-officer{display:flex;align-items:center;gap:.875rem;background:var(--tint);border:1px solid #dbe6ff;border-radius:.5rem;min-height:2.9375rem;padding:.3125rem .6875rem;margin-top:.125rem;color:var(--accent)}
-.cooperation .trade-officer{border-color:#ffead8}
+.cooperation .trade-officer{border-color:#ffead8;color:#b4520a}
 .trade-officer>img{width:2.125rem;max-height:2.125rem;object-fit:contain;mix-blend-mode:multiply;flex-shrink:0}
 .trade-officer p{min-width:0;font-size:.8125rem;line-height:1.22}
 .trade-officer strong{display:block;font-size:.9375rem;line-height:1.1}
