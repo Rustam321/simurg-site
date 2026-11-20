@@ -24,7 +24,7 @@
 @keyframes simurg-finance-ecosystem-hub-sheen{0%{background-position:180% 0;opacity:0}15%{opacity:1}75%{opacity:1}100%{background-position:-80% 0;opacity:0}}
 .simurg-finance-ecosystem__brand{margin:0;font-size:clamp(48px,3.6vw,64px);line-height:1;font-weight:700;letter-spacing:.02em}
 .simurg-finance-ecosystem__hub-rule{width:48%;max-width:160px;height:1px;background:var(--sfe-secondary);margin:30px 0 25px}
-.simurg-finance-ecosystem__hub-title{margin:0;font-size:clamp(22px,1.5vw,28px);font-weight:600;line-height:1.32;letter-spacing:0}
+.simurg-finance-ecosystem__hub-title{margin:0;font-size:clamp(22px,1.5vw,28px);font-weight:600;line-height:1.32;letter-spacing:.02em}
 .simurg-finance-ecosystem__connections{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none;z-index:3;fill:none;color:var(--sfe-link)}
 .simurg-finance-ecosystem__connection path{stroke:var(--sfe-link);stroke-width:1.5;vector-effect:non-scaling-stroke;transition:stroke var(--sfe-release-ms) ease-out}
 .simurg-finance-ecosystem__connection circle{r:3;fill:var(--sfe-link);stroke:none;transition:fill var(--sfe-release-ms) ease-out}

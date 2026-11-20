@@ -42,7 +42,7 @@
   font-weight: 700;
   font-size: calc(clamp(22px, 5.4vw, 40px) - 1pt);   /* на 1 пункт меньше (замечание 07.11) */
   line-height: 1.04;
-  letter-spacing: 0;
+  letter-spacing: .03em;
   text-transform: uppercase;
   color: #002443;
 }
@@ -93,7 +93,7 @@
   font-weight: 700;
   font-size: max(13px, calc(var(--ops-fs) * 1.06 * var(--ops-ik, 1)));
   line-height: 1.25;
-  letter-spacing: 0.01em;
+  letter-spacing: .04em;
   text-transform: uppercase;
   color: var(--ops-blue);
 }
@@ -108,7 +108,7 @@
   font-weight: 700;
   font-size: calc(var(--ops-fs) * 1.06);
   line-height: 1.3;
-  letter-spacing: 0.01em;
+  letter-spacing: .03em;
   text-transform: uppercase;
   text-wrap: balance;
   color: var(--ops-ink);
@@ -228,7 +228,7 @@ html.ops-lock { overflow: hidden; }
   .de-control { margin-top: 1.5rem; padding: 1.5rem 1rem; border: 2px solid #75caff; border-radius: 1rem; text-align: center; color: #fff; background: radial-gradient(ellipse at 45% 0%, #155492, #08274f 70%, #061b3b); box-shadow: 0 0 0 4px #9dd4f32b; }
   .de-control h4 { margin: 0; font-family: var(--font-heading); font-weight: 700; font-size: clamp(1.4rem, 5vw, 1.8rem); line-height: 1.25; color: #fff; }
   .de-control p { margin: 0; }
-  .de-control-actions { margin-top: 0.85rem !important; padding-block: 0.8rem; border-block: 1px solid #6bafd6; color: #b5e5ff; font-family: var(--font-heading); font-weight: 700; font-size: 0.9rem; line-height: 1.55; }
+  .de-control-actions { letter-spacing: 0.03em; margin-top: 0.85rem !important; padding-block: 0.8rem; border-block: 1px solid #6bafd6; color: #b5e5ff; font-family: var(--font-heading); font-weight: 700; font-size: 0.9rem; line-height: 1.55; }
   .de-control-description { font-size: 17px; line-height: 1.55; margin-top: 0.8rem !important; }
   .de-module-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.85rem; margin-top: 1.25rem; }
   .de-module-card { min-width: 0; padding: 1.1rem 0.9rem; border: 1.5px solid #8ad0ff; border-radius: 0.75rem; color: #fff; background: radial-gradient(ellipse at 50% 0%, #174b7e, #09274d 62%, #061a38); box-shadow: 0 0 0 3px #9dd4f31a; }

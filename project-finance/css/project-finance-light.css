@@ -12,7 +12,7 @@
 .simurg-finance-ecosystem--light .simurg-finance-ecosystem__hub{height:100%;min-height:0;padding:26px 14px;border-radius:30px;border-color:#779db7;background:linear-gradient(145deg,#5e859e,#3f6b87);box-shadow:inset 0 1px 2px #ffffff,0 12px 28px #3b67861a;color:#ffffff}
 .simurg-finance-ecosystem--light .simurg-finance-ecosystem__brand{font-size:clamp(37px,3.1vw,54px);font-weight:700;letter-spacing:.025em;line-height:1}
 .simurg-finance-ecosystem--light .simurg-finance-ecosystem__hub-rule{background:#ffffffa6;margin:26px 0 24px;width:46%;height:1px}
-.simurg-finance-ecosystem--light .simurg-finance-ecosystem__hub-title{font-size:clamp(16px,1.3vw,22px);font-weight:600;line-height:1.45;letter-spacing:0}
+.simurg-finance-ecosystem--light .simurg-finance-ecosystem__hub-title{font-size:clamp(16px,1.3vw,22px);font-weight:600;line-height:1.45;letter-spacing:.02em}
 .simurg-finance-ecosystem--light .simurg-finance-ecosystem__hub::before{background-image:linear-gradient(110deg,transparent 35%,#ffffff10 42%,#ffffffaa 50%,#ffffff10 58%,transparent 65%)}
 .simurg-finance-ecosystem--light .simurg-finance-ecosystem__pulse{fill:#347da9;stroke:#ffffff;stroke-opacity:.7;filter:drop-shadow(0 0 3px #ffffff)}
 .simurg-finance-ecosystem--light .simurg-finance-ecosystem__card.is-active{border-color:#6f9cb9;box-shadow:inset 0 1px 1px #ffffff,0 7px 20px #315f7e22}

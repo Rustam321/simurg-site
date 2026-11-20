@@ -10,3 +10,11 @@ html body :is(h1, h2, h3, h4):not(.sx-topbar *) { font-family: var(--sx-head) !i
    --sx-xh страница задаёт сама (у прежнего шрифта: Times ≈ .46, Georgia ≈ .48, Arial/Helvetica ≈ .52). Заголовки не трогаем. */
 html body *:not(svg *):not(.sx-topbar):not(.sx-topbar *) { font-size-adjust: var(--sx-xh, .48); }
 html body :is(h1, h2, h3, h4):not(.sx-topbar *) { font-size-adjust: none; }
+
+/* Интервал между буквами (замечание заказчика 19–20.11: «буквы слепленные»). Заглавные заголовки — не плотнее .035em; !important — чтобы результат
+   не зависел от порядка подключения и от @media страниц. Исключены заголовки со строчными буквами (имена в «Команде», подпись блока, окна). */
+html body :is(h1, h2, h3, h4):not(.sx-topbar *):not(.simurg-leadership__name):not(.simurg-leadership__label):not(.modal *):not(.hero-center *) { letter-spacing: .035em !important; }
+html body h1 > span { letter-spacing: .03em !important; }
+html body :is(.simurg-finance-ecosystem__brand, .ai-wordmark, .navigation a, .communication-button span, .portal-link) { letter-spacing: .03em !important; }
+html body :is(.ai-tagline, .entry-title) { letter-spacing: .04em !important; }
+

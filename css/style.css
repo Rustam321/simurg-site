@@ -109,7 +109,7 @@ body {
 h1, h2, h3, h4 {
   font-family: var(--font-heading);
   font-weight: 700;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.035em;
   text-transform: uppercase;
   line-height: 1.25;
 }
@@ -480,6 +480,7 @@ body.menu-open { overflow: hidden; }
   font-family: var(--font-heading);
   font-weight: 700;
   font-size: var(--hs-fs);
+  letter-spacing: 0.02em;   /* заказчик 20.11: буквы не слипаются; кегль для всех сцен подбирает js/hero.js по ширине, так что интервал учитывается сам */
   line-height: 1.1;
   text-transform: uppercase;
   white-space: normal;       /* слишком длинная строка переносится на следующую */
@@ -539,7 +540,7 @@ body.menu-open { overflow: hidden; }
   font-weight: 700;
   font-size: calc(var(--pb-h) * 0.385);
   line-height: 1;
-  letter-spacing: 0.01em;
+  letter-spacing: 0.04em;
   white-space: nowrap;
   color: #fff;
   transition: box-shadow var(--transition-fast), filter var(--transition-fast), transform var(--transition-fast);
