@@ -161,7 +161,7 @@ h1{
   font-weight:700;
   line-height:1.1;
   letter-spacing:.02em;
-  color:#052d53
+  color:#082e66   /* 21.11.2026, просьба заказчика: цвет заголовка — как у «Международной экспертизы» (было #052d53) */
 }
 .hero-subtitle{
   font-size:clamp(1.375rem,2.44vw,1.875rem);
@@ -1338,8 +1338,18 @@ img{
 img {
   mix-blend-mode: darken;
 }
-.hero {
+/* 21.11.2026, просьба заказчика «в проектном финансировании заметен порог перехода»: белая подсветка шапки обрывалась по нижней границе шапки
+   (на 2000 px яркость в центре 246,6 → 242,4 за одну строку). Подсветка та же, но вынесена в ::before и за 4 rem до нижней границы плавно сходит на нет.
+   z-index:-1 работает над фоном страницы, потому что у .page-shell ниже включена isolation. */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
   background: radial-gradient(ellipse at 50% 58%, rgba(255,255,255,.7), rgba(255,255,255,.38) 48%, transparent 85%);
+  -webkit-mask-image: linear-gradient(to bottom, #000 calc(100% - 4rem), transparent);
+  mask-image: linear-gradient(to bottom, #000 calc(100% - 4rem), transparent);
 }
 .site-footer {
   background: linear-gradient(rgba(255,255,255,.65), rgba(255,255,255,.38) 35%, transparent 62%);
@@ -1370,7 +1380,7 @@ html{font-size:clamp(16px,1.225vw,20px)}
 }
 
 /* Горы внизу убраны: вместо подвала с панорамой — тёмная планка (assets/dark-foot.css); пустой хвост страницы под ней не нужен */
-.page-shell{min-height:0}
+.page-shell{min-height:0;isolation:isolate}   /* isolation — на всех ширинах, чтобы подсветка шапки (.hero::before, z-index:-1) лежала над фоном страницы, а не под ним */
 @media(min-width:1230px){.page-shell::after{display:none}}
 @media(max-width:1229px){
   .page-shell{background-image:url('../img/backgrounds/scene-top.png');background-size:100% auto;background-position:center top}
@@ -1385,3 +1395,7 @@ html{font-size:clamp(16px,1.225vw,20px)}
 @media(min-width:1061px){.hero{padding-bottom:3.4rem}}   /* ниже 1061 px схема идёт стопкой, отступ там и так больше */
 /* 20.11.2026, просьба заказчика: «отступ ниже ПРОЕКТНОЕ ФИНАНСИРОВАНИЕ — таким же, как сверху от него» (затем «разные отступы» — выровнено по ВИДИМОМУ расстоянию: от букв строки «УСЛОВИЯ · …» до букв заголовка 36–45 px, от букв заголовка до букв подзаголовка при margin 1,25 rem было на 2–4 px больше): margin-top подзаголовка 1,25 rem − 3,5 px (было 0) */
 @media(min-width:1061px){.hero-subtitle{margin-top:calc(1.25rem - 3.5px)}}
+/* 21.11.2026, просьба заказчика «текст ВОЗМОЖНОСТИ ФИНАНСИРОВАНИЯ УСЛОВИЯ КОНКРЕТНОЙ СДЕЛКИ налазит на график»: график лежит в фоне страницы (scene-top.png), занимает слева 19 % ширины окна и начинается ≈ на 8,15 % ширины окна ниже верха страницы, а подпись стояла на постоянных rem от края шапки — на 1440–2100 px оказывалась поверх линии и столбиков. Теперь подпись над графиком: верх зависит от ширины окна (8,15vw − полоска над шапкой (42px − 1rem) − высота подписи 4,875rem − зазор .75rem), но не выше верха шапки (выше подпись упирается в тень меню; на 1061–1230 px места по высоте мало — там касается лишь короткая черта под подписью) */
+@media(min-width:1061px){.hero-side-left{top:max(0px,calc(8.15vw - 42px - 4.625rem))}}
+/* 21.11.2026, просьба заказчика «должна быть по длине как и другие блоки»: тёмная планка подвала — той же ширины и в тех же боковых полях, что блоки страницы (.container); из assets/dark-foot.css она брала min(94%,1400px): на ≥1728 px была уже блоков на 17 px с каждой стороны, на 1280–1536 px шире на 3 px */
+.page-shell .sx-dfoot{width:min(calc(100% - var(--gutter)*2),var(--container-width))}
