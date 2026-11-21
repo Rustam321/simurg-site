@@ -19,15 +19,15 @@ ul,ol{margin:0;padding:0;list-style:none}
 .marginal{font-family:var(--font-caption);font-size:.5rem;line-height:1.65;letter-spacing:.125rem;font-weight:400;color:var(--color-note)}
 .opening{position:relative;isolation:isolate}
 .hero-art{position:absolute;inset:0;z-index:-1;width:min(100%,var(--frame-width));height:19.875rem;margin-inline:auto;background:url("../img/hero/scene-soft.webp") center top/70.125rem 19.875rem no-repeat}
-.site-header{height:5.25rem;padding: .625rem 2.9375rem 0 3.375rem;display:flex;align-items:flex-start;position:relative;gap:4.3125rem}
+.site-header{height:5.25rem;padding: .625rem 2.9375rem 0 3.5rem;display:flex;align-items:flex-start;position:relative;gap:4.25rem}
 .brand{flex:0 0 10.9375rem}
 .brand img{width:10.9375rem;mix-blend-mode:multiply}
-.main-navigation{display:flex;align-items:center;gap:1.875rem;padding-top:.4rem;font-size:.625rem;white-space:nowrap}
+.main-navigation{display:flex;align-items:center;gap:2rem;padding-top:.375rem;font-size:.625rem;white-space:nowrap}
 .main-navigation a{display:inline-flex;align-items:center;min-height:2.75rem}
 .main-navigation a:hover{text-decoration:underline;text-underline-offset:.3rem}
-.language{display:flex;align-items:center;gap:.75rem;border-left:1px solid var(--color-primary);padding-left:1.625rem;line-height:1;min-height:1rem}
-.down-chevron{width:.375rem;height:.375rem;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg);margin-top:-.2rem}
-.header-note{margin-left:auto;padding-top:.35rem;min-width:5.6rem}
+.language{display:flex;align-items:center;gap:.75rem;border-left:1px solid var(--color-primary);padding-left:1.5rem;line-height:1;min-height:1rem}
+.down-chevron{width:.375rem;height:.375rem;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg);margin-top:-.25rem}
+.header-note{margin-left:auto;padding-top:.375rem;min-width:5.6rem}
 .header-note::after,.hero-note-left::after,.hero-note-right::after,.footer-note-left::after,.footer-note-right::after{content:"";display:block;width:2.0625rem;height:1px;background:var(--color-secondary);margin-top:.875rem}
 .hero{height:auto;min-height:14.25rem;position:relative;text-align:center;padding-top:.6875rem;padding-bottom:1.25rem;font-family:var(--font-body)}   /* 17.11.2026: шапка растёт вместе с новым текстом (было фиксированных 14,25rem) */
 .hero-copy{max-width:52rem;margin-inline:auto;padding-inline:1rem}
@@ -42,7 +42,7 @@ h1{font-size:clamp(2rem,3.565vw,2.5rem);line-height:1.1;letter-spacing:.02em;whi
 .hero-note-left{position:absolute;text-align:left;left:2.9375rem;top:.5rem}
 .hero-note-right{position:absolute;text-align:left;right:1rem;bottom:1rem}
 main,.footer-statement{font-family:"Simurg Reference",var(--font-body)}
-.section-heading{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);position:relative;align-items:center;gap:1.375rem;min-height:2.5rem;margin-bottom:.1875rem;padding-inline:.3125rem}
+.section-heading{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);position:relative;align-items:center;gap:1.5rem;min-height:2.5rem;margin-bottom:.25rem;padding-inline:.25rem}
 .section-heading::before,.section-heading::after{content:"";height:1px;background:var(--color-line);flex:1;min-width:1rem}
 .section-heading::before{grid-column:1;grid-row:1}
 .section-heading h2{grid-column:2;grid-row:1}
@@ -52,18 +52,18 @@ main,.footer-statement{font-family:"Simurg Reference",var(--font-body)}
 .section-heading::after{margin-right:7.5rem}
 .glass-card{border:1px solid #fff;border-radius:var(--radius);background:linear-gradient(120deg,rgba(255,255,255,.23),rgba(255,255,255,.06));min-width:0}
 .intelligence-grid,.geography-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.625rem}
-.intelligence-card{position:relative;min-height:9.25rem;display:grid;grid-template-columns:3.875rem minmax(0,1fr);gap:.625rem;padding:.625rem .6875rem .625rem .875rem}
+.intelligence-card{position:relative;min-height:9.25rem;display:grid;grid-template-columns:3.875rem minmax(0,1fr);gap:.625rem;padding:.5rem .6875rem .5rem .875rem}
 .card-icon{width:3.875rem;border-radius:50%}
-.intelligence-card h3{font-size:1.15rem;line-height:1.1;margin-top:.875rem;padding-right:.25rem;letter-spacing:0}
+.intelligence-card h3{font-size:1.15rem;line-height:1.1;margin-top:1rem;padding-right:.25rem;letter-spacing:0}
 .intelligence-card h3::after,.region-copy h3::after{content:"";display:block;width:1.5rem;height:1px;background:#7da9cb;margin-top:.5rem;margin-bottom:.4375rem}
 .intelligence-card p{font-size:.96875rem;line-height:1.2;color:var(--color-secondary)}
 .right-chevron{position:absolute;right:.8125rem;top:1.8125rem;width:.5rem;height:.5rem;border-right:1px solid #164a86;border-top:1px solid #164a86;transform:rotate(45deg)}
 .intelligence-card h3{padding-right:.625rem}
 .intelligence-card:last-child h3{font-size:.875rem;letter-spacing:0}
 .intelligence-card:hover{border-color:#86accb}
-.geography{margin-top:1.1875rem}
+.geography{margin-top:1.25rem}
 .geography .section-heading{margin-bottom:.25rem}
-.geography-note{max-width:60rem;margin:.375rem auto .875rem;padding-inline:1rem;text-align:center;font-size:.9375rem;line-height:1.4;color:var(--color-secondary);text-wrap:balance}   /* пояснение под заголовком «Направления поиска» (ТЗ 17.11.2026) */
+.geography-note{max-width:60rem;margin:.375rem auto 1rem;padding-inline:1rem;text-align:center;font-size:.9375rem;line-height:1.4;color:var(--color-secondary);text-wrap:balance}   /* пояснение под заголовком «Направления поиска» (ТЗ 17.11.2026) */
 .geography .section-heading h2{font-size:1.625rem}
 .geography-card{min-height:13.8125rem;display:flex;flex-direction:column}
 .region-image{width:100%;aspect-ratio:255/124;object-fit:cover;border-radius:calc(var(--radius) - 1px) calc(var(--radius) - 1px) 0 0}
@@ -71,9 +71,9 @@ main,.footer-statement{font-family:"Simurg Reference",var(--font-body)}
 .region-copy h3{font-size:1.25rem;line-height:1.1}
 .region-copy h3::after{margin-top:.375rem;margin-bottom:.375rem}
 .region-copy p{font-size:1rem;line-height:1.08;color:var(--color-secondary)}
-.region-copy b{font-weight:400;color:var(--color-primary);padding-inline:.2rem}
+.region-copy b{font-weight:400;color:var(--color-primary);padding-inline:.25rem}
 .process{margin-top:1.125rem}
-.process .section-heading{margin-bottom:.625rem}
+.process .section-heading{margin-bottom:.5rem}
 .process .section-heading h2{font-size:1.4375rem}
 .process-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:0;min-height:8rem}
 .process-grid li{min-width:0;position:relative;text-align:center;padding-inline:.25rem}
@@ -86,13 +86,13 @@ main,.footer-statement{font-family:"Simurg Reference",var(--font-body)}
 .results .section-heading{margin-bottom:.375rem}
 .results .section-heading h2{font-size:1.5rem}
 .results-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:.375rem}
-.result-card{display:grid;grid-template-columns:3.25rem minmax(0,1fr);gap:.5rem;padding:.5rem .5rem .625rem .5625rem;min-height:6.9375rem;--radius:.5rem}
+.result-card{display:grid;grid-template-columns:3.25rem minmax(0,1fr);gap:.5rem;padding:.5rem .5rem .5rem .5625rem;min-height:6.9375rem;--radius:.5rem}
 .result-card>img{width:3.25rem;height:3.25rem;object-fit:contain;border-radius:50%}
 .result-card h3{font-size:.6875rem;line-height:1.15;letter-spacing:.02em;margin-top:.625rem}
 .result-card p{font-size:.8125rem;line-height:1.2;color:var(--color-secondary);margin-top:.5625rem}
 .site-footer{margin-top:.25rem;position:relative;isolation:isolate;min-height:15.75rem}
 .footer-art{position:absolute;inset:0;z-index:-1;margin-inline:auto;max-width:var(--frame-width);background:url("../img/backgrounds/mountains.webp") center bottom/70.125rem 15.75rem no-repeat;mask:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%201122%20252%22%3E%0A%20%20%3Cdefs%3E%0A%20%20%20%20%3Cfilter%20id%3D%22soft%22%3E%3CfeGaussianBlur%20stdDeviation%3D%225%22%2F%3E%3C%2Ffilter%3E%0A%20%20%20%20%3Cmask%20id%3D%22art%22%20maskUnits%3D%22userSpaceOnUse%22%20x%3D%220%22%20y%3D%220%22%20width%3D%221122%22%20height%3D%22252%22%3E%0A%20%20%20%20%20%20%3Cpath%20fill%3D%22white%22%20d%3D%22M0%200h1122v252H0z%22%2F%3E%0A%20%20%20%20%20%20%3Cg%20fill%3D%22black%22%20filter%3D%22url%28%23soft%29%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M478%2022h169v36H478zM314%2050h494v80H314zM39%2020h155v65H39zM1010%2020h88v67h-88z%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fg%3E%0A%20%20%20%20%3C%2Fmask%3E%0A%20%20%3C%2Fdefs%3E%0A%20%20%3Cpath%20fill%3D%22white%22%20mask%3D%22url%28%23art%29%22%20d%3D%22M0%200h1122v252H0z%22%2F%3E%0A%3C%2Fsvg%3E%0A") center bottom/70.125rem 15.75rem no-repeat}
-.footer-inner{min-height:15.75rem;position:relative;padding:1.375rem 2.9375rem 1rem}
+.footer-inner{min-height:15.75rem;position:relative;padding:1.5rem 3rem 1rem}
 .footer-statement{text-align:center;position:relative}
 .footer-statement h2{font-size:2.5rem;line-height:1.1;letter-spacing:.225rem}
 .footer-statement p{font-size:1.375rem;line-height:1.17;margin-top:.125rem;letter-spacing:0}
@@ -103,14 +103,14 @@ main,.footer-statement{font-family:"Simurg Reference",var(--font-body)}
 .footer-bottom p{position:absolute;clip-path:inset(50%);width:1px;height:1px}
 .footer-eagle{display:none}
 .footer-bottom p:last-child{font-size:.875rem;letter-spacing:.125rem;line-height:1.35}
-.skip-link{position:fixed;top:.5rem;left:.5rem;z-index:10;padding:.7rem 1rem;background:white;transform:translateY(-200%)}
+.skip-link{position:fixed;top:.5rem;left:.5rem;z-index:10;padding:.75rem 1rem;background:white;transform:translateY(-200%)}
 .skip-link:focus{transform:none}
 .menu-toggle{display:none}
 @media(min-width:1123px){.footer-art{mask-composite:intersect}.site-footer::before{content:"";position:absolute;inset:0;z-index:-2;background:linear-gradient(to bottom,transparent 0,#e5f0f9 65%,#c5d9e9 100%)}.footer-art{mask-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%201122%20252%22%3E%0A%20%20%3Cdefs%3E%0A%20%20%20%20%3Cfilter%20id%3D%22soft%22%3E%3CfeGaussianBlur%20stdDeviation%3D%225%22%2F%3E%3C%2Ffilter%3E%0A%20%20%20%20%3Cmask%20id%3D%22art%22%20maskUnits%3D%22userSpaceOnUse%22%20x%3D%220%22%20y%3D%220%22%20width%3D%221122%22%20height%3D%22252%22%3E%0A%20%20%20%20%20%20%3Cpath%20fill%3D%22white%22%20d%3D%22M0%200h1122v252H0z%22%2F%3E%0A%20%20%20%20%20%20%3Cg%20fill%3D%22black%22%20filter%3D%22url%28%23soft%29%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M478%2022h169v36H478zM314%2050h494v80H314zM39%2020h155v65H39zM1010%2020h88v67h-88z%22%2F%3E%0A%20%20%20%20%20%20%3C%2Fg%3E%0A%20%20%20%20%3C%2Fmask%3E%0A%20%20%3C%2Fdefs%3E%0A%20%20%3Cpath%20fill%3D%22white%22%20mask%3D%22url%28%23art%29%22%20d%3D%22M0%200h1122v252H0z%22%2F%3E%0A%3C%2Fsvg%3E%0A"),linear-gradient(to right,transparent,black 4%,black 96%,transparent);mask-size:70.125rem 15.75rem,100% 100%;mask-position:center bottom;mask-repeat:no-repeat}}
 @media(max-width:1050px){
   :root{--gutter:1.5rem}
   .site-header{padding-inline:1.5rem;gap:2rem}
-  .main-navigation{gap:1.3rem}
+  .main-navigation{gap:1.25rem}
   .header-note{display:block;font-size:.4375rem;letter-spacing:.08rem}
   .hero-note-left{left:1.5rem}
   .hero-note-right{right:.875rem}
@@ -155,7 +155,7 @@ main,.footer-statement{font-family:"Simurg Reference",var(--font-body)}
   .brand{flex-basis:10rem}
   .brand img{width:10rem}
   .main-navigation{width:100%;justify-content:space-between;padding:.5rem 0;font-size:.75rem;white-space:normal;flex-wrap:wrap;gap:.375rem 1rem}
-  .js .menu-toggle{display:flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:44px;height:44px;border:1px solid #8db4d4;border-radius:.375rem;background:rgba(255,255,255,.4);cursor:pointer}
+  .js .menu-toggle{display:flex;flex-direction:column;justify-content:center;align-items:center;gap:4px;width:44px;height:44px;border:1px solid #8db4d4;border-radius:.375rem;background:rgba(255,255,255,.4);cursor:pointer}
   .menu-toggle span{display:block;width:20px;height:1px;background:var(--color-primary)}
   .js .main-navigation{display:none}
   .js .main-navigation.is-open{display:flex}
@@ -215,7 +215,7 @@ main,.footer-statement{font-family:"Simurg Reference",var(--font-body)}
   .process-grid li{display:grid;grid-template-columns:3.5625rem minmax(0,1fr);gap:1rem;text-align:left;padding:0 .625rem;min-height:5rem;align-items:start}
   .process-grid li>img{margin:0}
   .process-grid h3{font-size:1rem;line-height:1.15;margin-top:.25rem;letter-spacing:0}
-  .process-grid p{font-size:1rem;line-height:1.2;margin-top:.3rem}
+  .process-grid p{font-size:1rem;line-height:1.2;margin-top:.25rem}
   .process-grid p br,.process-grid h3 br{display:none}
   .process-grid li:not(:last-child)::after{display:block;left:2.40625rem;top:3.65rem;width:1px;height:2.15rem}
   .process-grid li:not(:last-child)::before{display:block;left:2.25rem;top:5.3rem;transform:rotate(135deg)}

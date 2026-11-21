@@ -81,7 +81,7 @@ a:focus-visible,button:focus-visible{
   display:flex;
   align-items:center;
   position:relative;
-  gap:2.125rem
+  gap:2rem
 }
 .brand{
   flex:0 0 12.5rem
@@ -96,7 +96,7 @@ a:focus-visible,button:focus-visible{
   gap:2.25rem;
   font-size:.75rem;
   white-space:nowrap;
-  margin-left:2.875rem
+  margin-left:3rem
 }
 .site-header nav a{
   padding:1rem 0;
@@ -105,10 +105,10 @@ a:focus-visible,button:focus-visible{
 .language{
   display:flex;
   align-items:center;
-  gap:.625rem;
+  gap:.5rem;
   font-size:.6875rem;
   border-left:1px solid #9fb8d1;
-  padding-left:1.875rem;
+  padding-left:2rem;
   white-space:nowrap
 }
 .language svg{
@@ -209,7 +209,7 @@ h1{
   grid-template-columns:minmax(0,1fr) 16.875rem minmax(0,1fr);
   grid-template-rows:7.5rem 7.5rem;
   align-content:center;
-  gap:1.125rem 2rem;
+  gap:1rem 2rem;
   margin-top:.75rem;
   position:relative
 }
@@ -222,8 +222,8 @@ h1{
   box-shadow:0 6px 18px rgba(42,95,129,.23),inset 0 0 0 1px rgba(211,230,243,.6);
   display:flex;
   align-items:center;
-  gap:1.125rem;
-  padding:.8125rem 1.125rem;
+  gap:1rem;
+  padding:.75rem 1rem;
   position:relative;
   z-index:2
 }
@@ -250,7 +250,7 @@ h1{
   width:min(100%,11.5rem);
   height:1px;
   background:linear-gradient(90deg,#7faac6,#d9e9f3);
-  margin:.4375rem 0 .5rem
+  margin:.5rem 0 .5rem
 }
 .architecture-card p{
   font-size:.9375rem;
@@ -349,7 +349,7 @@ h1{
 }
 .deal-architecture{
   text-align:center;
-  padding:2.0625rem 1rem 2rem
+  padding:2rem 1rem 2rem
 }
 .deal-architecture h2{
   font-size:2.25rem;
@@ -434,7 +434,7 @@ h1{
   border-top:1px solid #c5dce8;
   margin-top:1.75rem;
   text-align:center;
-  padding-top:1.8125rem;
+  padding-top:1.75rem;
   padding-bottom:3.25rem
 }
 .site-footer h2{
@@ -448,7 +448,7 @@ h1{
   display:grid;
   grid-template-columns:repeat(3,minmax(0,1fr));
   width:min(100%,47.5rem);
-  margin:2.125rem auto 0;
+  margin:2rem auto 0;
   padding:0
 }
 .values li{
@@ -496,9 +496,9 @@ h1{
   justify-content:space-between;
   align-items:flex-end;
   min-height:5.125rem;
-  margin-top:4.125rem;
+  margin-top:4rem;
   text-align:left;
-  padding:0 .3125rem
+  padding:0 .25rem
 }
 .footer-bottom .microcopy{
   align-self:flex-start;
@@ -513,7 +513,7 @@ h1{
   letter-spacing:.08rem;
   color:white;
   text-shadow:0 1px 2px #355365;
-  padding-right:1.375rem
+  padding-right:1.5rem
 }
 @media(max-width:1120px){
   .site-header{
@@ -590,7 +590,7 @@ h1{
   }
   .advantages li{
     font-size:.75rem;
-    gap:.625rem;
+    gap:.5rem;
     padding:.75rem .5rem
   }
   .advantages img{
@@ -617,13 +617,13 @@ h1{
     display:flex;
     flex-direction:column;
     justify-content:center;
-    gap:5px;
+    gap:4px;
     background:rgba(255,255,255,.55);
     border:1px solid #9cbcd3;
     border-radius:.375rem;
     width:2.75rem;
     height:2.75rem;
-    padding:.625rem;
+    padding:.5rem;
     order:3
   }
   .menu-toggle span{
@@ -672,7 +672,7 @@ h1{
     display:none
   }
   .hero-side-left .caption-line{
-    margin-top:.4375rem
+    margin-top:.5rem
   }
   .hero{
     padding-top:1rem;
@@ -705,7 +705,7 @@ h1{
   }
   .process{
     grid-template-columns:repeat(3,minmax(0,1fr));
-    gap:.875rem 2rem
+    gap:1rem 2rem
   }
   .process li{
     font-size:.8125rem;
@@ -773,7 +773,7 @@ h1{
     grid-row:1;
     justify-self:center;
     width:15rem;
-    margin:.625rem 0 1.125rem
+    margin:.5rem 0 1rem
   }
   .finance-card{
     grid-column:1;
@@ -795,7 +795,7 @@ h1{
     height:auto;
     min-height:8rem;
     gap:.75rem;
-    padding:.875rem .75rem
+    padding:1rem .75rem
   }
   .architecture-card img{
     width:3.5rem;
@@ -927,7 +927,7 @@ h1{
   }
   .architecture-diagram{
     grid-template-columns:minmax(0,1fr);
-    gap:.875rem
+    gap:1rem
   }
   .funding-center{
     grid-column:1;
@@ -1024,7 +1024,7 @@ h1{
   .advantages{
     grid-template-columns:minmax(0,1fr);
     gap:.75rem;
-    margin-top:.875rem
+    margin-top:1rem
   }
   .advantages li{
     justify-content:flex-start;
@@ -1173,7 +1173,7 @@ img{
     grid-row:1;
     justify-self:center;
     width:15rem;
-    margin:.625rem 0 1.125rem
+    margin:.5rem 0 1rem
   }
   .finance-card{
     grid-column:1;
@@ -1283,7 +1283,7 @@ img{
 }
 @media(max-width:380px){
   .architecture-card{
-    padding:.875rem;
+    padding:1rem;
     gap:.75rem
   }
   .architecture-card img{
@@ -1306,7 +1306,7 @@ img{
   .architecture-card{
     height:auto;
     min-height:7.5rem;
-    gap:.625rem;
+    gap:.5rem;
     padding:.75rem
   }
   .architecture-card img{

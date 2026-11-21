@@ -17,14 +17,14 @@ a:focus-visible,button:focus-visible{outline:3px solid #56a6ff;outline-offset:4p
 .site-header{height:4.625rem;display:grid;grid-template-columns:11.75rem minmax(0,1fr)17.5rem;align-items:center;gap:5.625rem;padding-inline:.75rem}
 .brand{display:block;width:11.75rem}
 .brand img{width:100%;mix-blend-mode:multiply}
-.navigation{display:flex;justify-content:space-between;align-items:center;gap:1rem;min-width:0;padding-left:5.9375rem;padding-right:1.125rem}
+.navigation{display:flex;justify-content:space-between;align-items:center;gap:1rem;min-width:0;padding-left:6rem;padding-right:1rem}
 .navigation a{font-size:.875rem;font-weight:700;color:var(--color-primary);white-space:nowrap;min-height:2.75rem;display:inline-flex;align-items:center}
 .navigation a:hover{text-decoration:underline;text-underline-offset:.3rem}
 .header-actions{display:flex;align-items:center;justify-content:space-between;gap:1.5rem}
 .language{display:flex;align-items:center;gap:.75rem;white-space:nowrap;font-size:.875rem;font-weight:700;color:var(--color-primary)}
 .language img{width:1.4375rem;height:1.5rem;mix-blend-mode:multiply}
 .chevron{height:.4375rem;width:.4375rem;border-bottom:2px solid currentColor;border-right:2px solid currentColor;transform:rotate(45deg);margin-top:-.25rem}
-.portal-link{height:2.8125rem;border-radius:.5rem;color:#fff;background:linear-gradient(#071f70,#041951);display:flex;align-items:center;justify-content:center;gap:1.125rem;padding-inline:1.25rem;font-size:1rem;white-space:nowrap;font-weight:700}
+.portal-link{height:2.8125rem;border-radius:.5rem;color:#fff;background:linear-gradient(#071f70,#041951);display:flex;align-items:center;justify-content:center;gap:1rem;padding-inline:1.25rem;font-size:1rem;white-space:nowrap;font-weight:700}
 .arrow{display:inline-block;position:relative;flex-shrink:0;width:.875rem;height:1px;background:currentColor}
 .arrow::after{content:"";position:absolute;right:0;top:-.25rem;width:.5rem;height:.5rem;border-top:1.5px solid currentColor;border-right:1.5px solid currentColor;transform:rotate(45deg)}
 .hero{position:relative;isolation:isolate;display:grid;grid-template-columns:20.625rem minmax(0,1fr)20.625rem;min-height:21.5rem;border-radius:.875rem;background:radial-gradient(ellipse at 45% 10%,#002b60,transparent 65%),var(--hero-background);color:#fff}
@@ -32,7 +32,7 @@ a:focus-visible,button:focus-visible{outline:3px solid #56a6ff;outline-offset:4p
 .hero-intro{padding:2rem 1.625rem 1rem 4.0625rem;display:flex;flex-direction:column;justify-content:space-between;min-width:0}
 .entry-title{color:#86d9ff;font-size:1.0625rem;font-weight:700;line-height:1.36;letter-spacing:.025rem}
 .intro-description{font-size:.9375rem;line-height:1.4}
-.hero-center{text-align:center;position:relative;padding:1rem 0 .71875rem}
+.hero-center{text-align:center;position:relative;padding:1rem 0 .75rem}
 .hero-center::before{content:"";position:absolute;left:0;top:2rem;bottom:1.4375rem;width:1px;background:rgba(196,233,255,.78)}
 .ai-wordmark{font-size:3rem;line-height:1.12;font-weight:700;color:#77c4ff}
 .ai-tagline{font-size:.875rem;font-weight:700;line-height:1.25;border-radius:1rem;background:#032969;padding:.1875rem 1.5rem;display:table;margin:0 auto .25rem}
@@ -46,30 +46,30 @@ h1{font-size:1.875rem;line-height:1.12;font-weight:700;letter-spacing:.005rem}
 .voice-button{background:linear-gradient(160deg,#074cd0,#003087 60%,#052963);box-shadow:inset 0 0 16px #3784d72b}
 .message-button{background:linear-gradient(140deg,#00595c,#008b7d);border-color:#00d4c4}
 .communication-button:hover{filter:brightness(1.08)}
-.privacy-note{font-size:.875rem;line-height:1.3;display:flex;gap:.5rem;justify-content:center;align-items:center;margin-top:.9375rem}
+.privacy-note{font-size:.875rem;line-height:1.3;display:flex;gap:.5rem;justify-content:center;align-items:center;margin-top:1rem}
 .privacy-note svg{width:1rem;height:1.1875rem;flex-shrink:0}
-.hero-global{display:flex;align-items:flex-end;justify-content:flex-end;padding:0 3.4375rem 1.4375rem .5rem;min-width:0}
+.hero-global{display:flex;align-items:flex-end;justify-content:flex-end;padding:0 3.5rem 1.5rem .5rem;min-width:0}
 .hero-global p{font-size:.9375rem;line-height:1.42;white-space:nowrap}
 .mobile-door,.mobile-globe{display:none}
-.opportunities{margin-top:.55rem}
+.opportunities{margin-top:.5rem}
 .section-heading{text-align:center;position:relative;z-index:1}
 .section-heading h2{font-size:1.625rem;line-height:1.2;color:var(--color-primary);letter-spacing:.02rem}
 .section-heading p{font-size:1rem;line-height:1.25;color:#6686b5;margin-top:.0625rem}
 .opportunity-grid{display:grid;grid-template-columns:1.1fr 1fr 1.025fr 1.1fr;gap:.875rem;margin-top:.75rem}   /* было -.6875rem: карточки наезжали на подзаголовок секции */
-.opportunity-card{--accent:var(--color-blue);--tint:#ecf3ff;position:relative;min-width:0;border:1px solid var(--color-line);border-radius:var(--radius);padding:.5625rem .5625rem 1.0625rem;min-height:24.25rem;background:rgba(255,255,255,.58)}
+.opportunity-card{--accent:var(--color-blue);--tint:#ecf3ff;position:relative;min-width:0;border:1px solid var(--color-line);border-radius:var(--radius);padding:.5rem .5625rem 1rem;min-height:24.25rem;background:rgba(255,255,255,.58)}
 .intelligence{--accent:var(--color-teal)}
 .deals{--accent:var(--color-purple);--tint:#edf2ff}
 .cooperation{--accent:var(--color-orange);--tint:#fff7ed;border-color:#fce9da}
 .opportunity-image{width:100%;height:7.9375rem;object-fit:contain;object-position:center top;border-radius:.375rem}
-.card-content{padding:.625rem .75rem 0}
+.card-content{padding:.5rem .75rem 0}
 .card-content h3{font-size:1.125rem;line-height:1.2;color:var(--accent);font-weight:700;letter-spacing:.02em}
 .cooperation .card-content h3{font-size:1.0625rem;letter-spacing:.02em}
-.card-description{color:var(--accent);font-size:.875rem;line-height:1.3;min-height:2.25rem;margin-top:.1875rem}
+.card-description{color:var(--accent);font-size:.875rem;line-height:1.3;min-height:2.25rem;margin-top:.25rem}
 .deals .card-description{color:#2e528c}
 .feature-list{display:grid;gap:.375rem;margin-top:1rem;font-size:.8125rem;line-height:1.38}
 .feature-list li{position:relative;padding-left:1.6875rem;min-width:0}
 .feature-list li::before{content:"";position:absolute;left:.1875rem;top:.25rem;width:.625rem;height:.375rem;border-left:2px solid var(--accent);border-bottom:2px solid var(--accent);transform:rotate(-45deg)}
-.trade-officer{display:flex;align-items:center;gap:.875rem;background:var(--tint);border:1px solid #dbe6ff;border-radius:.5rem;min-height:2.9375rem;padding:.3125rem .6875rem;margin-top:.125rem;color:var(--accent)}
+.trade-officer{display:flex;align-items:center;gap:.875rem;background:var(--tint);border:1px solid #dbe6ff;border-radius:.5rem;min-height:2.9375rem;padding:.25rem .6875rem;margin-top:.125rem;color:var(--accent)}
 .cooperation .trade-officer{border-color:#ffead8;color:#b4520a}
 .trade-officer>img{width:2.125rem;max-height:2.125rem;object-fit:contain;mix-blend-mode:multiply;flex-shrink:0}
 .trade-officer p{min-width:0;font-size:.8125rem;line-height:1.22}
@@ -80,7 +80,7 @@ h1{font-size:1.875rem;line-height:1.12;font-weight:700;letter-spacing:.005rem}
 .card-arrow::before{content:"";position:absolute;inset:-.25rem}
 .card-arrow:hover{background:var(--tint)}
 .feature-list li:last-child{padding-right:2.5rem}
-.trust-strip{margin-top:.8125rem;border:1px solid var(--color-line);border-radius:var(--radius);padding:.9375rem 1.5rem;background:rgba(255,255,255,.7)}
+.trust-strip{margin-top:.75rem;border:1px solid var(--color-line);border-radius:var(--radius);padding:1rem 1.5rem;background:rgba(255,255,255,.7)}
 .trust-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr))}
 .trust-grid li{min-width:0;position:relative;display:grid;grid-template-columns:3.625rem minmax(0,1fr);gap:1.125rem;align-items:center;padding-inline:.375rem 1rem}
 .trust-grid li+li{padding-left:.375rem}
@@ -107,7 +107,7 @@ h1{font-size:1.875rem;line-height:1.12;font-weight:700;letter-spacing:.005rem}
 .dialog-contact{display:flex;gap:1rem;align-items:center;width:fit-content;margin-top:1.25rem;min-height:2.75rem;color:var(--color-blue);font-weight:700}
 @media(max-width:1450px){
  .site-header{gap:2.25rem;grid-template-columns:11.75rem minmax(0,1fr)17rem}
- .navigation{padding:0;gap:.875rem}
+ .navigation{padding:0;gap:1rem}
  .hero{grid-template-columns:18rem minmax(0,1fr)18rem}
  .hero-intro{padding-left:2rem}
  .hero-global{padding-right:1.5rem}
@@ -135,7 +135,7 @@ h1{font-size:1.875rem;line-height:1.12;font-weight:700;letter-spacing:.005rem}
  .hero-art{background-image:url("../img/hero/door.webp"),url("../img/hero/globe.webp");background-position:left 48%,right top;background-size:15rem auto,28.4375rem auto;opacity:.55}
  .hero-description{max-width:36rem}
  .opportunities{margin-top:1rem}
- .section-heading p{margin-top:.3rem}
+ .section-heading p{margin-top:.25rem}
  .opportunity-grid{grid-template-columns:repeat(2,minmax(0,1fr));margin-top:1rem;gap:1rem}
  .opportunity-card{min-height:0;padding:.75rem .75rem 3.75rem}
  .opportunity-image{height:auto;aspect-ratio:355/127;object-fit:contain}
@@ -207,7 +207,7 @@ h1{font-size:1.875rem;line-height:1.12;font-weight:700;letter-spacing:.005rem}
  .section-heading h2{font-size:clamp(1.25rem,3.5vw,1.625rem);line-height:1.2}
  .section-heading p{font-size:.9375rem}
  .opportunity-grid{gap:.875rem}
- .card-content{padding:.875rem .375rem 0}
+ .card-content{padding:1rem .375rem 0}
  .card-content h3,.cooperation .card-content h3{font-size:1.0625rem}
  .card-description{font-size:.9375rem;min-height:3.8rem}
  .card-description .wide-break{display:none}
@@ -240,7 +240,7 @@ h1{font-size:1.875rem;line-height:1.12;font-weight:700;letter-spacing:.005rem}
  .ai-tagline{font-size:.75rem;line-height:1.25;padding:.25rem .75rem;margin-top:.25rem;margin-bottom:.75rem}
  h1{font-size:1.5rem;line-height:1.18}
  h1 br{display:none}
- .hero-description{font-size:1rem;line-height:1.4;padding:0;margin-block:.875rem 1rem}
+ .hero-description{font-size:1rem;line-height:1.4;padding:0;margin-block:1rem 1rem}
  .communication-actions{grid-template-columns:min(100%,13rem);justify-content:center;gap:.5rem}
  .privacy-note{font-size:.8125rem;align-items:flex-start;max-width:15rem;margin-inline:auto;line-height:1.4}
  .privacy-note svg{margin-top:.125rem}
@@ -255,9 +255,9 @@ h1{font-size:1.875rem;line-height:1.12;font-weight:700;letter-spacing:.005rem}
  .section-heading h2{font-size:1.375rem;line-height:1.2;letter-spacing:0}
  .section-heading p{font-size:1rem;line-height:1.35;margin-top:.5rem}
  .opportunity-grid{grid-template-columns:minmax(0,1fr);gap:1rem;margin-top:1rem}
- .opportunity-card{padding:.625rem .625rem 3.75rem}
+ .opportunity-card{padding:.5rem .625rem 3.75rem}
  .opportunity-image{aspect-ratio:auto;width:100%;height:auto;object-fit:contain}
- .card-content{padding:.875rem .5rem 0}
+ .card-content{padding:1rem .5rem 0}
  .card-content h3,.cooperation .card-content h3{font-size:1.125rem;line-height:1.25;overflow-wrap:normal}
  .card-description{font-size:1rem;line-height:1.4;min-height:0;margin-top:.375rem}
  .feature-list{font-size:1rem;line-height:1.4;gap:.625rem;margin-top:1rem}
@@ -266,14 +266,14 @@ h1{font-size:1.875rem;line-height:1.12;font-weight:700;letter-spacing:.005rem}
  .trade-officer{margin-top:.75rem;padding:.625rem;gap:.75rem}
  .trade-officer p{font-size:.875rem}
  .trade-officer strong{font-size:1rem}
- .trade-officer+.feature-list{margin-top:.875rem}
+ .trade-officer+.feature-list{margin-top:1rem}
  .card-arrow{width:2.5rem;height:2.5rem;bottom:.75rem;right:.75rem}
  .trust-strip{margin-top:1rem;padding:1.25rem 1rem}
  .trust-grid{grid-template-columns:minmax(0,1fr);gap:1.375rem}
  .trust-grid li,.trust-grid li+li{padding:0;grid-template-columns:3.625rem minmax(0,1fr);gap:1rem}
  .trust-grid h2{font-size:.875rem;line-height:1.3}
  .trust-grid p{font-size:.9375rem;line-height:1.4}
- .site-footer{grid-template-columns:minmax(0,1fr);text-align:center;gap:.5rem;padding:1.125rem 0;font-size:.8125rem}
+ .site-footer{grid-template-columns:minmax(0,1fr);text-align:center;gap:.5rem;padding:1rem 0;font-size:.8125rem}
  .email{text-align:center;justify-self:center;min-height:2.75rem;display:flex;align-items:center}
  .legal-links,.social-links{justify-content:center}
  .legal-links button{min-height:2.75rem}
