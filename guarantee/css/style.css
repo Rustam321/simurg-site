@@ -12,10 +12,11 @@
 .benefit>div{min-width:0}.benefit h3{white-space:normal}
 @media(min-width:1481px){.benefits{grid-template-columns:.94fr 1.05fr 1.05fr .96fr}.benefit{gap:1.5rem}.benefit img{flex-basis:auto;width:auto;height:auto;max-width:3.625rem;max-height:3.625rem}.benefit:first-child{gap:1.375rem}.module{padding-inline:1.71875rem}.module p{font-size:1.0625rem;line-height:1.4}}
 /* The mountain remains an extracted source asset; only its edges blend into the page. */
-.hero{background:none}.hero:before{content:'';position:absolute;top:0;right:12.625rem;width:21.25rem;height:min(100%,19.9375rem);background:url('../img/hero/mountains.png?v=20261121') center/cover no-repeat;mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);pointer-events:none}.hero-copy,.hero-aside{position:relative}
-@media(max-width:1480px){.hero:before{right:11.5rem}}
+.hero{background:none}/* 21.11.2026, просьба заказчика «картинка горы заходит на вертикальную линию примерно на 20 px — убрать»: правый край картинки теперь ровно на линии (right = ширина боковой колонки + боковой отступ шапки: 12.625 + 1.25 rem; ≤1480 px: 11.5 + 1.25; ≤850 px: 9 + .5), раньше стоял на ширине колонки без отступа и заходил за линию на отступ */
+.hero:before{content:'';position:absolute;top:0;right:13.875rem;width:21.25rem;height:min(100%,19.9375rem);background:url('../img/hero/mountains.png?v=20261121') center/cover no-repeat;mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);pointer-events:none}.hero-copy,.hero-aside{position:relative}
+@media(max-width:1480px){.hero:before{right:12.75rem}}
 @media(max-width:1200px){.hero:before{opacity:.65}}
-@media(max-width:850px){.hero:before{right:9rem;opacity:.55}}
+@media(max-width:850px){.hero:before{right:9.5rem;opacity:.55}}
 @media(max-width:570px){.hero:before{right:0;width:min(100%,21.25rem);height:100%;opacity:.16}}
 
 .reference-break{display:none}@media(min-width:1481px){.reference-break{display:block}.hero{min-height:19.9375rem;padding-bottom:1.75rem}.hero-aside{margin-bottom:-1.75rem}.control{padding-top:1rem;padding-bottom:1.25rem}}
