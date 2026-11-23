@@ -1,0 +1,168 @@
+/* Правки ТОЛЬКО для языковых версий (en/ zh/ ar/): файл подключается после всех остальных стилей, русские страницы его не загружают.
+   Каждое правило ограничено языком страницы: html[lang="ar"], html[lang="zh-Hans"], html[lang="en"]. */
+
+/* Арабское письмо соединяет буквы; положительный letter-spacing (он задан у меню, заголовков и кнопок) разрывает слова. */
+html[lang="ar"] *, html[lang="ar"] *::before, html[lang="ar"] *::after { letter-spacing: 0 !important; }
+
+/* ===== АРАБСКАЯ ВЕРСИЯ (RTL): исправление поломок раскладки. Все правила — только для html[lang="ar"]. =====
+   Принцип: зеркалим то, что без зеркала ломается (текст поверх картинки, стрелки, разделители, телефоны);
+   схемы, где геометрию считает JS (соединительные линии) или важна последовательность стрелок, оставляем в исходной
+   «физической» раскладке (direction:ltr у контейнера), а текст внутри карточек остаётся арабским (direction:rtl). */
+
+/* A1. Телефоны и e-mail читаются слева направо. Без этого в RTL-строке «+375 44 555 08 06» выводилось как «06 08 555 44 375+»
+   (подвал главной, портал). */
+html[lang="ar"] a[href^="tel:"], html[lang="ar"] a[href^="mailto:"]:not(.dialog-contact) { direction: ltr; unicode-bidi: isolate }
+
+/* A2. Общее верхнее меню. В assets/topbar.css шапке жёстко задано direction:ltr, поэтому подпись «عن SIMURG» выводилась как
+   «عن SIMURG» слева направо, то есть слова задом наперёд. Раскладка шапки не зеркалится, подписям возвращается RTL.
+   Арабский шрифт при 12 px мелок — кегль пунктов чуть крупнее: от 1100 px — 13,5…17 px, в выпадающем меню — 15 px (было 14). */
+html[lang="ar"] .sx-nav__link { direction: rtl }
+@media (min-width: 1100px) { html[lang="ar"] .sx-nav__link { font-size: clamp(13.5px, .95vw, 17px) } }
+@media (max-width: 1099px) { html[lang="ar"] .sx-nav__link { font-size: 15px } }   /* выпадающее меню: 14 px арабского шрифта мелко, пункты чуть крупнее */
+
+/* A3. Главная, баннер: стрелка кнопки «WEB PORTAL» стояла слева от подписи и указывала вправо (на подпись) — в RTL должна указывать влево. */
+html[lang="ar"] .hero-stage__portal svg { transform: scaleX(-1) }
+
+/* A4. Главная, блок «Прямое взаимодействие…»: заголовок и итоговая плашка были выровнены по левому краю (text-align:left),
+   остальной текст — по правому; акцент (синяя черта) под заголовком стоял слева, а начало строки — справа. */
+html[lang="ar"] .ops__head, html[lang="ar"] .ops__final { text-align: start }
+html[lang="ar"] .ops__rule::after { left: auto; right: 0 }
+
+/* B1. SIMURG-БАНК (героический экран на главной #bank и страница банка): текст и три карточки в RTL уходили на правую половину,
+   где лежит фотография порта (подпись «ASIA» и самолёт были закрыты заголовком, абзац шёл по кранам). Блок остаётся слева, как у русской версии;
+   текст внутри — арабский, выровнен по правому краю колонки одной ширины (30 rem: правый край не доходит до подписей карты «AMERICAS/EUROPE»). До 700 px фото скрыто — обычная RTL-раскладка. */
+@media (min-width: 701px) {
+  html[lang="ar"] .hero-shell { direction: ltr }
+  html[lang="ar"] .hero-shell .hero-copy > *, html[lang="ar"] .hero-shell .benefits, html[lang="ar"] .hero-shell .scene-note { direction: rtl }
+  html[lang="ar"] .hero-shell .hero-copy .eyebrow, html[lang="ar"] .hero-shell .hero-copy h1, html[lang="ar"] .hero-shell .hero-copy .hero-description { max-width: 30rem }
+  html[lang="ar"] .hero-shell .hero-copy .hero-description { text-wrap: balance }   /* две ровные строки вместо «висячего» слова «المالين.» на второй */
+}
+
+/* B2. Схема «ресурсы финансирования» (SIMURG-БАНК и «Проектное финансирование»): finance.js рисует соединительные линии к ПРАВОМУ краю
+   карточек первой колонки и к ЛЕВОМУ — третьей. В RTL колонки менялись местами, и линии шли поверх текста карточек.
+   Сетка остаётся в физической раскладке (как у русской версии), внутри карточки — зеркало: значок справа, разделитель между значком и текстом. */
+html[lang="ar"] .simurg-finance-ecosystem__graph { direction: ltr }
+html[lang="ar"] .simurg-finance-ecosystem__graph > * { direction: rtl }
+html[lang="ar"] .simurg-finance-ecosystem__copy { padding-left: 0; padding-right: 24px }
+html[lang="ar"] .simurg-finance-ecosystem__copy::before { left: auto; right: 0 }
+html[lang="ar"] .simurg-finance-ecosystem--light .simurg-finance-ecosystem__copy { padding-right: 17px }
+html[lang="ar"] .simurg-finance-ecosystem--light .simurg-finance-ecosystem__card { text-align: start }
+html[lang="ar"] .simurg-finance-ecosystem__tagline { text-align: start }
+@media (max-width: 1399px) {
+  html[lang="ar"] .simurg-finance-ecosystem__copy { padding-right: 16px }
+  html[lang="ar"] .simurg-finance-ecosystem--light .simurg-finance-ecosystem__copy { padding-right: 14px }
+}
+
+/* C1. «О SIMURG»: вертикальный разделитель и точка у заголовков блоков стояли у внешнего (правого) края колонки заголовка, а не между заголовком и текстом. */
+html[lang="ar"] .info-row h2::before { right: auto; left: .1875rem }
+html[lang="ar"] .info-row h2::after { right: auto; left: 0 }
+@media (max-width: 43.75rem) {   /* колонки сложены: черта под заголовком начинается справа */
+  html[lang="ar"] .info-row h2::before { left: auto; right: .15625rem }
+  html[lang="ar"] .info-row h2::after { left: auto; right: 0 }
+}
+/* C2. «О SIMURG», блок «SIMURG — организация…»: текст в RTL ложился на карту мира (карта — фон справа). Текстовая колонка остаётся слева, как в русской версии. */
+@media (min-width: 53.76rem) {
+  html[lang="ar"] .ecosystem-intro { direction: ltr }
+  html[lang="ar"] .ecosystem-copy { direction: rtl; width: min(100%, 35.3125rem) }
+}
+
+/* D1. «Международная экспертиза»: шесть этапов — линии и стрелки между ними были нарисованы справа от каждого этапа и указывали вправо
+   (от следующего к предыдущему, у первого этапа стрелка уходила за край). Зеркалим: линия идёт влево, стрелка указывает влево. */
+html[lang="ar"] .process-grid li:not(:last-child)::after { left: auto; right: calc(50% + 1.85rem) }
+html[lang="ar"] .process-grid li:not(:last-child)::before { left: auto; right: calc(100% - .375rem); transform: rotate(-135deg) }
+@media (max-width: 560px) {      /* один столбец: вертикальная линия и стрелка вниз — под значком, который теперь справа */
+  html[lang="ar"] .process-grid li:not(:last-child)::after { left: auto; right: 2.40625rem }
+  html[lang="ar"] .process-grid li:not(:last-child)::before { left: auto; right: 2.25rem; transform: rotate(135deg) }
+}
+/* D2. «Международная экспертиза»: шеврон «›» карточек «Торговая разведка» — слева и указывает влево; разделительные точки между вопросами в шапке — между вопросами. */
+html[lang="ar"] .right-chevron { right: auto; left: .8125rem; transform: rotate(-135deg) }
+@media (max-width: 1050px) { html[lang="ar"] .right-chevron { left: 1rem } }
+html[lang="ar"] .hero-questions li + li::before { left: auto; right: -1rem; transform: translate(50%, -50%) }
+@media (max-width: 560px) { html[lang="ar"] .process-grid li { text-align: start } }
+
+/* E1. «Проектное финансирование»: шесть этапов — стрелки-картинки стояли справа от каждого этапа и указывали вправо (в RTL это «назад»).
+   От 1061 px зеркалим: стрелка слева от этапа и указывает влево. До 1060 px этапы идут «змейкой» в две строки со своими поворотами стрелок —
+   там раскладка остаётся физической, как у русской версии (контейнер ltr, текст этапов арабский). */
+@media (min-width: 1061px) {
+  html[lang="ar"] ol.process li:not(:last-child):after { right: auto; left: -2rem; transform: scaleX(-1) }
+}
+@media (max-width: 1060px) {
+  html[lang="ar"] ol.process { direction: ltr }
+  html[lang="ar"] ol.process > li { direction: rtl }
+}
+
+/* F1. «Сопровождение исполнения», шапка: гора (фон справа) лежала под текстом, вертикальная линия-разделитель стояла у внешнего края боковой колонки.
+   Зеркалим композицию: боковая колонка — слева, гора вплотную к её линии (край горы = линия, как в русской версии), текст справа. */
+html[lang="ar"] .hero:has(> .hero-aside)::before { right: auto; left: 13.875rem }
+html[lang="ar"] .hero-aside { border-left: 0; border-right: 1px solid #cbdeed; padding-left: 0; padding-right: 2.3125rem }
+@media (max-width: 1480px) {
+  html[lang="ar"] .hero:has(> .hero-aside)::before { left: 12.75rem }
+  html[lang="ar"] .hero-aside { padding-right: 1.5rem }
+}
+@media (max-width: 850px) {
+  html[lang="ar"] .hero:has(> .hero-aside)::before { left: 9.5rem }
+  html[lang="ar"] .hero-aside { padding-right: 1rem }
+}
+@media (max-width: 570px) {      /* столбцы сложены: как в русской версии */
+  html[lang="ar"] .hero:has(> .hero-aside)::before { left: auto; right: 0 }
+  html[lang="ar"] .hero-aside { border-right: 0; padding-right: 0 }
+}
+html[lang="ar"] .control-caption { margin-left: 0 }
+@media (min-width: 1201px) { html[lang="ar"] .control-caption { margin-right: auto } }
+
+/* G1. «Правовая информация»: фото колонн (фон справа) лежало под заголовком и подзаголовком (синий текст на сером камне), цифры разделов
+   «01…05» имели разделитель с внешней стороны, боковая колонка — линию слева. Фото переносим влево, разделители — к тексту. */
+html[lang="ar"] .hero:has(> .hero-inner) { background: linear-gradient(270deg, #f1f7fb 0%, #eef5fa 43%, transparent 66%), url('../legal/img/hero/legal-architecture.webp') left center / auto 100% no-repeat }
+@media (max-width: 760px) {
+  html[lang="ar"] .hero:has(> .hero-inner) { background-image: linear-gradient(270deg, #f1f7fb 0%, rgba(241,247,251,.96) 35%, rgba(241,247,251,.75) 100%), url('../legal/img/hero/legal-architecture.webp'); background-position: left center }
+}
+html[lang="ar"] .number { padding-right: 0; padding-left: 1.5rem }
+html[lang="ar"] .number:after { right: auto; left: .625rem }
+@media (max-width: 760px) {
+  html[lang="ar"] .number { padding-left: .5rem }
+  html[lang="ar"] .number:after { left: 0 }
+}
+html[lang="ar"] .legal-section aside { border-left: 0; border-right: 1px solid var(--line); padding-left: 0; padding-right: 1.125rem }
+@media (max-width: 760px) { html[lang="ar"] .legal-section aside { border-right: 0; padding-right: 0 } }
+
+/* P1. Портал, главный экран: колонки (вступление слева, «глобальная сеть» справа) в RTL менялись местами, и текст ложился на яркий глобус
+   (голубой «بوابة موحّدة…» по светлым материкам); фоновая панорама (дверь слева, глобус справа) не зеркалится.
+   Раскладка остаётся физической, как у русской версии, текст внутри колонок — арабский. До 780 px колонки сложены и фон бледный — обычная RTL-раскладка. */
+@media (min-width: 781px) {
+  html[lang="ar"] .hero#portal { direction: ltr }
+  html[lang="ar"] .hero#portal > * { direction: rtl }
+}
+/* P2. Портал: стрелки кнопки «WEB PORTAL», ссылки e-mail в окне и кружков в карточках указывали вправо; в RTL «вперёд» — влево. */
+html[lang="ar"] .arrow, html[lang="ar"] .card-arrow > * { transform: scaleX(-1) }
+
+/* P3. Портал: кружок-стрелка в углу карточек — в RTL «конец» карточки слева, стрелка (уже зеркальная) уходит туда же. */
+html[lang="ar"] .card-arrow { right: auto; left: .875rem }
+@media (max-width: 560px) { html[lang="ar"] .card-arrow { left: .75rem } }
+
+/* G2. «Правовая информация», блок «Права доступа к документам»: тире-маркер строк списка документов стояло у левого края строки, далеко от текста;
+   в RTL текст начинается справа — маркер переносим к правому краю строки (между названием документа и описанием). */
+html[lang="ar"] .document-list dd:before { left: auto; right: -17px }
+
+/* Предложение форка «визуальная проверка en/zh» — правила для конца assets/i18n.css.
+   Все правила ограничены html[lang="en"] или html[lang="zh-Hans"]: русские и арабские страницы не меняются.
+   Проверено на сборке out/site_v2 (копия qa_enzh): ширины 320…3072, сканер вёрстки не находит новых обрезок/наложений/горизонтального скролла. */
+
+/* en · global-trade, первая карточка «HOW SIMURG COORDINATES…»: первая строка заголовка (20,8 px, uppercase) шириной ровно с колонку 263 px
+   и на 1 px заходит на вертикальную линию-разделитель справа; на ширинах 861–1000 px зазор 4 px (в русской версии — от 10 px).
+   Трекинг уменьшать нельзя (type.css: заглавные заголовки не плотнее .035em, !important — замечание заказчика «буквы слепленные»), поэтому
+   у этого одного заголовка кегль чуть меньше (как и в русской версии, где .model h2 уже меньше соседних): 1,3 → 1,25 rem (20,8 → 20 px),
+   на 701–1000 px 1,15 → 1,125 rem (18,4 → 18 px), и справа остаётся поле .5 rem. Зазор до линии — 9 px на всех ширинах от 861 px (12 px на 701–860).
+   Раскладка в одну колонку (≤700 px) не затрагивается. */
+@media (min-width: 701px) { html[lang="en"] .info-row.model h2 { font-size: 1.25rem; padding-right: .5rem; } }
+@media (min-width: 701px) and (max-width: 1000px) { html[lang="en"] .info-row.model h2 { font-size: 1.125rem; } }
+
+/* en · главная, схема «SUPPORT FOR YOUR TRANSACTION»: подпись круга «DOCUMENT MANAGEMENT» одной строкой шире круга (запас −3 px: буква D и последняя T выходят за край).
+   Русская «ДОКУМЕНТООБОРОТ» шире круга не была (запас 22 px). Уменьшаем кегль только этой подписи (17 → 14 px), трекинг не трогаем — запас становится ≈20 px (у соседних шариков 22 px).
+   Второй селектор — увеличенная копия шарика при наведении мыши: ops-modules.js удаляет у копии data-module, поэтому копия ищется по месту (10-й шарик слоя). */
+html[lang="en"] [data-module="documents"] .de-module-heading,
+html[lang="en"] .de-hover-layer > .de-hover:nth-child(10) .de-module-heading { font-size: 14px; }
+
+/* zh · «висячие» последние строки: китайский текст переносится между любыми знаками, и в узких карточках на последнюю строку часто попадает один знак с точкой
+   («件。», «货。», «息。»). text-wrap: pretty (Chrome/Edge 117+, Safari 26) подбирает переносы так, чтобы последняя строка не была из 1–2 знаков;
+   в браузерах без поддержки правило просто игнорируется. Длина абзацев и их ширина не меняются. */
+html[lang="zh-Hans"] :is(p, li, h2, h3, h4, dd) { text-wrap: pretty; }

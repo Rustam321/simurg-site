@@ -32,9 +32,9 @@
 
 /* языки (справа; слева от них светящийся разделитель, как у пунктов) */
 .sx-lang{position:relative;display:flex;align-items:center;gap:clamp(10px,1.2vw,22px);padding-left:clamp(16px,1.8vw,34px);flex:none}
-.sx-lang__btn{display:flex;flex-direction:column;align-items:center;gap:5px;min-width:44px;min-height:44px;justify-content:center;cursor:default;font-size:12px;font-weight:600;letter-spacing:.02em;opacity:.92}
+.sx-lang__btn{display:flex;flex-direction:column;align-items:center;gap:5px;min-width:44px;min-height:44px;justify-content:center;cursor:pointer;font-size:12px;font-weight:600;letter-spacing:.02em;opacity:.92}
 .sx-lang__btn img{width:32px;height:22px;object-fit:cover;border-radius:2px;box-shadow:0 0 0 1px rgba(255,255,255,.18)}
-.sx-lang__btn[aria-current="true"]{opacity:1}
+.sx-lang__btn[aria-current="true"]{opacity:1;cursor:default}
 .sx-lang__btn:not([aria-current="true"]){opacity:.55;transition:opacity .2s ease}
 .sx-lang__btn:not([aria-current="true"]):hover{opacity:.8}
 .sx-lang__btn span{border-bottom:2px solid transparent;padding-bottom:1px}   /* место под подчёркивание есть у всех подписей: флаги стоят на одной линии */
