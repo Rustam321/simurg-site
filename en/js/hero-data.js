@@ -41,6 +41,6 @@ window.SIMURG_HERO = {
       "scene_04.title": "RISK\nMANAGEMENT",
       "scene_05.title": "INTELLIGENT\nSOLUTIONS",
       "scene_06.title": "INTELLIGENCE — SOLUTION\nEXECUTION — OVERSIGHT"
-}  // после утверждения RU — сюда те же ключи по-английски
+}
   }
 };

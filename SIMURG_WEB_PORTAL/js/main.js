@@ -25,7 +25,7 @@ const titles = {
   voice: 'Начать голосовой диалог', message: 'Написать сообщение',
   investment: 'Привлечение инвестиций', intelligence: 'Торговая разведка',
   deals: 'Управление сделками', cooperation: 'Международное сотрудничество',
-  privacy: 'Privacy Policy', terms: 'Terms of Use', linkedin: 'LinkedIn', telegram: 'Telegram', youtube: 'YouTube'
+  privacy: 'Политика конфиденциальности', terms: 'Условия использования', linkedin: 'LinkedIn', telegram: 'Telegram', youtube: 'YouTube'
 };
 function goToConfiguredUrl(value) {
   if (!value) return false;
@@ -51,7 +51,7 @@ document.addEventListener('click', event => {
   document.querySelector('#dialog-description').textContent = group === 'actions'
     ? 'Сервис пока недоступен. Свяжитесь с командой SIMURG по электронной почте.'
     : 'Ссылка пока недоступна. Вы можете запросить информацию у команды SIMURG.';
-  document.querySelector('.dialog-contact').href = `mailto:info@simurg.global?subject=${encodeURIComponent('SIMURG — '+titles[action])}`;
+  document.querySelector('.dialog-contact').href = `mailto:start@simurg-global.com?subject=${encodeURIComponent('SIMURG — '+titles[action])}`;
   dialog.showModal();
 });
 document.querySelector('.dialog-close').addEventListener('click', () => dialog.close());

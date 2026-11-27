@@ -1,5 +1,5 @@
 /* Единая типографика (эталон — страница «ЮРИДИЧЕСКАЯ ОТВЕТСТВЕННОСТЬ»): весь текст — Manrope, заголовки — Manrope 700, как в меню.
-   Подключена на global-trade, expertise, project-finance, guarantee, legal, SIMURG_BANK, SIMURG_WEB_PORTAL; на главной то же задано переменной --font-heading.
+   Подключена на global-trade, expertise, project-finance, execution-support, legal, SIMURG_FINANCE, SIMURG_WEB_PORTAL; на главной то же задано переменной --font-heading.
    Подключается ПОСЛЕ css страницы и ../css/fonts.css. Меню (.sx-topbar) не затрагивается. */
 :root { --sx-head: 'Manrope', 'Exo 2', Arial, sans-serif; --sx-body: 'Manrope', 'Exo 2', Arial, sans-serif; }
 html body,

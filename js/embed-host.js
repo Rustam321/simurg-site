@@ -12,6 +12,8 @@
     if (Math.abs(top) > 2) window.scrollBy({ top: top, left: 0, behavior: 'auto' });
   }
   function startHash() {
+    // старые ссылки …#bank (до 27.11.2026) ведут к тому же блоку, теперь он называется #finance
+    if (location.hash === '#bank' && history.replaceState) history.replaceState(null, '', '#finance');
     if (!location.hash || location.hash.length < 2) return;
     target = document.getElementById(decodeURIComponent(location.hash.slice(1)));
     if (!target) return;

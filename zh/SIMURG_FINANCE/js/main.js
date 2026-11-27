@@ -51,7 +51,7 @@ document.querySelectorAll('.modal').forEach(dialog => {
   });
 });
 const searchEntries = [
-  ['about', '国际交易财务事务支持'],
+  ['about', '国际交易金融支持'],
   ['trade', '国际贸易 — 为您的交易提供解决方案'],
   ['leaders', 'SIMURG 团队'],
   ['payments', '结算'], ['financing', '融资'],

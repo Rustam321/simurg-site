@@ -22,7 +22,7 @@ document.addEventListener('keydown', event => {
 });
 window.matchMedia('(min-width: 1061px)').addEventListener('change', event => { if (event.matches) closeMenu(); });
 const titles = {
-  voice: 'ابدأ حوارًا صوتيًا', message: 'اكتب رسالة',
+  voice: 'ابدؤوا حوارًا صوتيًا', message: 'اكتبوا رسالة',
   investment: 'جذب الاستثمارات', intelligence: 'المعلومات التجارية',
   deals: 'إدارة المعاملات', cooperation: 'التعاون الدولي',
   privacy: 'سياسة الخصوصية', terms: 'شروط الاستخدام', linkedin: 'LinkedIn', telegram: 'Telegram', youtube: 'YouTube'
@@ -50,8 +50,8 @@ document.addEventListener('click', event => {
   document.querySelector('#dialog-title').textContent = titles[action];
   document.querySelector('#dialog-description').textContent = group === 'actions'
     ? 'هذه الخدمة غير متاحة حاليًا. يُرجى التواصل مع فريق SIMURG عبر البريد الإلكتروني.'
-    : 'هذا الرابط غير متاح حاليًا. يمكنك طلب المعلومات من فريق SIMURG.';
-  document.querySelector('.dialog-contact').href = `mailto:info@simurg.global?subject=${encodeURIComponent('SIMURG — '+titles[action])}`;
+    : 'هذا الرابط غير متاح حاليًا. يمكنكم طلب المعلومات من فريق SIMURG.';
+  document.querySelector('.dialog-contact').href = `mailto:start@simurg-global.com?subject=${encodeURIComponent('SIMURG — '+titles[action])}`;
   dialog.showModal();
 });
 document.querySelector('.dialog-close').addEventListener('click', () => dialog.close());

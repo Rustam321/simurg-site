@@ -2,8 +2,8 @@
    Адрес каждой ссылки (эквивалент ТЕКУЩЕЙ страницы на другом языке) записан в разметке и работает без JavaScript.
    Здесь только то, чего разметка не знает:
    — к адресу дописывается якорь текущей страницы (#opportunities, #section-3 …), если такой элемент есть на странице
-     (страницы всех языков устроены одинаково, id совпадают); на главной, если посреди окна сейчас блок банка (#bank),
-     добавляется #bank — посетитель остаётся у финансового блока;
+     (страницы всех языков устроены одинаково, id совпадают); на главной, если посреди окна сейчас блок финансового сопровождения (#finance),
+     добавляется #finance — посетитель остаётся у финансового блока;
    — служебный режим банка ?standalone сохраняется;
    — выпадающий список языков в шапках портала и банка закрывается по Escape и по щелчку вне списка. */
 (function () {
@@ -16,10 +16,10 @@
     var raw = location.hash.slice(1), id = '';
     try { id = decodeURIComponent(raw); } catch (e) { id = ''; }
     if (id && document.getElementById(id)) return '#' + raw;
-    var bank = document.getElementById('bank');
+    var bank = document.getElementById('finance');
     if (bank) {
       var r = bank.getBoundingClientRect(), mid = window.innerHeight / 2;
-      if (r.top <= mid && r.bottom >= mid) return '#bank';
+      if (r.top <= mid && r.bottom >= mid) return '#finance';
     }
     return '';
   }

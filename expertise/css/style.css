@@ -237,7 +237,7 @@ main,.footer-statement{font-family:"Simurg Reference",var(--font-body)}
 /* NEW_SIMURG: арт героя привязан к секции (над ним теперь общее меню, а не собственная шапка 5.25rem) */
 .hero>.hero-art{inset:auto;top:-5.25rem;left:0;right:0}
 
-/* NEW_SIMURG: единый масштаб светлых страниц — содержимое занимает ~94% ширины экрана (как у guarantee), потолок 21px */
+/* NEW_SIMURG: единый масштаб светлых страниц — содержимое занимает ~94% ширины экрана (как у execution-support), потолок 21px */
 html{font-size:clamp(16px,1.34vw,21px)}
 
 /* NEW_SIMURG: на 1051–1250px четыре карточки узкие — заголовок «ИНФРАСТРУКТУРА» упирался в стрелку */

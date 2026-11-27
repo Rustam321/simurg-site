@@ -35,12 +35,12 @@ window.SIMURG_HERO = {
     },
     zh: {
       "scene_01.title": "AI-SIMURG — 通向新市场\n与新机遇的入口",
-      "scene_01.title.s": "AI-SIMURG —\n通向新市场与新机遇\n的入口",
+      "scene_01.title.s": "AI-SIMURG —\n通向新市场\n与新机遇的入口",
       "scene_02.title": "融资与\n履约担保",
       "scene_03.title": "全球\n贸易",
       "scene_04.title": "风险\n管理",
       "scene_05.title": "智能\n解决方案",
       "scene_06.title": "智慧 — 方案\n执行 — 监督"
-}  // после утверждения RU — сюда те же ключи по-английски
+}
   }
 };

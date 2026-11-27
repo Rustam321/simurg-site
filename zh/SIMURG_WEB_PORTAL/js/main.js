@@ -22,7 +22,7 @@ document.addEventListener('keydown', event => {
 });
 window.matchMedia('(min-width: 1061px)').addEventListener('change', event => { if (event.matches) closeMenu(); });
 const titles = {
-  voice: '开始语音对话', message: '撰写消息',
+  voice: '开始语音对话', message: '发送消息',
   investment: '引进投资', intelligence: '贸易情报',
   deals: '交易管理', cooperation: '国际合作',
   privacy: '隐私政策', terms: '使用条款', linkedin: 'LinkedIn', telegram: 'Telegram', youtube: 'YouTube'
@@ -51,7 +51,7 @@ document.addEventListener('click', event => {
   document.querySelector('#dialog-description').textContent = group === 'actions'
     ? '该服务暂未开放。请通过电子邮件联系 SIMURG 团队。'
     : '该链接暂未开放。您可以向 SIMURG 团队咨询相关信息。';
-  document.querySelector('.dialog-contact').href = `mailto:info@simurg.global?subject=${encodeURIComponent('SIMURG — '+titles[action])}`;
+  document.querySelector('.dialog-contact').href = `mailto:start@simurg-global.com?subject=${encodeURIComponent('SIMURG — '+titles[action])}`;
   dialog.showModal();
 });
 document.querySelector('.dialog-close').addEventListener('click', () => dialog.close());
